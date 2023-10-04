@@ -17,7 +17,8 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-# This respository contains a README.Rmd which has the contents of the previous activities in the GEOG 712 course
+# Introduction to the Repository
+This respository contains a README.Rmd which has the contents of the previous activities in the GEOG 712 course
 
 ---
 title: "So-Activity-1"
