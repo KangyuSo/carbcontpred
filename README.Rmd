@@ -86,7 +86,7 @@ box_plot
 
 # Folder Structure Explanation
 
-The data table created from loading the PlantGrowth data set is stored in the "Data Table Assets" folder. The box plot created from the PlantGrowth data set is stored in the "Image Assets" folder.
+The assets I used for this project were created from the chunk of code from Activity 1. The data table created from loading the PlantGrowth data set is stored in the "Data Table Assets" folder. The box plot created from the PlantGrowth data set is stored in the "Image Assets" folder.
 
 The goal of GEOG 712 is to ...
 
