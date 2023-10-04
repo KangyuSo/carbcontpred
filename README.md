@@ -9,7 +9,9 @@
 # Introduction to the Repository
 
 This respository contains a README.Rmd which has the contents of the
-previous activities in the GEOG 712 course
+previous activities in the GEOG 712 course. This includes the content of
+Activity 1, the folders containing assets from Activity 2, and a section
+explaining the folder structure which the assets are stored within.
 
 # Main Research Interest
 
@@ -74,6 +76,9 @@ data(PlantGrowth)
 
 # View the data set
 View(PlantGrowth)
+
+# Save the data set as a table titled "PlantGrowth.csv"
+write.table(PlantGrowth, file = "PlantGrowth.csv")
 
 # Install and load ggplot2
 install.packages("ggplot2")

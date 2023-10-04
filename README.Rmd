@@ -67,6 +67,9 @@ data(PlantGrowth)
 # View the data set
 View(PlantGrowth)
 
+# Save the data set as a table titled "PlantGrowth.csv"
+write.table(PlantGrowth, file = "PlantGrowth.csv")
+
 # Install and load ggplot2
 install.packages("ggplot2")
 library("ggplot2")
