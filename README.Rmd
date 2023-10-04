@@ -20,13 +20,6 @@ knitr::opts_chunk$set(
 # Introduction to the Repository
 This respository contains a README.Rmd which has the contents of the previous activities in the GEOG 712 course
 
----
-title: "So-Activity-1"
-output:
-  pdf_document: default
-  html_notebook: default
----
-
 # Main Research Interest
 
 Forest ecosystems provide many essential services such as climate regulation and carbon storage. However, they are endangered by ongoing resource exploitation and climate change. Forest management practices hold massive potential for reducing the atmospheric buildup of carbon dioxide but require an intensive assessment of their contribution to enhanced carbon sequestration. Unfortunately, traditional inventory-based forest monitoring practices are time, cost, and labour intensive and impractical at a national scale. 
