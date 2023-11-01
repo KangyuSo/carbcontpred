@@ -1,0 +1,22 @@
+Package: ContinuumRemoved
+Title: Continuum Removal of Soil Spectral Reflectance Data
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Kangyu",
+           family = "So",
+           role = c("aut", "cre"),
+           email = "sok11@mcmaster.ca")
+Description: The package calculates the continuum removal of a data set containing the spectral reflectance of post-dried soil samples collected from the Hudson Bay Lowlands. This normalizes the reflectance spectra, which allows the absorption features of individual soil samples to be compared from a common baseline.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Depends: 
+    R (>= 2.10)
+LazyData: true
+LazyDataCompression: xz
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+URL: https://github.com/KangyuSo/ContinuumRemoved
+BugReports: https://github.com/KangyuSo/ContinuumRemoved/issues

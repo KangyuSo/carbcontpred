@@ -1,0 +1,43 @@
+---
+title: "RefDryContinuumRemoved"
+author: "Kangyu So"
+date: "2023-10-31"
+output: html_document
+---
+
+I have a CSV file which contains data on the spectral reflectance of post-dried soil samples between the wavelengths 350 nm and 2500 nm in increments of 1 nm. The soil samples were collected from the Hudson Bay Lowlands.
+
+To increase the shareability of the data I will first read the data set. I will then convert the data set to an `.RData` file and then document it. This will enable the data set to be bundled with package `ContinuumRemoval`.
+
+Install and load the package needed to preprocess the data:
+```{r}
+install.packages("prospectr")
+library(prospectr)
+```
+
+Read the CSV file as a data frame:
+```{r}
+RefDry <- read.csv("data-raw/SoilReflectanceDry_v01.csv")
+```
+
+The data frame consists of 2151 observations of 433 variables.Get a summary of the RefDry data frame:
+```{r}
+summary(RefDry)
+```
+
+The data definitions are as follows:
+
+- Wavelength  Specific wavelength in nanometers
+- Sample ID  ID of the soil sample
+- Reflectance  Spectral reflectance value at a given wavelength
+
+The reflectance spectra is not normalized so I will calculate continuum removal for the RefDry data frame:
+```{r}
+RefDryContinuumRemoved<-as.data.frame(apply(RefDry[,-1], MARGIN=2, FUN =continuumRemoval, wav = RefDry$Wavelength))
+RefDryContinuumRemoved<-cbind(Wavelength = RefDry$Wavelength, RefDryContinuumRemoved)
+```
+
+Save to data folder:
+```{r}
+usethis::use_data(RefDryContinuumRemoved, overwrite = TRUE)
+```
