@@ -1,0 +1,50 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# avgref
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of avgref is to calculate the average reflectance of each soil sample at a given wavelength range. 
+
+## Installation
+
+You can install the development version of avgref like so:
+
+```r
+library(devtools)
+install_github("KangyuSo/avgref")
+library(avgref)
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+## Install and load the package
+install.packages("avgref") 
+library(avgref)
+
+## Load the dataset 
+ref_dry <- read.csv(ref_dry)
+
+## Calculate the average reflectance of the soil samples between the wavelengths 1250 nm and 1450 nm.
+ref_dry_average <- avgref(ref_dry, 500, 750)
+
+## View the results
+View(ref_dry_average)
+```
