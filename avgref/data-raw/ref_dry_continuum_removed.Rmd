@@ -17,7 +17,7 @@ library(prospectr)
 
 Read the CSV file as a data frame:
 ```{r}
-data <- read.csv("data-raw/SoilReflectanceDry_v01.csv")
+data <- read.csv("avgref/data-raw/SoilReflectanceDry_v01")
 ```
 
 The data frame consists of 2151 observations of 433 variables. Get a summary of the data frame:
@@ -33,7 +33,32 @@ ref_dry <- as.data.frame(apply(data[,-1], MARGIN=2, FUN =continuumRemoval, wav =
 ref_dry <- cbind(Wavelength = data$Wavelength, ref_dry)
 ```
 
-At this stage, the data is arranged so that its definitions are composed of the wavelength and the ID of all of the soil samples, totaling 433 definitions. There are too many data definitions to explain right now, but after the avgref function is applied, there will only be two data definitions remaining which are Sample_ID and Reflectance.
+At this stage, the data is arranged so that its definitions are composed of the wavelength and the ID of all of the soil samples, totaling 433 definitions. There are too many data definitions right now so the data set must be changed into a more acceptable format. For this example, we will look at the entire wavelength range of 350 nm to 2500 nm for all of the samples.
+
+Define the start_row to be the lower end of the wavelength range you are interested in and end_row to be the higher end, which would be 350 and 2500 respectively:
+```{r}
+start_row <- 350
+end_row <- 2500
+```
+
+Select the range of columns for your subset to be the samples you are interested in, which would be all of the samples:
+```{r}
+ref_dry <- ref_dry[start_row:end_row, 2:ncol(data)]
+```
+
+
+Calculate the average reflectance for each column in the data set:
+```{r}
+avg_values <- colMeans(ref_dry)
+```
+
+Create a new data set that contains a column with the ID of the soil samples and another column with the average reflectance values, which will be named "Sample_ID" and "Reflectance" respectively: 
+```{r}
+ref_dry_avg <- data.frame(
+  "Sample ID" = colnames(ref_dry),
+  "Reflectance" = avg_values
+)
+```
 
 Load the summary of the new data frame and ensure that there is no missing data:
 ```{r}
