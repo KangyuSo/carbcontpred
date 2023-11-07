@@ -1,4 +1,4 @@
-Package: ContinuumRemoved
+Package: carbcontpred
 Title: Continuum Removal of Soil Spectral Reflectance Data
 Version: 0.0.0.9000
 Authors@R: 
@@ -6,7 +6,7 @@ Authors@R:
            family = "So",
            role = c("aut", "cre"),
            email = "sok11@mcmaster.ca")
-Description: The package calculates the continuum removal of a data set containing the spectral reflectance of post-dried soil samples collected from the Hudson Bay Lowlands. This normalizes the reflectance spectra, which allows the absorption features of individual soil samples to be compared from a common baseline.
+Description: The package builds and cross-validates a linear regression model for a dataset containing the spectral reflectance and organic carbon content of soil samples. The linear regression model uses the reflectance to predict the organic carbon content.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -18,5 +18,5 @@ LazyDataCompression: xz
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
-URL: https://github.com/KangyuSo/ContinuumRemoved
-BugReports: https://github.com/KangyuSo/ContinuumRemoved/issues
+URL: https://github.com/KangyuSo/carbcontpred
+BugReports: https://github.com/KangyuSo/carbcontpred/issues

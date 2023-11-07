@@ -36,9 +36,8 @@ library(dplyr)
 
 # Merge the organic carbon data from "data_met" to "ref_dry_avg" dataset based on sample ID
 ref_dry_avg <- ref_dry_avg %>%
-  left_join(data_met, by = "Sample_ID") %>%
-  select(Sample_ID, OC) %>%
-  rename(Organic_Carbon = OC) 
+  left_join(data_met %>% select(Sample_ID, OC), by = "Sample_ID") %>%
+  rename(Organic_Carbon = OC)
 
 # Get a summary of the new data frame
 summary(ref_dry_avg)
