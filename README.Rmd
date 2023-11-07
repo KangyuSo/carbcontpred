@@ -13,19 +13,20 @@ knitr::opts_chunk$set(
 )
 ```
 
-# ContinuumRemoved
+# carbcontpred
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of ContinuumRemoved is to ...
+The goal of carbcontpred is to build and cross-validate a linear regression model for a dataset containing the spectral reflectance and organic carbon content of soil samples, and then use it to predict the organic carbon content based on reflectance.
 
 ## Installation
 
-You can install the development version of ContinuumRemoved like so:
+You can install the development version of carbcontpred from [GitHub](https://github.com/) with:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+# install.packages("devtools")
+devtools::install_github("KangyuSo/my-GEO712-repository")
 ```
 
 ## Example
@@ -33,22 +34,16 @@ You can install the development version of ContinuumRemoved like so:
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-library(ContinuumRemoved)
-## basic example code
+## Install and load the package
+install.packages("carbcontpred") 
+library(carbcontpred)
+
+## Load the dataset 
+ref_dry_avg <- read.csv(ref_dry_avg)
+
+## Create a linear regression model with "Reflectance" as the response variable, "Organic_Carbon" as the predictor variable, 10 folds for the cross-validation, and "Predicted_Organic_Carbon" as the output column
+pred_c <- cpred(ref_dry_avg, "Reflectance", "Organic_Carbon", folds = 10, "Predicted_Organic_Carbon")
+
+## View the results
+View(pred_c)
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
