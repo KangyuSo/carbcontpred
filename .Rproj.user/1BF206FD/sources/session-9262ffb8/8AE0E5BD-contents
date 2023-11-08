@@ -1,0 +1,67 @@
+---
+title: "Data Management Plan for Soil Spectral Reflectance and Organic Carbon Content in the Hudson Bay Lowlands"
+output: html_document
+date: "2023-10-25"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Authors
+
+Corresponding Author: Kangyu So^[McMaster University, sok11@mcmaster.ca]
+
+Additional Authors: Cheryl A. Rogers^[McMaster University, rogerc11@mcmaster.ca], Alemu Gonsamo^[McMaster University, gonsamoa@mcmaster.ca], Yiyao Li^[McMaster University, liy571@mcmaster.ca], James Snider^[World Wildlife Fund Canada, jsnider@wwfcanada.org], Clare Wark^[World Wildlife Fund Canada, cwark@wwfcanada.org]
+
+# Keywords
+
+Machine Learning, Soil Carbon Storage, Soil Carbon Stock Estimate, Predictive Modeling, Soil Spectroscopy, and Terrestrial Ecosystem Modeling.
+
+# Value of Data
+
+* The data will be useful to the research community because it contains detailed biophysical and biochemical measurements of soil samples from the Hudson Bay Lowlands that are relevant in peatlands carbon research. 
+* The data will be beneficial for global climate researchers, conservation planners in Canada, and the Cree First Nations of northern Ontario.
+* The data can be reused to predict carbon stock in the Hudson Bay Lowlands using relevant soil metrics, create a map of estimated carbon content using a mask layer of relevant soil metrics, or be reused to train predictive carbon stock models for other peatland regions globally.
+
+# Data Description
+
+The data will consist of three CSV files which will contain the biophysical and biochemical metrics of the soil samples, the Vis-NIR reflectance of the pre-dried soil samples, and the Vis-NIR reflectance of the post-dried soil samples.
+* The first CSV file is titled “SoilMetrics_v01” and details the biophysical and biochemical metrics of the soil samples. Biophysical metrics include the weight of the soil samples pre-dried and post-dried and the depth at which the soil samples were collected. Biochemical metrics include the inorganic and organic carbon content of the soil samples by percent dry weight. The CSV file also contains general information about the soil samples such as its sample ID and the ID of the core it belongs to, the coordinates where the sample was collected and the community associated with the location, and any additional comments or information about the soil samples. The CSV file is arranged so that each row belongs to one sample and each column belongs to one data type, with the first column being the sample ID.
+* The second CSV file is titled “SoilReflectanceFresh_v01” and details the reflectance of the soil samples pre-dried between the wavelengths 350 nm and 2500 nm in increments of 1 nm. The CSV file is arranged so that each row belongs to the reflectance of one wavelength and each column belongs to one soil sample, with the first column being the wavelength and the first row being the sample ID.
+* The third CSV file is titled “SoilReflectanceDry_v01” and details the reflectance of the soil samples post-dried in an identical fashion and format as the “SoilReflectanceFresh_v01” file.
+The data will be shared on a repository in an open format that will be made easily accessible to anybody who may reuse the data. This means that the policy regarding data sharing accommodates the guidelines of Accessibility Standards Canada.
+
+# Experimental Design, Material and Methods
+
+## Soil Sample Collection
+
+Data was acquired through soil samples that were collected from sites that were located within 5 km of the Kashechewan, Moose Factory, and Attawapiskat First Nation communities. Within each community, 6 sites were selected based on the ground profiles containing the richest peat content. The soil samples were collected using an Eijkelkamp Peat Sampler at varying depths between 50.0 cm and 206.5 cm. 
+
+## Pre-dried Soil Samples
+
+The soil samples were divided into 10 segments of volume 11.56 cm^3^ along the length of the sample, yielding segments representing varying depths of the sample. Each soil sample was placed in an aluminum tray and weighed using a Mettler Toledo Standard ME-T Precision Balance which automatically recorded weight data to a CSV file titled “SoilMetrics_v01”. The Vis-NIR reflectance of soil samples was also measured using an ASD FieldSpec 4 Hi-Res NG spectrometer set at a wavelength range of 350 nm to 2500 nm in increments of 1 nm, which automatically recorded data to a CSV file titled “SoilReflectanceFresh_v01”.
+
+## Post-dried Soil Samples
+
+The soil samples were dried for 48 hours using a Thermo Scientific Precision Compact Oven. After drying, the soil samples were pulverized using manual labour and tools into pieces less than 5 cm in width and length. The soil samples were then weighed again using a Mettler Toledo Standard ME-T Precision Balance which automatically recorded weight data to the “SoilMetrics_v01” file. The Vis-NIR reflectance of soil samples was then measured using the ASD FieldSpec 4 Hi-Res NG spectrometer at the same settings and automatically recorded data to a CSV file titled “SoilReflectanceDry_v01”. The soil samples were then sent to the University of Guelph’s Agriculture and Food Laboratory to measure the inorganic and organic carbon content by percent dry weight. The carbon content data was manually recorded in the “SoilMetrics_v01” file.
+
+# Specification Table
+
+**Section** | **Description**
+- | -
+**Subject** | Ecological Modelling
+**Specific Subject Area** | Predictive modeling of organic and inorganic carbon stock in peatlands using machine learning and soil spectroscopy of the Vis-NIR wavelength range.
+**Data Format** | The raw data of the soil metrics and reflectance will be featured. Analyzed data will also be featured as the results of the predictive carbon model. 
+**Type of Data** | The data will be featured as .csv files (dataset with numbers in the format of a table).
+**Data Collection** | Soil samples of peat-rich sites near 3 First Nation communities were collected using an Eijkelkamp Peat Sampler at depths of 50.0 cm to 206.5 cm. The samples were divided into 11.56 cm^3^ segments and weighed using a Mettler Toledo Standard ME-T Precision Balance. The reflectance of the samples was measured using an ASD FieldSpec 4 Hi-Res NG spectrometer and then dried using a Thermo Scientific Precision Compact Oven, before measuring the mass and reflectance again. The inorganic and organic carbon content was measured at the University of Guelph’s Agriculture and Food Laboratory.
+**Data Source Location** | The data was collected from sites that were located within 5 km of the Kashechewan (52.253621°N, 81.776621°W), Moose Factory (51.220318°N, 80.556189°W), and Attawapiskat (52.934019°N, 82.377133°W) First Nation communities in northern Ontario, Canada. The geographical coordinates for the individual sites of data collection varied slightly. The data is stored in a laboratory computer associated with McMaster University in Hamilton, Ontario, Canada.
+**Data Accessibility** | Repository Name (GitHub): my-GEO712-repository. Data identification number and direct URL to data will be included when data is publicly uploaded to the repository.
+
+# Abstract
+
+This research data contains biophysical and biochemical measurements of soil samples collected from peatlands in the Hudson Bay Lowlands. The data is divided into 3 CSV files, which are “SoilMetrics_v01”, “SoilReflectanceFresh_v01”, and “SoilReflectanceDry_v01”. The “SoilMetrics_v01” file includes the weight, depth, sample and core ID, location and coordinates, and inorganic and organic carbon content of the soil samples before and after they are dried. The “SoilReflectanceFresh_v01” CSV file contains the reflectance of the soil samples and the “SoilReflectanceDry_v01” CSV file contains the reflectance of the soil samples after the drying process. Data was acquired from soil samples that were collected from 18 sites within 5 km of the Kashechewan, Moose Factory, and Attawapiskat First Nation communities that were rich in peat content. Within each community, 6 sites were selected based on the ground profiles containing the richest peat content. The soil samples were divided into segments and weighed. The Vis-NIR reflectance of the soil samples was also measured at a wavelength range of 350 nm to 2500 nm in increments of 1 nm. The weighing and reflectance measurement process was repeated for the soil samples after they were dried in an oven for 48 hours and then pulverized. The inorganic and organic carbon content of the dried soil samples was measured at the University of Guelph’s Agriculture and Food Laboratory. The data will be analyzed to create a predictive model for carbon stock in peatlands that uses ground reflectance as a predictor. A machine learning model will be created in R that will be trained using the data. This model will be used to predict the carbon stock for the entirety of the Hudson Bay Lowlands using available data on the ground reflectance of the region. The data has reuse potential for predicting carbon stock in the Hudson Bay Lowlands using other metrics such as peat content, gravimetric water content, and bulk density. The data can also be used to create a map of the estimated carbon content in the region if these metrics are available as a mask layer. Finally, the data can be reused to train predictive carbon stock models for other peatland regions in the world.
+
+# Declarations
+
+The authors have read and followed the ethical requirements for publication in Data in Brief and confirmed that the current work does not involve human subjects, animal experiments, or any data collected from social media platforms.
