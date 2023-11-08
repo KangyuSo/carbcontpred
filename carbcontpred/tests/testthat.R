@@ -8,6 +8,6 @@
 
 install.packages("testthat", repos = "http://cran.us.r-project.org")
 library(testthat)
-install.packages("cpred", repos = "http://cran.us.r-project.org")
-library(cpred)
-test_check("cpred")
+install.packages("carbcontpred", repos = "http://cran.us.r-project.org")
+library(carbcontpred)
+test_check("carbcontpred")

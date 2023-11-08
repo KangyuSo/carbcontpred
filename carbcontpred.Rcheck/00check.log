@@ -83,20 +83,20 @@ to your NAMESPACE file.
   Running ‘testthat.R’
 Running the tests in ‘tests/testthat.R’ failed.
 Last 13 lines of output:
-  The downloaded binary packages are in
-  	/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpwyLBYf/working_dir/RtmpYmn1Nh/downloaded_packages
-  > library(testthat)
-  > install.packages("cpred", repos = "http://cran.us.r-project.org")
-  Installing package into '/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/RtmpwyLBYf/RLIBS_ee724db2694b'
-  (as 'lib' is unspecified)
-  Warning message:
-  package 'cpred' is not available for this version of R
+  > test_check("carbcontpred")
+  Loading required package: ggplot2
+  Loading required package: lattice
+  [ FAIL 1 | WARN 0 | SKIP 0 | PASS 0 ]
   
-  A version of this package for your version of R might be available elsewhere,
-  see the ideas at
-  https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages 
-  > library(cpred)
-  Error in library(cpred) : there is no package called 'cpred'
+  ══ Failed tests ════════════════════════════════════════════════════════════════
+  ── Failure ('test-cpred.R:2:3'): cpred-works ───────────────────────────────────
+  cpred(...) (`actual`) not equal to 6 (`expected`).
+  
+  `actual` is an S3 object of class <data.frame>, a list
+  `expected` is a double vector (6)
+  
+  [ FAIL 1 | WARN 0 | SKIP 0 | PASS 0 ]
+  Error: Test failures
   Execution halted
 * checking for non-standard things in the check directory ... OK
 * checking for detritus in the temp directory ... OK
