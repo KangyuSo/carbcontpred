@@ -17,7 +17,7 @@ library(prospectr)
 
 Read the "SoilReflectanceDry_v01" file as a data frame:
 ```{r}
-data_ref <- read.csv("avgref/data-raw/SoilReflectanceDry_v01.csv")
+data_ref <- read.csv("data-raw/SoilReflectanceDry_v01.csv")
 ```
 
 The data frame consists of 2151 observations of 433 variables. Get a summary of the data frame:
