@@ -4,7 +4,7 @@
 \name{carbcontpred-package}
 \alias{carbcontpred}
 \alias{carbcontpred-package}
-\title{carbcontpred: Continuum Removal of Soil Spectral Reflectance Data}
+\title{carbcontpred: Linear Regression of Soil Spectral Reflectance and Organic Carbcon Content Data}
 \description{
 The package builds and cross-validates a linear regression model for a dataset containing the spectral reflectance and organic carbon content of soil samples. The linear regression model uses the reflectance to predict the organic carbon content.
 

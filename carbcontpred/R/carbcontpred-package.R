@@ -31,7 +31,7 @@ NULL
 #' \describe{
 #'   \item{Sample ID}{ID of the soil sample}
 #'   \item{Reflectance}{Average spectral reflectance value for a given wavelength for the soil sample}
-#'   \item{Reflectance}{Organic carbon content by percent dry weight for the soil sample}
+#'   \item{Organic_Carbon}{Organic carbon content by percent dry weight for the soil sample}
 #' }
 #'
 #' @docType data
@@ -43,4 +43,5 @@ NULL
 #' @examples
 #'  data(ref_dry_avg)
 #'  Reflectance <- ref_dry_avg$Reflectance
-NULL
+"ref_dry_avg"
+

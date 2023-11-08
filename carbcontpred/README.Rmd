@@ -41,7 +41,7 @@ library(carbcontpred)
 ref_dry_avg <- read.csv(ref_dry_avg)
 
 ## Create a linear regression model with "Reflectance" as the response variable, "Organic_Carbon" as the predictor variable, 10 folds for the cross-validation, and "Predicted_Organic_Carbon" as the output column
-pred_c <- cpred(ref_dry_avg, "Reflectance", "Organic_Carbon", folds = 10, "Predicted_Organic_Carbon")
+pred_c <- cpred(ref_dry_avg, "Reflectance", "Organic_Carbon", 0.7, 10, "Predicted_Organic_Carbon")
 
 ## View the results
 View(pred_c)
