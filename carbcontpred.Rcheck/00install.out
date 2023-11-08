@@ -4,7 +4,7 @@
 ** data
 *** moving datasets to lazyload DB
 ** byte-compile and prepare package for lazy loading
-Installing package into ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/RtmpuNAoIZ/working_dir/RtmpXP2ScM/RLIBS_6ca463724fd’
+Installing package into ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/RtmpetTn0p/working_dir/RtmpEBHJ5C/RLIBS_797d4df1521b’
 (as ‘lib’ is unspecified)
 Error in contrib.url(repos, "source") : 
   trying to use CRAN without setting a mirror

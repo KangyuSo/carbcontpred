@@ -20,6 +20,6 @@ Config/testthat/edition: 3
 URL: https://github.com/KangyuSo/carbcontpred
 BugReports: https://github.com/KangyuSo/carbcontpred/issues
 NeedsCompilation: no
-Packaged: 2023-11-08 01:22:26 UTC; kangyuso
+Packaged: 2023-11-08 01:53:17 UTC; kangyuso
 Author: Kangyu So [aut, cre]
 Maintainer: Kangyu So <sok11@mcmaster.ca>
