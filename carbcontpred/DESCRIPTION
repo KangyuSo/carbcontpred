@@ -1,5 +1,5 @@
 Package: carbcontpred
-Title: Continuum Removal of Soil Spectral Reflectance Data
+Title: Linear Regression of Soil Spectral Reflectance and Organic Carbcon Content Data
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Kangyu",

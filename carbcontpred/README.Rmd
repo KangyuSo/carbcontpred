@@ -25,7 +25,7 @@ The goal of carbcontpred is to build and cross-validate a linear regression mode
 You can install the development version of carbcontpred from [GitHub](https://github.com/KangyuSo/my-GEO712-repository) with:
 
 ``` r
-install.packages('plyr', repos = "https://github.com/KangyuSo/my-GEO712-repository")
+install.packages('carbcontpred', repos = "https://github.com/KangyuSo/my-GEO712-repository/tree/main/carbcontpred")
 ```
 
 ## Example
