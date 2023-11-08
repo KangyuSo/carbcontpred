@@ -24,8 +24,81 @@ These are not fully portable file names.
 See section ‘Package structure’ in the ‘Writing R Extensions’ manual.
 * checking for sufficient/correct file permissions ... OK
 * checking serialization versions ... OK
-* checking whether package ‘carbcontpred’ can be installed ... ERROR
-Installation failed.
-See ‘/Users/kangyuso/carbcontpred/carbcontpred.Rcheck/00install.out’ for details.
+* checking whether package ‘carbcontpred’ can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking for future file timestamps ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... NOTE
+File
+  LICENSE
+is not mentioned in the DESCRIPTION file.
+Non-standard files/directories found at top level:
+  ‘GEOG 712.Rproj’ ‘Image Assets’
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking dependencies in R code ... WARNING
+'library' or 'require' call not declared from: ‘caret’
+'library' or 'require' call to ‘caret’ in package code.
+  Please use :: or requireNamespace() instead.
+  See section 'Suggested packages' in the 'Writing R Extensions' manual.
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+cpred: no visible global function definition for ‘install.packages’
+cpred: no visible global function definition for ‘lm’
+cpred: no visible global function definition for ‘formula’
+cpred: no visible global function definition for ‘predict’
+Undefined global functions or variables:
+  formula install.packages lm predict
+Consider adding
+  importFrom("stats", "formula", "lm", "predict")
+  importFrom("utils", "install.packages")
+to your NAMESPACE file.
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking contents of ‘data’ directory ... OK
+* checking data for non-ASCII characters ... OK
+* checking LazyData ... OK
+* checking data for ASCII and uncompressed saves ... OK
+* checking examples ... OK
+* checking for unstated dependencies in ‘tests’ ... OK
+* checking tests ... ERROR
+  Running ‘testthat.R’
+Running the tests in ‘tests/testthat.R’ failed.
+Last 13 lines of output:
+  The downloaded binary packages are in
+  	/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpJdrsxp/working_dir/RtmpXqgYuI/downloaded_packages
+  > library(testthat)
+  > install.packages("cpred", repos = "http://cran.us.r-project.org")
+  Installing package into '/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/RtmpJdrsxp/RLIBS_e91f5b7d1452'
+  (as 'lib' is unspecified)
+  Warning message:
+  package 'cpred' is not available for this version of R
+  
+  A version of this package for your version of R might be available elsewhere,
+  see the ideas at
+  https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages 
+  > library(cpred)
+  Error in library(cpred) : there is no package called 'cpred'
+  Execution halted
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
 * DONE
-Status: 1 ERROR, 1 WARNING
+Status: 1 ERROR, 2 WARNINGs, 2 NOTEs

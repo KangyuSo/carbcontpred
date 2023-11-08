@@ -6,7 +6,8 @@
 # * https://r-pkgs.org/testing-design.html#sec-tests-files-overview
 # * https://testthat.r-lib.org/articles/special-files.html
 
+install.packages("testthat", repos = "http://cran.us.r-project.org")
 library(testthat)
-library(ContinuumRemoved)
-
-test_check("ContinuumRemoved")
+install.packages("cpred", repos = "http://cran.us.r-project.org")
+library(cpred)
+test_check("cpred")

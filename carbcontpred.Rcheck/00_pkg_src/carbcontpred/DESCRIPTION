@@ -8,8 +8,9 @@ Authors@R:
            role = c("aut", "cre"),
            email = "sok11@mcmaster.ca")
 Description: The package builds and cross-validates a linear regression model for a dataset containing the spectral reflectance and organic carbon content of soil samples. The linear regression model uses the reflectance to predict the organic carbon content.
-License: MIT + file LICENSE
+License: CC BY 4.0
 Encoding: UTF-8
+Imports: caret
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Depends: R (>= 2.10)
@@ -20,6 +21,6 @@ Config/testthat/edition: 3
 URL: https://github.com/KangyuSo/carbcontpred
 BugReports: https://github.com/KangyuSo/carbcontpred/issues
 NeedsCompilation: no
-Packaged: 2023-11-08 01:53:17 UTC; kangyuso
+Packaged: 2023-11-08 05:59:03 UTC; kangyuso
 Author: Kangyu So [aut, cre]
 Maintainer: Kangyu So <sok11@mcmaster.ca>

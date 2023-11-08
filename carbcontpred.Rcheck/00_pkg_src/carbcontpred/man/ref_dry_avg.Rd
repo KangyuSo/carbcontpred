@@ -7,9 +7,9 @@
 \format{
 A data frame with 432 observations and 3 variables:
 \describe{
-\item{Sample ID}{ID of the soil sample}
+\item{Sample_ID}{ID of the soil sample}
 \item{Reflectance}{Average spectral reflectance value for a given wavelength for the soil sample}
-\item{Reflectance}{Organic carbon content by percent dry weight for the soil sample}
+\item{Organic_Carbon}{Organic carbon content by percent dry weight for the soil sample}
 }
 }
 \usage{

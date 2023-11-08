@@ -29,7 +29,7 @@ NULL
 #'
 #' @format A data frame with 432 observations and 3 variables:
 #' \describe{
-#'   \item{Sample ID}{ID of the soil sample}
+#'   \item{Sample_ID}{ID of the soil sample}
 #'   \item{Reflectance}{Average spectral reflectance value for a given wavelength for the soil sample}
 #'   \item{Organic_Carbon}{Organic carbon content by percent dry weight for the soil sample}
 #' }
@@ -40,6 +40,8 @@ NULL
 #' @keywords Soil spectroscopy
 #' @name ref_dry_avg
 #' @usage data(ref_dry_avg)
+#' @import caret
+## usethis namespace: end
 #' @examples
 #'  data(ref_dry_avg)
 #'  Reflectance <- ref_dry_avg$Reflectance

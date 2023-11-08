@@ -4,11 +4,11 @@
 ** data
 *** moving datasets to lazyload DB
 ** byte-compile and prepare package for lazy loading
-Installing package into ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/RtmpetTn0p/working_dir/RtmpEBHJ5C/RLIBS_797d4df1521b’
-(as ‘lib’ is unspecified)
-Error in contrib.url(repos, "source") : 
-  trying to use CRAN without setting a mirror
-Error: unable to load R code in package ‘carbcontpred’
-Execution halted
-ERROR: lazy loading failed for package ‘carbcontpred’
-* removing ‘/Users/kangyuso/carbcontpred/carbcontpred.Rcheck/carbcontpred’
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (carbcontpred)

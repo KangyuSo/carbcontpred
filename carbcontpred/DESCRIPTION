@@ -7,8 +7,9 @@ Authors@R:
            role = c("aut", "cre"),
            email = "sok11@mcmaster.ca")
 Description: The package builds and cross-validates a linear regression model for a dataset containing the spectral reflectance and organic carbon content of soil samples. The linear regression model uses the reflectance to predict the organic carbon content.
-License: MIT + file LICENSE
+License: CC BY 4.0
 Encoding: UTF-8
+Imports: caret
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Depends: 
