@@ -84,10 +84,10 @@ to your NAMESPACE file.
 Running the tests in ‘tests/testthat.R’ failed.
 Last 13 lines of output:
   The downloaded binary packages are in
-  	/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpJdrsxp/working_dir/RtmpXqgYuI/downloaded_packages
+  	/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpwyLBYf/working_dir/RtmpYmn1Nh/downloaded_packages
   > library(testthat)
   > install.packages("cpred", repos = "http://cran.us.r-project.org")
-  Installing package into '/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/RtmpJdrsxp/RLIBS_e91f5b7d1452'
+  Installing package into '/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/RtmpwyLBYf/RLIBS_ee724db2694b'
   (as 'lib' is unspecified)
   Warning message:
   package 'cpred' is not available for this version of R

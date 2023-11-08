@@ -24,7 +24,7 @@ Type 'q()' to quit R.
 > # * https://testthat.r-lib.org/articles/special-files.html
 > 
 > install.packages("testthat", repos = "http://cran.us.r-project.org")
-Installing package into '/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/RtmpJdrsxp/RLIBS_e91f5b7d1452'
+Installing package into '/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/RtmpwyLBYf/RLIBS_ee724db2694b'
 (as 'lib' is unspecified)
 trying URL 'http://cran.us.r-project.org/bin/macosx/big-sur-arm64/contrib/4.3/testthat_3.2.0.tgz'
 Content type 'application/x-gzip' length 3060955 bytes (2.9 MB)
@@ -33,10 +33,10 @@ downloaded 2.9 MB
 
 
 The downloaded binary packages are in
-	/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpJdrsxp/working_dir/RtmpXqgYuI/downloaded_packages
+	/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpwyLBYf/working_dir/RtmpYmn1Nh/downloaded_packages
 > library(testthat)
 > install.packages("cpred", repos = "http://cran.us.r-project.org")
-Installing package into '/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/RtmpJdrsxp/RLIBS_e91f5b7d1452'
+Installing package into '/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/RtmpwyLBYf/RLIBS_ee724db2694b'
 (as 'lib' is unspecified)
 Warning message:
 package 'cpred' is not available for this version of R
