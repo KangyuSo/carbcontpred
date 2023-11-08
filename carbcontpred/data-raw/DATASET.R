@@ -20,7 +20,7 @@ end_row <- 2500
 ref_dry <- ref_dry[start_row:end_row, 2:ncol(ref_dry)]
 
 # Calculate the average reflectance for each column in the data set excluding NA values
-avg_values <- colMeans(ref_dry)
+avg_values <- colMeans(ref_dry, na.rm = TRUE)
 
 # Create a new data set with the ID of the soil samples and the average reflectance values and name them "Sample_ID" and "Reflectance" respectively
 ref_dry_avg <- data.frame(

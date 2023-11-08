@@ -43,12 +43,12 @@ end_row <- 2500
 
 Select the rows to be the wavelengths you are interested in, which would be 350 to 2500 respectively. Select the columns for your subset to be the samples you are interested in, which would be all of the samples.
 ```{r}
-ref_dry <- ref_dry[start_row:end_row, 2:ncol(data)]
+ref_dry <- ref_dry[start_row:end_row, 2:ncol(ref_dry)]
 ```
 
 Calculate the average reflectance for each column in the data set excluding NA values:
 ```{r}
-avg_values <- colMeans(ref_dry)
+avg_values <- colMeans(ref_dry, na.rm = TRUE)
 ```
 
 Create a new data set that contains a column with the ID of the soil samples and another column with the average reflectance values, which will be named "Sample_ID" and "Reflectance" respectively: 
