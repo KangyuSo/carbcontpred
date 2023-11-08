@@ -32,3 +32,6 @@ Create a linear regression model, cross-validate it, and use it to predict the o
 data <- data.frame(ref_dry_avg)
 pred_c <- cpred(data, "Reflectance", "Organic_Carbon", 0.7, 10, "Predicted_Organic_Carbon")
 }
+\references{
+https://github.com/KangyuSo/my-GEO712-repository
+}

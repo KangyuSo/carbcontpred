@@ -1,6 +1,0 @@
-cpred                   Create a linear regression model,
-                        cross-validate it, and use it to predict the
-                        organic carbon content of soil samples based on
-                        their reflectance
-ref_dry_avg             Reflectance values and organic carbon content
-                        for post-dried soil samples.

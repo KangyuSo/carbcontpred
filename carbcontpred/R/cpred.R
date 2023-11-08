@@ -10,23 +10,20 @@
 #' @usage cpred(data, reflectance, carbon, test_size, folds, prediction)
 #' @import caret
 #' @export
-#' @reference https://github.com/KangyuSo/my-GEO712-repository
+#' @references https://github.com/KangyuSo/my-GEO712-repository
 #' @source The data was collected by Kangyu So, Dr. Alemu Gonsamo, and Dr. Cheryl A. Rogers (All affiliated with McMaster University) from the Hudson Bay Lowlands region on July 2023
 #' @examples
 #' data <- data.frame(ref_dry_avg)
 #' pred_c <- cpred(data, "Reflectance", "Organic_Carbon", 0.7, 10, "Predicted_Organic_Carbon")
 cpred <- function(data, reflectance, carbon, test_size, folds, prediction) {
-  if (!requireNamespace("caret", quietly = TRUE))
-    install.packages("caret")
-  library(caret)
   set.seed(123)
   indices <- sample(1:nrow(data), nrow(data) * (1 - test_size))
   train_data <- data[indices, ]
   test_data <- data[-indices, ]
-  lm_model <- lm(formula(paste0(carbon, '~', reflectance)), data = train_data)
-  train_control <- trainControl(method = "cv", number = folds)
-  cv_model <- train(x= data.frame(train_data[, reflectance]), train_data[, carbon], method = "lm", trControl = train_control)
-  cv_model <- train(x= train_data[reflectance], train_data[, carbon], method = "lm", trControl = train_control)
-  test_data[, prediction] <- predict(cv_model, newdata = test_data)
+  lm_model <- stats::lm(stats::formula(paste0(carbon, '~', reflectance)), data = train_data)
+  train_control <- caret::trainControl(method = "cv", number = folds)
+  cv_model <- caret::train(x= data.frame(train_data[, reflectance]), train_data[, carbon], method = "lm", trControl = train_control)
+  cv_model <- caret::train(x= train_data[reflectance], train_data[, carbon], method = "lm", trControl = train_control)
+  test_data[, prediction] <- stats::predict(cv_model, newdata = test_data)
   return(test_data)
 }
