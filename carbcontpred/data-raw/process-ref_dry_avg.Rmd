@@ -65,7 +65,7 @@ Read the "SoilMetrics_v01" file as a data frame:
 data_met <- read.csv("avgref/data-raw/SoilMetrics_v01.csv")
 ```
 
-The data frame consists of XXX observations of XXX variables. Get a summary of the data frame:
+The data frame consists of 432 observations of 13 variables. Get a summary of the data frame:
 ```{r}
 summary(data_met)
 ```
