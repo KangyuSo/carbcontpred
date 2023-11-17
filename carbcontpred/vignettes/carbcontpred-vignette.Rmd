@@ -92,16 +92,3 @@ See the ````README.Rmd```` files for additional details on how to utilize ````cp
 # Contributing to the carbcontpred Package
 
 The purpose of this ````R```` package is to make the soil spectral reflectance and organic carbon content data from a 2022 McMaster University Remote Sensing Laboratory project easily available for predictive modeling in an ````R```` environment. Currently, the package only uses the reflectance and organic carbon content data of the post-dried soil samples, but we invite others from the community to request additional metrics from the original project dataset, report issues such as spelling errors, and contribute to the ````carbcontpred```` package. To contribute to the package, create a branch in the repository and submit a pull request for your contribution. Contributions will be reviewed before approval and full credit will be given.
-
-
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
-```
-
-```{r setup}
-library(carbcontpred)
-```
