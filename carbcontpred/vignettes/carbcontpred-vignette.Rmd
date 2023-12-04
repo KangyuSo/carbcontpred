@@ -11,6 +11,10 @@ vignette: >
 
 This package contains objects that are sourced from a 2022 McMaster Remote Sensing Laboratory research project and objects created to facilitate the use and analysis of the fieldwork data. The project recorded a wide range of biochemical, biophysical, and spectral metrics of 432 soil samples that were collected from the Hudson Bay Lowlands (N 51.220318, W 80.556189) and measured and analyzed at McMaster University and the University of Guelph. A portion of the project’s data has been cleaned and packaged for easy use in an ````R```` environment.
 
+The soil samples were collected from near the Kashechewan (N 52.253621, W 81.776621), Moose Factory (N 51.220318, W 80.556189), and Attawapiskat (N 52.934019, W 82.377133) First Nation communities in northern Ontario, Canada. The image below shows the 3 locations where the soil samples were collected from:
+
+![](SoilSampleSites.png){width="90%"}
+
 The project was funded by the Natural Sciences and Engineering Research Council of Canada (NSERC) through the Discovery Grants program (RGPIN-2020-05,708). The corresponding author is Kangyu So^[McMaster University, sok11@mcmaster.ca]. The full list of authors can be found here^[Authors: Kangyu So (McMaster University, sok11@mcmaster.ca), Cheryl A. Rogers (McMaster University, rogerc11@mcmaster.ca), Alemu Gonsamo (McMaster University, gonsamoa@mcmaster.ca), Yiyao Li (McMaster University, liy571@mcmaster.ca), James Snider (World Wildlife Fund Canada, jsnider@wwfcanada.org), Clare Wark (World Wildlife Fund Canada, cwark@wwfcanada.org)].
 
 # What Is This Package?
