@@ -106,10 +106,43 @@ The return of the function is a new column added to the previous dataset which c
 
 Let’s take a look at the first 8 rows of this newly updated dataset with the predicted organic carbon content values:
 
-![](cpred_output.png){width="75%"}
+![](pred_c.png){width="75%"}
+
+Let's visualize this data as a scatter plot where the original and predicted organic carbon content values will be our X and Y axis respectively:
+
+```{r eval = FALSE}
+install.packages("ggplot2")
+library(ggplot2)
+
+ggplot(pred_c, aes(x = Organic_Carbon, y = Predicted_Organic_Carbon)) +
+  geom_point() +
+  geom_smooth(method = "lm", color = "red") +
+  labs(x = "Organic_Carbon", y = "Predicted_Organic_Carbon") +
+  theme_minimal() +
+  theme(panel.grid = element_blank()) +
+  geom_hline(yintercept = 0, linetype = "solid", color = "black") +
+  geom_vline(xintercept = 0, linetype = "solid", color = "black")
+```
+
+![](scatterplot_pred_c.png){width="75%"}
+
+Finally let's evaluate our output by calculating the R^2^ value between the the original and predicted organic carbon content values:
+
+```{r eval = FALSE}
+r_squared <- cor(pred_c$Organic_Carbon, pred_c$Predicted_Organic_Carbon)^2
+cat("R-squared:", r_squared, "\n")
+```
+
+The R^2^ value for this example is ~0.61, which is in line with the R^2^ values from studies that used standard global soil spectral data from peatlands to predict organic carbon (de Sousa Mendes et al., 2022).
 
 See the ````README.Rmd```` files for additional details on how to utilize ````cpred````. See the ````cpred.R```` file for additional information about the function.
 
 # Contributing to the carbcontpred Package
 
 The purpose of this ````R```` package is to make the soil spectral reflectance and organic carbon content data from a 2022 McMaster University Remote Sensing Laboratory project easily available for predictive modeling in an ````R```` environment. Currently, the package only uses the reflectance and organic carbon content data of the post-dried soil samples, but we invite others from the community to request additional metrics from the original project dataset, report issues such as spelling errors, and contribute to the ````carbcontpred```` package. To contribute to the package, create a branch in the repository and submit a pull request for your contribution. Contributions will be reviewed before approval and full credit will be given.
+
+# References
+
+de Sousa Mendes, W., Sommer, M., Koszinski, S., & Wehrhan, M. (2022). Peatlands spectral data influence in 
+&emsp;&emsp;global spectral modelling of soil organic carbon and total nitrogen using visible-near-infrared spectroscopy. 
+&emsp;&emsp;*Journal of Environmental Management*, *317*, 115383.
