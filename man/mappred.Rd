@@ -29,7 +29,7 @@ The function first extracts an algebraic equation based on the reflectance and p
 \examples{
 pred_c_df <- data.frame(pred_c)
 pred_c_df["Reflectance"] <- as.factor(pred_c_df[,"Reflectance"])
-mappred_c <- mappred(pred_c_df, "Reflectance", "Predicted_Organic_Carbon", "data-raw/Reflectance_ROI.csv", "ROI_Predicted_Carbon")
+mappred_c <- mappred(pred_c_df, "Reflectance", "Predicted_Organic_Carbon", "ROI_Data/Reflectance_ROI.csv", "ROI_Predicted_Carbon")
 }
 \references{
 https://github.com/KangyuSo/carbcontpred

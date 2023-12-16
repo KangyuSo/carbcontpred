@@ -15,7 +15,7 @@
 #' @examples
 #' pred_c_df <- data.frame(pred_c)
 #' pred_c_df["Reflectance"] <- as.factor(pred_c_df[,"Reflectance"])
-#' mappred_c <- mappred(pred_c_df, "Reflectance", "Predicted_Organic_Carbon", "data-raw/Reflectance_ROI.csv", "ROI_Predicted_Carbon")
+#' mappred_c <- mappred(pred_c_df, "Reflectance", "Predicted_Organic_Carbon", "ROI_Data/Reflectance_ROI.csv", "ROI_Predicted_Carbon")
 mappred <- function(predictions_dataframe, reflectance, prediction, ROI_dataset_path, output_dataset) {
   independent_variable <- predictions_dataframe[reflectance]
   dependent_variable <- predictions_dataframe[prediction]
