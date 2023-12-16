@@ -1,4 +1,0 @@
-"0","data <- read.csv(""data-raw/SoilReflectanceDry_v01.csv"")"
-"2","Warning: cannot open file 'data-raw/SoilReflectanceDry_v01.csv': No such file or directory"
-"2","Error in file(file, ""rt"") : cannot open the connection
-"

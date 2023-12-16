@@ -34,7 +34,6 @@ This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
 ## Install and load the package
-install.packages("carbcontpred") 
 library(carbcontpred)
 
 ## Load the dataset 
