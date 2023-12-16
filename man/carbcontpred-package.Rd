@@ -18,7 +18,7 @@ reflectance data. The package also includes the documentation for the
 functions and datasets.
 }
 \references{
-\url{https://github.com/KangyuSo/my-GEO712-repository}
+\url{https://github.com/KangyuSo/carbcontpred}
 }
 \seealso{
 Useful links:

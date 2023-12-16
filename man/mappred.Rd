@@ -12,6 +12,10 @@ mappred(predictions_dataframe, ROI_dataset_path, output_dataset)
 \arguments{
 \item{predictions_dataframe}{The dataset resulting from the output of the cpred function, contains the average reflectance and measured and predicted organic carbon content of some soil samples}
 
+\item{reflectance}{The average reflectance at a given wavelength range in the predictions_dataframe}
+
+\item{prediction}{The predicted organic carbon content in the predictions_dataframe}
+
 \item{ROI_dataset_path}{The ROI data table exported from ENVI into a CSV file, contains geoinformation and reflectance values of the ROI divided into individual points}
 
 \item{output_dataset}{The updated ROI data table containing the new predicted organic carbon content of the points}
@@ -23,8 +27,10 @@ A CSV file containing the ROI data table as well as the predicted organic carbon
 The function first extracts an algebraic equation based on the reflectance and predicted organic carbon content of soil samples. Then the function applies continuum removal over the reflectance values of an Region of Interest (ROI) data table collected from image processing and analysis software ENVI. Then the function applies the extracted algebraic equation on this attribute table to predict organic carbon content of points based on their reflectance values.
 }
 \examples{
-mappred_c <- mappred(pred_c, "data-raw/Reflectance_ROI.csv", "ROI_Predicted_Carbon")
+pred_c_df <- data.frame(pred_c)
+pred_c_df["Reflectance"] <- as.factor(pred_c_df[,"Reflectance"])
+mappred_c <- mappred(pred_c_df, "Reflectance", "Predicted_Organic_Carbon", "data-raw/Reflectance_ROI.csv", "ROI_Predicted_Carbon")
 }
 \references{
-https://github.com/KangyuSo/my-GEO712-repository
+https://github.com/KangyuSo/carbcontpred
 }

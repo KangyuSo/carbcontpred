@@ -10,7 +10,7 @@
 #' @usage cpred(data, reflectance, carbon, test_size, folds, prediction)
 #' @import caret
 #' @export
-#' @references https://github.com/KangyuSo/my-GEO712-repository
+#' @references https://github.com/KangyuSo/carbcontpred
 #' @source The data was collected by Kangyu So, Dr. Alemu Gonsamo, and Dr. Cheryl A. Rogers (All affiliated with McMaster University) from the Hudson Bay Lowlands region on July 2022
 #' @examples
 #' data <- data.frame(ref_dry_avg)

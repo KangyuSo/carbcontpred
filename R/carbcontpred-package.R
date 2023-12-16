@@ -21,7 +21,7 @@ NULL
 #' @docType package
 #' @name carbcontpred-package
 #' @author Kangyu So, School of Earth, Environment and Society, McMaster University \email{sok11@mcmaster.ca}
-#' @references \url{https://github.com/KangyuSo/my-GEO712-repository}
+#' @references \url{https://github.com/KangyuSo/carbcontpred}
 NULL
 
 #' Reflectance values and organic carbon content for post-dried soil samples.

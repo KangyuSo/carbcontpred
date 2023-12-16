@@ -18,10 +18,10 @@ map.
 ## Installation
 
 You can install the development version of carbcontpred from
-[GitHub](https://github.com/KangyuSo/my-GEO712-repository) with:
+[GitHub](https://github.com/KangyuSo/carbcontpred) with:
 
 ``` r
-install.packages('carbcontpred', repos = "https://github.com/KangyuSo/my-GEO712-repository/tree/main/carbcontpred")
+install.packages('carbcontpred', repos = "https://github.com/KangyuSo/carbcontpred")
 ```
 
 ## Example

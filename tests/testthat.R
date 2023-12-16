@@ -8,6 +8,6 @@
 
 install.packages("testthat", repos = "http://cran.us.r-project.org")
 library(testthat)
-#install.packages("carbcontpred", repos = "http://cran.us.r-project.org")
+#install.packages("carbcontpred", repos = "https://github.com/KangyuSo/carbcontpred")
 #library(carbcontpred)
 #test_check("carbcontpred")
