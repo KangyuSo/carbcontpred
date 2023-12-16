@@ -1,17 +1,19 @@
 Package: carbcontpred
-Title: Linear Regression of Soil Spectral Reflectance and Organic Carbcon Content Data
+Title: Linear Regression of Soil Spectral Reflectance and Organic Carbcon Content Data to Help Predict Organic Carbon in Regions of Interest for Mapping Purposes
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Kangyu",
            family = "So",
            role = c("aut", "cre"),
            email = "sok11@mcmaster.ca")
-Description: The package builds and cross-validates a linear regression model for a dataset containing the spectral reflectance and organic carbon content of soil samples. The linear regression model uses the reflectance to predict the organic carbon content.
+Description: The package first builds and cross-validates a linear regression model for a dataset containing the spectral reflectance and organic carbon content of soil samples. The linear regression model uses the reflectance to predict the organic carbon content. The package then uses the predictions from the linear regression model to predict the organic carbon content of a Region of Interest (ROI) data table using its spectral reflectance values.
 License: CC BY 4.0
 Encoding: UTF-8
 Imports: 
     caret,
-    stats
+    stats,
+    prospectr,
+    utils
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Depends: 

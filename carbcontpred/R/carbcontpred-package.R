@@ -7,13 +7,16 @@
 ## usethis namespace: end
 NULL
 
-#' carbcontpred: A package that uses a linear regression model to predict the organic carbon content of soil samples based on their reflectance.
+#' carbcontpred: A package that uses a linear regression model to predict the organic carbon content of soil samples based on their reflectance, and then uses the predictions to estimate the organic carbon content of a Region of Interest (ROI) based on its spectral reflectance data.
 #'
 #' This package is an exercise in package creation using R studio. The package 
 #' includes a function that builds and implements a linear regression model and 
 #' a sample dataset containing the reflectance and organic carbon data of soil 
-#' samples. The package also includes the documentation for the function and 
-#' dataset.
+#' samples. The package includes another function that extracts an algebraic 
+#' equation based on the predictions from the linear regression model and uses 
+#' it to predict the organic carbon content of an ROI using its spectral 
+#' reflectance data. The package also includes the documentation for the 
+#' functions and datasets.
 #'
 #' @docType package
 #' @name carbcontpred-package
@@ -41,6 +44,7 @@ NULL
 #' @name ref_dry_avg
 #' @usage data(ref_dry_avg)
 #' @import caret
+#' @import prospectr
 ## usethis namespace: end
 #' @examples
 #'  data(ref_dry_avg)

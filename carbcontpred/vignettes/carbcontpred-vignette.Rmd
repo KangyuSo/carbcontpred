@@ -39,7 +39,7 @@ Begin by loading the package:
 library(carbcontpred)
 ```
 
-## Pre-Processing Data
+## Pre-Processing Data for cpred
 
 The 2022 McMaster Remote Sensing Laboratory research project collected soil samples from the Hudson Bay Lowlands region in northern Ontario, Canada (N 51.220318, W 80.556189). Included within are two csv files containing data for the soil samples. The first csv file contains data on the spectral reflectance of post-dried soil samples between the wavelengths 350 nm and 2500 nm in increments of 1 nm. 
 
@@ -89,7 +89,7 @@ knitr::kable(head(ref_dry_avg))
 
 See the ````process-ref_dry.Rmd```` file for complete details on how the raw data was processed for use in the ````carbcontpred```` package.
 
-# Function Overview:
+# cpred Function Overview:
 
 The ````cpred```` function builds a linear regression model using spectral reflectance as the independent variable and organic carbon content as the dependent variable and uses it to predict the organic carbon content of soil samples based on their reflectance. The function will utilize a dataset containing the spectral reflectance and organic carbon content of soil samples. In this package, that dataset will be ````ref_dry_avg.rda````.
 

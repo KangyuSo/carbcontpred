@@ -11,7 +11,7 @@
 #' @import caret
 #' @export
 #' @references https://github.com/KangyuSo/my-GEO712-repository
-#' @source The data was collected by Kangyu So, Dr. Alemu Gonsamo, and Dr. Cheryl A. Rogers (All affiliated with McMaster University) from the Hudson Bay Lowlands region on July 2023
+#' @source The data was collected by Kangyu So, Dr. Alemu Gonsamo, and Dr. Cheryl A. Rogers (All affiliated with McMaster University) from the Hudson Bay Lowlands region on July 2022
 #' @examples
 #' data <- data.frame(ref_dry_avg)
 #' pred_c <- cpred(data, "Reflectance", "Organic_Carbon", 0.7, 10, "Predicted_Organic_Carbon")
