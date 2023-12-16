@@ -4,7 +4,7 @@
 \alias{cpred}
 \title{Create a linear regression model, cross-validate it, and use it to predict the organic carbon content of soil samples based on their reflectance}
 \source{
-The data was collected by Kangyu So, Dr. Alemu Gonsamo, and Dr. Cheryl A. Rogers (All affiliated with McMaster University) from the Hudson Bay Lowlands region on July 2023
+The data was collected by Kangyu So, Dr. Alemu Gonsamo, and Dr. Cheryl A. Rogers (All affiliated with McMaster University) from the Hudson Bay Lowlands region on July 2022
 }
 \usage{
 cpred(data, reflectance, carbon, test_size, folds, prediction)

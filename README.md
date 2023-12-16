@@ -30,6 +30,16 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 ## Install and load the package
+install.packages("carbcontpred", repos = "https://github.com/KangyuSo/carbcontpred")
+#> Warning: unable to access index for repository https://github.com/KangyuSo/carbcontpred/src/contrib:
+#>   cannot open URL 'https://github.com/KangyuSo/carbcontpred/src/contrib/PACKAGES'
+#> Warning: package 'carbcontpred' is not available for this version of R
+#> 
+#> A version of this package for your version of R might be available elsewhere,
+#> see the ideas at
+#> https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages
+#> Warning: unable to access index for repository https://github.com/KangyuSo/carbcontpred/bin/macosx/big-sur-arm64/contrib/4.3:
+#>   cannot open URL 'https://github.com/KangyuSo/carbcontpred/bin/macosx/big-sur-arm64/contrib/4.3/PACKAGES'
 library(carbcontpred)
 
 ## Load the dataset 

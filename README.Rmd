@@ -34,6 +34,7 @@ This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
 ## Install and load the package
+install.packages("carbcontpred", repos = "https://github.com/KangyuSo/carbcontpred")
 library(carbcontpred)
 
 ## Load the dataset 
@@ -44,12 +45,4 @@ pred_c <- cpred(data, "Reflectance", "Organic_Carbon", 0.7, 10, "Predicted_Organ
 
 ## View the results
 View(pred_c)
-
-## Extract an algebraic equation based on the results of your linear regression model
-## Load the ROI data table and and apply continuum removal over the reflectance values
-## Use the algebraic equation to predict organic carbon content of points in the ROI data table based on their reflectance values
-mappred_c <- mappred(pred_c, "data-raw/Reflectance_ROI.csv", "ROI_Predicted_Carbon")
-
-## View the results
-View(mappred_c)
 ```

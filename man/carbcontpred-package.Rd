@@ -4,15 +4,18 @@
 \name{carbcontpred-package}
 \alias{carbcontpred}
 \alias{carbcontpred-package}
-\title{carbcontpred: Linear Regression of Soil Spectral Reflectance and Organic Carbcon Content Data}
+\title{carbcontpred: Linear Regression of Soil Spectral Reflectance and Organic Carbcon Content Data to Help Predict Organic Carbon in Regions of Interest for Mapping Purposes}
 \description{
-The package builds and cross-validates a linear regression model for a dataset containing the spectral reflectance and organic carbon content of soil samples. The linear regression model uses the reflectance to predict the organic carbon content.
+The package first builds and cross-validates a linear regression model for a dataset containing the spectral reflectance and organic carbon content of soil samples. The linear regression model uses the reflectance to predict the organic carbon content. The package then uses the predictions from the linear regression model to predict the organic carbon content of a Region of Interest (ROI) data table using its spectral reflectance values.
 
 This package is an exercise in package creation using R studio. The package
 includes a function that builds and implements a linear regression model and
 a sample dataset containing the reflectance and organic carbon data of soil
-samples. The package also includes the documentation for the function and
-dataset.
+samples. The package includes another function that extracts an algebraic
+equation based on the predictions from the linear regression model and uses
+it to predict the organic carbon content of an ROI using its spectral
+reflectance data. The package also includes the documentation for the
+functions and datasets.
 }
 \references{
 \url{https://github.com/KangyuSo/my-GEO712-repository}

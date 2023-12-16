@@ -14,7 +14,7 @@
 mappred <- function(predictions_dataframe, ROI_dataset_path, output_dataset) {
   independent_variable <- predictions_dataframe$Independent_Variable_Column_Name
   dependent_varriable <- predictions_dataframe$Dependent_Variable_Column_Name
-  equation <- stats::lm(dependent_var ~ independent_var)
+  equation <- stats::lm(dependent_variable ~ independent_variable)
   ROI <- utils::read.csv(ROI_dataset_path)
   remove_rows <- c(1:7, 9)
   ROI_New <- ROI[-remove_rows, ]
