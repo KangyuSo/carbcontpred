@@ -93,10 +93,26 @@
 <p>This is a basic example which shows you how to solve a common problem:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Install and load the package</span></span>
-<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"paezha/packr"</span>, </span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"KangyuSo/carbcontpred"</span>, </span>
 <span>                         build_vignettes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Skipping install of 'packr' from a github remote, the SHA1 (c9642e64) has not changed since last install.</span></span>
-<span><span class="co">#&gt;   Use `force = TRUE` to force installation</span></span>
+<span><span class="co">#&gt; Downloading GitHub repo KangyuSo/carbcontpred@HEAD</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ── R CMD build ─────────────────────────────────────────────────────────────────</span></span>
+<span><span class="co">#&gt;      checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/Rtmpt4lVJX/remotesac83e424f5/KangyuSo-carbcontpred-e29a5ce/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/Rtmpt4lVJX/remotesac83e424f5/KangyuSo-carbcontpred-e29a5ce/DESCRIPTION’</span></span>
+<span><span class="co">#&gt;   ─  preparing ‘carbcontpred’:</span></span>
+<span><span class="co">#&gt;    checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information</span></span>
+<span><span class="co">#&gt;   ─  installing the package to build vignettes</span></span>
+<span><span class="co">#&gt;      creating vignettes ...  ✔  creating vignettes (8.4s)</span></span>
+<span><span class="co">#&gt;   ─  checking for LF line-endings in source and make files and shell scripts</span></span>
+<span><span class="co">#&gt;   ─  checking for empty or unneeded directories</span></span>
+<span><span class="co">#&gt;        NB: this package now depends on R (&gt;= 3.5.0)</span></span>
+<span><span class="co">#&gt;        WARNING: Added dependency on R &gt;= 3.5.0 because serialized objects in</span></span>
+<span><span class="co">#&gt;      serialize/load version 3 cannot be read in older versions of R.</span></span>
+<span><span class="co">#&gt;      File(s) containing such objects:</span></span>
+<span><span class="co">#&gt;        ‘carbcontpred/vignettes/ref_dry_avg.rda’</span></span>
+<span><span class="co">#&gt;   ─  building ‘carbcontpred_0.0.0.9000.tar.gz’</span></span>
+<span><span class="co">#&gt;      </span></span>
+<span><span class="co">#&gt; </span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/KangyuSo/carbcontpred" class="external-link">carbcontpred</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">## Load the dataset </span></span>
