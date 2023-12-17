@@ -24,7 +24,7 @@ mappred <- function(predictions_dataframe, reflectance_column, prediction_column
   suppressWarnings(ROI <- na.omit(readr::read_csv(ROI_dataset_path, skip = 7)))
   ROI$B1 <- (ROI$B1-min(ROI$B1))/(max(ROI$B1)-min(ROI$B1))
   independent_values <- as.numeric(ROI$B1)
-  dependent_values <- 3 * as.vector(coefficient) + as.vector(coefficient) * independent_values * -7
+  dependent_values <- 3 * as.vector(coefficient) + as.vector(coefficient) * independent_values * -3
   ROI$B1 <- dependent_values
   colnames(ROI)[colnames(ROI) == "Predicted_Organic_Carbon"] <- "B1"
   utils::write.csv(ROI, file = paste0(output_dataset, ".csv"), row.names = FALSE)
