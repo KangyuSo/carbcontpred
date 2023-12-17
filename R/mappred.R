@@ -23,10 +23,9 @@ mappred <- function(predictions_dataframe, reflectance_column, prediction_column
   coefficient <- solve(t(coef_matrix) %*% coef_matrix) %*% t(coef_matrix) %*% dependent_variable
   suppressWarnings(ROI <- stats::na.omit(readr::read_csv(ROI_dataset_path, skip = 7)))
   ROI$B1 <- (ROI$B1-min(ROI$B1))/(max(ROI$B1)-min(ROI$B1))
-  ROI$B1 <- ROI[ROI$B1 >= 0 & ROI$B1 <= 1, ]
-  independent_values <- as.numeric(ROI$B1)
-  dependent_values <- 3 * as.vector(coefficient) + as.vector(coefficient) * independent_values * -3
-  ROI$B1 <- dependent_values
+  ROI$B1 <- as.numeric(ROI$B1)
+  predicted_carbon <- 3 * as.vector(coefficient) + as.vector(coefficient) * as.numeric(ROI$B1) * -3
+  ROI$B1 <- predicted_carbon
   colnames(ROI)[colnames(ROI) == "Predicted_Organic_Carbon"] <- "B1"
   utils::write.csv(ROI, file = paste0(output_dataset, ".csv"), row.names = FALSE)
   return(ROI)
