@@ -93,16 +93,10 @@
 <p>This is a basic example which shows you how to solve a common problem:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Install and load the package</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"carbcontpred"</span>, repos <span class="op">=</span> <span class="st">"https://github.com/KangyuSo/carbcontpred"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Warning: unable to access index for repository https://github.com/KangyuSo/carbcontpred/src/contrib:</span></span>
-<span><span class="co">#&gt;   cannot open URL 'https://github.com/KangyuSo/carbcontpred/src/contrib/PACKAGES'</span></span>
-<span><span class="co">#&gt; Warning: package 'carbcontpred' is not available for this version of R</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; A version of this package for your version of R might be available elsewhere,</span></span>
-<span><span class="co">#&gt; see the ideas at</span></span>
-<span><span class="co">#&gt; https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages</span></span>
-<span><span class="co">#&gt; Warning: unable to access index for repository https://github.com/KangyuSo/carbcontpred/bin/macosx/big-sur-arm64/contrib/4.3:</span></span>
-<span><span class="co">#&gt;   cannot open URL 'https://github.com/KangyuSo/carbcontpred/bin/macosx/big-sur-arm64/contrib/4.3/PACKAGES'</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"paezha/packr"</span>, </span>
+<span>                         build_vignettes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Skipping install of 'packr' from a github remote, the SHA1 (c9642e64) has not changed since last install.</span></span>
+<span><span class="co">#&gt;   Use `force = TRUE` to force installation</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/KangyuSo/carbcontpred" class="external-link">carbcontpred</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">## Load the dataset </span></span>
