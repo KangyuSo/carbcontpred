@@ -13,7 +13,8 @@ Imports:
     caret,
     stats,
     prospectr,
-    readr
+    readr,
+    dplyr
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Depends: 

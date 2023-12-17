@@ -3,5 +3,6 @@
 export(cpred)
 export(mappred)
 import(caret)
+import(dplyr)
 import(prospectr)
 import(readr)
