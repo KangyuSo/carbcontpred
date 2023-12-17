@@ -21,12 +21,11 @@ mappred <- function(predictions_dataframe, reflectance_column, prediction_column
   dependent_variable <- as.numeric(unlist(predictions_dataframe[prediction_column]))
   coef_matrix <- cbind(independent_variable)
   coefficient <- solve(t(coef_matrix) %*% coef_matrix) %*% t(coef_matrix) %*% dependent_variable
-  ROI <- try(readr::read_csv(ROI_dataset_path, skip = 7), silent = TRUE)
-  ROI_New <- ROI[-1, , drop = FALSE]
-  ROI_New$B1 <- (ROI_New$B1-min(ROI_New$B1))/(max(ROI_New$B1)-min(ROI_New$B1))
-  independent_values <- as.numeric(ROI_New$B1)
+  suppressWarnings(ROI <- na.omit(readr::read_csv(ROI_dataset_path, skip = 7)))
+  ROI$B1 <- (ROI$B1-min(ROI$B1))/(max(ROI$B1)-min(ROI$B1))
+  independent_values <- as.numeric(ROI$B1)
   dependent_values <- 3 * as.vector(coefficient) + as.vector(coefficient) * independent_values * -7
-  ROI_New$B1 <- dependent_values
-  colnames(ROI_New)[colnames(ROI_New) == "Predicted_Organic_Carbon"] <- "B1"
-  utils::write.csv(ROI_New, file = paste0(output_dataset, ".csv"), row.names = FALSE)
+  ROI$B1 <- dependent_values
+  colnames(ROI)[colnames(ROI) == "Predicted_Organic_Carbon"] <- "B1"
+  utils::write.csv(ROI, file = paste0(output_dataset, ".csv"), row.names = FALSE)
 }
