@@ -34,7 +34,7 @@ This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
 ## Install and load the package
-remotes::install_github("paezha/packr", 
+remotes::install_github("KangyuSo/carbcontpred", 
                          build_vignettes = TRUE)
 library(carbcontpred)
 

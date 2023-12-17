@@ -30,10 +30,26 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 ## Install and load the package
-remotes::install_github("paezha/packr", 
+remotes::install_github("KangyuSo/carbcontpred", 
                          build_vignettes = TRUE)
-#> Skipping install of 'packr' from a github remote, the SHA1 (c9642e64) has not changed since last install.
-#>   Use `force = TRUE` to force installation
+#> Downloading GitHub repo KangyuSo/carbcontpred@HEAD
+#> 
+#> ── R CMD build ─────────────────────────────────────────────────────────────────
+#>      checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/Rtmpt4lVJX/remotesac83e424f5/KangyuSo-carbcontpred-e29a5ce/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/Rtmpt4lVJX/remotesac83e424f5/KangyuSo-carbcontpred-e29a5ce/DESCRIPTION’
+#>   ─  preparing ‘carbcontpred’:
+#>    checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
+#>   ─  installing the package to build vignettes
+#>      creating vignettes ...  ✔  creating vignettes (8.4s)
+#>   ─  checking for LF line-endings in source and make files and shell scripts
+#>   ─  checking for empty or unneeded directories
+#>        NB: this package now depends on R (>= 3.5.0)
+#>        WARNING: Added dependency on R >= 3.5.0 because serialized objects in
+#>      serialize/load version 3 cannot be read in older versions of R.
+#>      File(s) containing such objects:
+#>        ‘carbcontpred/vignettes/ref_dry_avg.rda’
+#>   ─  building ‘carbcontpred_0.0.0.9000.tar.gz’
+#>      
+#> 
 library(carbcontpred)
 
 ## Load the dataset 
