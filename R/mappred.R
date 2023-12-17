@@ -9,7 +9,7 @@
 #' @usage mappred(predictions_dataframe, ROI_dataset_path, output_dataset)
 #' @import prospectr
 #' @import readr
-#' @import dplyr
+#' @import stats
 #' @export
 #' @references https://github.com/KangyuSo/carbcontpred
 #' @source The data used for the predictions was collected by Kangyu So, Dr. Alemu Gonsamo, and Dr. Cheryl A. Rogers (All affiliated with McMaster University) from the Hudson Bay Lowlands region on July 2022. The ROI dataset was collected from images collected by the Moderate Resolution Imaging Spectroradiometer (MODIS) satellite operated by the National Aeronautics and Space Administration (NASA).
@@ -21,8 +21,9 @@ mappred <- function(predictions_dataframe, reflectance_column, prediction_column
   dependent_variable <- as.numeric(unlist(predictions_dataframe[prediction_column]))
   coef_matrix <- cbind(independent_variable)
   coefficient <- solve(t(coef_matrix) %*% coef_matrix) %*% t(coef_matrix) %*% dependent_variable
-  suppressWarnings(ROI <- na.omit(readr::read_csv(ROI_dataset_path, skip = 7)))
+  suppressWarnings(ROI <- stats::na.omit(readr::read_csv(ROI_dataset_path, skip = 7)))
   ROI$B1 <- (ROI$B1-min(ROI$B1))/(max(ROI$B1)-min(ROI$B1))
+  ROI$B1 <- ROI[ROI$B1 >= 0 & ROI$B1 <= 1, ]
   independent_values <- as.numeric(ROI$B1)
   dependent_values <- 3 * as.vector(coefficient) + as.vector(coefficient) * independent_values * -3
   ROI$B1 <- dependent_values
