@@ -21,7 +21,7 @@ mappred <- function(predictions_dataframe, reflectance_column, prediction_column
   dependent_variable <- as.numeric(unlist(predictions_dataframe[prediction_column]))
   coef_matrix <- cbind(independent_variable)
   coefficient <- solve(t(coef_matrix) %*% coef_matrix) %*% t(coef_matrix) %*% dependent_variable
-  ROI <- readr::read_csv(ROI_dataset_path, skip = 7)
+  ROI <- try(readr::read_csv(ROI_dataset_path, skip = 7), silent = TRUE)
   ROI_New <- ROI[-1, , drop = FALSE]
   ROI_New$B1 <- (ROI_New$B1-min(ROI_New$B1))/(max(ROI_New$B1)-min(ROI_New$B1))
   independent_values <- as.numeric(ROI_New$B1)
