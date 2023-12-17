@@ -28,4 +28,5 @@ mappred <- function(predictions_dataframe, reflectance_column, prediction_column
   ROI$B1 <- dependent_values
   colnames(ROI)[colnames(ROI) == "Predicted_Organic_Carbon"] <- "B1"
   utils::write.csv(ROI, file = paste0(output_dataset, ".csv"), row.names = FALSE)
+  return(ROI)
 }
