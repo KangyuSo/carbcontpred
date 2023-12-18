@@ -19,10 +19,9 @@
 #' @examples
 #' mappred_c <- mappred(
 #' pred_c, "Reflectance", "Predicted_Organic_Carbon", 
-#' system.file("extdata", "Reflectance_ROI.csv", package="carbcontpred"), "ROI_Predicted_Carbon"
+#' system.file("extdata", "Reflectance_ROI.csv", package = "carbcontpred"), "ROI_Predicted_Carbon"
 #' )
 mappred <- function(predictions_dataframe, reflectance_column, prediction_column, ROI_dataset_path, output_dataset) {
-  file.copy(ROI_dataset_path, tempfile(fileext = ".csv"), overwrite = TRUE)
   independent_variable <- as.numeric(unlist(predictions_dataframe[reflectance_column]))
   dependent_variable <- as.numeric(unlist(predictions_dataframe[prediction_column]))
   coef_matrix <- cbind(independent_variable)
@@ -32,7 +31,6 @@ mappred <- function(predictions_dataframe, reflectance_column, prediction_column
   ROI$B1 <- as.numeric(ROI$B1)
   predicted_carbon <- 3 * as.vector(coefficient) + as.vector(coefficient) * as.numeric(ROI$B1) * -3
   ROI$B1 <- predicted_carbon
-  ROI_folder <- system.file("inst", "ROI_Data", package = "carbcontpred")
   dir.create(ROI_folder, showWarnings = FALSE)
   utils::write.csv(ROI, file.path(ROI_folder, paste0(output_dataset, ".csv")), row.names = FALSE)
 }

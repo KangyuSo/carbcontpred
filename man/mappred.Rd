@@ -32,7 +32,7 @@ The function first extracts an algebraic equation based on the reflectance and p
 \examples{
 mappred_c <- mappred(
 pred_c, "Reflectance", "Predicted_Organic_Carbon", 
-system.file("extdata", "Reflectance_ROI.csv", package="carbcontpred"), "ROI_Predicted_Carbon"
+system.file("extdata", "Reflectance_ROI.csv", package = "carbcontpred"), "ROI_Predicted_Carbon"
 )
 }
 \references{
