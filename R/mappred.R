@@ -26,7 +26,8 @@ mappred <- function(predictions_dataframe, reflectance_column, prediction_column
   ROI$B1 <- as.numeric(ROI$B1)
   predicted_carbon <- 3 * as.vector(coefficient) + as.vector(coefficient) * as.numeric(ROI$B1) * -3
   ROI$B1 <- predicted_carbon
-  colnames(ROI)[colnames(ROI) == "Predicted_Organic_Carbon"] <- "B1"
+  if ("B1" %in% colnames(ROI))
+    colnames(ROI)[colnames(ROI) == "B1"] <- "Predicted_Organic_Carbon"
+    return(ROI)
   utils::write.csv(ROI, file = paste0(output_dataset, ".csv"), row.names = FALSE)
-  return(ROI)
 }
