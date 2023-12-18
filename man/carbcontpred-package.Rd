@@ -13,9 +13,10 @@ includes a function that builds and implements a linear regression model and
 a sample dataset containing the reflectance and organic carbon data of soil
 samples. The package includes another function that extracts an algebraic
 equation based on the predictions from the linear regression model and uses
-it to predict the organic carbon content of an ROI using its spectral
-reflectance data. The package also includes the documentation for the
-functions and datasets.
+it to predict the organic carbon content of a sample ROI data file  using its
+spectral reflectance data. The package contains a sample dataset of
+predictions from the linear regression model. The package also includes the
+documentation for the functions and datasets.
 }
 \references{
 \url{https://github.com/KangyuSo/carbcontpred}

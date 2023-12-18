@@ -21,7 +21,9 @@ You can install the development version of carbcontpred from
 [GitHub](https://github.com/KangyuSo/carbcontpred) with:
 
 ``` r
-install.packages('carbcontpred', repos = "https://github.com/KangyuSo/carbcontpred")
+remotes::install_github("KangyuSo/carbcontpred", 
+                         build_vignettes = TRUE)
+library(carbcontpred)
 ```
 
 ## Example
@@ -32,34 +34,34 @@ This is a basic example which shows you how to solve a common problem:
 ## Install and load the package
 remotes::install_github("KangyuSo/carbcontpred", 
                          build_vignettes = TRUE)
-#> Downloading GitHub repo KangyuSo/carbcontpred@HEAD
-#> 
-#> ── R CMD build ─────────────────────────────────────────────────────────────────
-#>      checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/Rtmpt4lVJX/remotesac83e424f5/KangyuSo-carbcontpred-e29a5ce/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/Rtmpt4lVJX/remotesac83e424f5/KangyuSo-carbcontpred-e29a5ce/DESCRIPTION’
-#>   ─  preparing ‘carbcontpred’:
-#>    checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
-#>   ─  installing the package to build vignettes
-#>      creating vignettes ...  ✔  creating vignettes (8.4s)
-#>   ─  checking for LF line-endings in source and make files and shell scripts
-#>   ─  checking for empty or unneeded directories
-#>        NB: this package now depends on R (>= 3.5.0)
-#>        WARNING: Added dependency on R >= 3.5.0 because serialized objects in
-#>      serialize/load version 3 cannot be read in older versions of R.
-#>      File(s) containing such objects:
-#>        ‘carbcontpred/vignettes/ref_dry_avg.rda’
-#>   ─  building ‘carbcontpred_0.0.0.9000.tar.gz’
-#>      
-#> 
+#> Skipping install of 'carbcontpred' from a github remote, the SHA1 (66dfba84) has not changed since last install.
+#>   Use `force = TRUE` to force installation
 library(carbcontpred)
 
 ## Load the dataset 
 data <- data.frame(ref_dry_avg)
 
-## Create a linear regression model with "Reflectance" as the response variable, "Organic_Carbon" as the predictor variable, test size of 70%, 10 folds for the cross-validation, and "Predicted_Organic_Carbon" as the output column
+## Create a linear regression model with "Reflectance" as the predictor variable, "Organic_Carbon" as the response variable, test size of 70%, 10 folds for the cross-validation, and "Predicted_Organic_Carbon" as the output column
 pred_c <- cpred(data, "Reflectance", "Organic_Carbon", 0.7, 10, "Predicted_Organic_Carbon")
 #> Loading required package: ggplot2
 #> Loading required package: lattice
-
+ 
 ## View the results
 View(pred_c)
+   
+## Load the ROI data file "ROI_Predicted_Carbon.csv" and apply min-max normalization on the spectral reflectance values 
+## Extract an equation for predicting organic carbon content using reflectance based on the results of the "cpred" function and use it to predicted the organic carbon content of the "ROI_Predicted_Carbon.csv" file using its reflectance values
+## Update the ROI data file with the predictions and save it as a csv file output titled "ROI_Predicted_Carbon"
+mappred_c <- mappred(pred_c, "Reflectance", "Predicted_Organic_Carbon", "~/carbcontpred/ROI_Data/Reflectance_ROI.csv", "ROI_Predicted_Carbon")
+#> Rows: 12209 Columns: 7
+#> ── Column specification ────────────────────────────────────────────────────────
+#> Delimiter: ","
+#> chr (1): ; File X
+#> dbl (6): File Y, Map X, Map Y, Lat, Lon, B1
+#> 
+#> ℹ Use `spec()` to retrieve the full column specification for this data.
+#> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+## View the results
+View(mappred_c)
 ```

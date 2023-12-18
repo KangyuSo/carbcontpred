@@ -2,12 +2,15 @@
 % Please edit documentation in R/mappred.R
 \name{mappred}
 \alias{mappred}
-\title{The function first extracts an algebraic equation based on the reflectance and predicted organic carbon content of soil samples. Then the function applies continuum removal over the reflectance values of an Region of Interest (ROI) data table collected from image processing and analysis software ENVI. Then the function applies the extracted algebraic equation on this attribute table to predict organic carbon content of points based on their reflectance values.}
+\title{The function first extracts an algebraic equation based on the reflectance and predicted organic carbon content of soil samples. Then the function applies min-max normalization over the reflectance values of an Region of Interest (ROI) data table collected from image processing and analysis software ENVI. Then the function applies the extracted algebraic equation on the reflectance values of points in the ROI data file to predict organic carbon content. Then the function updates the ROI data file with the predictions and outputs it as a new csv file.}
 \source{
 The data used for the predictions was collected by Kangyu So, Dr. Alemu Gonsamo, and Dr. Cheryl A. Rogers (All affiliated with McMaster University) from the Hudson Bay Lowlands region on July 2022. The ROI dataset was collected from images collected by the Moderate Resolution Imaging Spectroradiometer (MODIS) satellite operated by the National Aeronautics and Space Administration (NASA).
 }
 \usage{
-mappred(predictions_dataframe, ROI_dataset_path, output_dataset)
+mappred(
+predictions_dataframe, reflectance_column, prediction_column, 
+ROI_dataset_path, output_dataset
+)
 }
 \arguments{
 \item{predictions_dataframe}{The dataset resulting from the output of the cpred function, contains the average reflectance and measured and predicted organic carbon content of some soil samples}
@@ -16,7 +19,7 @@ mappred(predictions_dataframe, ROI_dataset_path, output_dataset)
 
 \item{prediction_column}{The predicted organic carbon content in the predictions_dataframe}
 
-\item{ROI_dataset_path}{The ROI data table exported from ENVI into a CSV file, contains geoinformation and reflectance values of the ROI divided into individual points}
+\item{ROI_dataset_path}{The path to the ROI data table that was exported from ENVI into a CSV file, contains geoinformation and reflectance values of the ROI divided into individual points}
 
 \item{output_dataset}{The updated ROI data table containing the new predicted organic carbon content of the points}
 }
@@ -24,11 +27,13 @@ mappred(predictions_dataframe, ROI_dataset_path, output_dataset)
 A CSV file containing the ROI data table as well as the predicted organic carbon content of the points using an algebraic equation extracted from the predictions of a cross-validated linear regression model
 }
 \description{
-The function first extracts an algebraic equation based on the reflectance and predicted organic carbon content of soil samples. Then the function applies continuum removal over the reflectance values of an Region of Interest (ROI) data table collected from image processing and analysis software ENVI. Then the function applies the extracted algebraic equation on this attribute table to predict organic carbon content of points based on their reflectance values.
+The function first extracts an algebraic equation based on the reflectance and predicted organic carbon content of soil samples. Then the function applies min-max normalization over the reflectance values of an Region of Interest (ROI) data table collected from image processing and analysis software ENVI. Then the function applies the extracted algebraic equation on the reflectance values of points in the ROI data file to predict organic carbon content. Then the function updates the ROI data file with the predictions and outputs it as a new csv file.
 }
 \examples{
-pred_c_df <- data.frame(pred_c)
-mappred_c <- mappred(pred_c_df, "Reflectance", "Predicted_Organic_Carbon", "~/carbcontpred/ROI_Data/Reflectance_ROI.csv", "ROI_Predicted_Carbon")
+mappred_c <- mappred(
+pred_c, "Reflectance", "Predicted_Organic_Carbon", 
+system.file("extdata", "Reflectance_ROI.csv", package="carbcontpred"), "ROI_Predicted_Carbon"
+)
 }
 \references{
 https://github.com/KangyuSo/carbcontpred

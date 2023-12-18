@@ -5,7 +5,7 @@ date: "2023-11-06"
 output: html_document
 ---
 
-I have two CSV files titled "SoilReflectanceDry_v01" and "SoilMetrics_v01". The "SoilReflectanceDry_v01" file contains data on the spectral reflectance of post-dried soil samples between the wavelengths 350 nm and 2500 nm in increments of 1 nm. The soil samples were collected from the Hudson Bay Lowlands. The "SoilMetrics_v01" file contains biophysical and biochemical metrics of the soil samples. This includes the organic carbon content of the soil samples by percent dry weight.
+I have two files titled `SoilReflectanceDry_v01.csv` and `SoilMetrics_v01.csv`. The `SoilReflectanceDry_v01.csv` file contains data on the spectral reflectance of post-dried soil samples between the wavelengths 350 nm and 2500 nm in increments of 1 nm. The soil samples were collected from the Hudson Bay Lowlands. The `SoilMetrics_v01.csv` file contains biophysical and biochemical metrics of the soil samples. This includes the organic carbon content of the soil samples by percent dry weight.
 
 To increase the shareability of the data I will first read the two data sets into one. I will then convert the data set to an `.RData` file and then document it. This will enable the data set to be bundled with package `carbcontpred`.
 
@@ -15,7 +15,7 @@ install.packages("prospectr")
 library(prospectr)
 ```
 
-Read the "SoilReflectanceDry_v01" file as a data frame:
+Read the `SoilReflectanceDry_v01.csv` file as a data frame:
 ```{r}
 data_ref <- read.csv("data-raw/SoilReflectanceDry_v01.csv")
 ```
@@ -51,7 +51,7 @@ Calculate the average reflectance for each column in the data set excluding NA v
 avg_values <- colMeans(ref_dry, na.rm = TRUE)
 ```
 
-Create a new data set that contains a column with the ID of the soil samples and another column with the average reflectance values, which will be named "Sample_ID" and "Reflectance" respectively: 
+Create a new data set that contains a column with the ID of the soil samples and another column with the average reflectance values, which will be named `Sample_ID` and `Reflectance` respectively: 
 ```{r}
 ref_dry_avg <- data.frame(
   "Sample_ID" = colnames(ref_dry),
@@ -59,7 +59,7 @@ ref_dry_avg <- data.frame(
 )
 ```
 
-Read the "SoilMetrics_v01" file as a data frame:
+Read the `SoilMetrics_v01.csv` file as a data frame:
 
 ```{r}
 data_met <- read.csv("data-raw/SoilMetrics_v01.csv")
@@ -78,7 +78,7 @@ install.packages("dplyr")
 library(dplyr)
 ```
 
-Merge the organic carbon data from the "data_met" dataset to the "ref_dry_avg" dataset based on the ID of the soil samples
+Merge the organic carbon data from the `data_met` dataset to the `ref_dry_avg` dataset based on the ID of the soil samples
 ```{r}
 ref_dry_avg <- ref_dry_avg %>%
   left_join(data_met %>% select(Sample_ID, OC), by = "Sample_ID") %>%

@@ -1,0 +1,42 @@
+---
+title: "Process pred_c File"
+author: "Kangyu So"
+date: "2023-12-17"
+output: html_document
+---
+
+I have an `.RData` file titled `red_dry_avg` which was the output of `ref_dry_avg.R`. The file contains data on post-dried soil samples regarding their sample ID and their average spectral reflectance between the wavelengths 350 nm and 2500 nm. The soil samples were collected from the Hudson Bay Lowlands.
+
+To increase the shareability of the data I will first read the data set, then convert it to an `.RData` file, and then document it. This will enable the data set to be bundled with package `carbcontpred`.
+
+Install and load the package needed to preprocess the data:
+```{r}
+remotes::install_github("KangyuSo/carbcontpred", 
+                        build_vignettes = TRUE)
+library(carbcontpred)
+```
+
+Read the `red_dry_avg`` file as a data frame:
+```{r}
+data <- data.frame(ref_dry_avg)
+```
+
+The data frame consists of 432 observations of 3 variables. Get a summary of the data frame:
+```{r}
+summary(data)
+```
+
+We want to get predict the organic carbon content of the soil samples using their spectral reflectance and measured organic carbon content. We will create a linear regression model where the reflectance is the predictor variable and the organic carbon content is the response variable. The model will also have a test size of 70% and 10 folds for the cross-validation. The model will make predictions for the organic carbon content of the soil samples and output them with the other variables from the original data frame under a new column with the header `Predicted_Organic_Carbon`:
+```{r}
+pred_c <- cpred(data, "Reflectance", "Organic_Carbon", 0.7, 10, "Predicted_Organic_Carbon")
+```
+
+Load the summary of the new data frame and ensure that there is no errors in the data:
+```{r}
+summary(pred_c)
+```
+
+Save to data folder:
+```{r}
+usethis::use_data(pred_c, overwrite = TRUE)
+```
