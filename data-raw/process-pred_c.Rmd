@@ -12,7 +12,7 @@ To increase the shareability of the data I will first read the data set, then co
 Install and load the package needed to preprocess the data:
 ```{r}
 remotes::install_github("KangyuSo/carbcontpred", 
-                        build_vignettes = TRUE)
+                         build_vignettes = TRUE)
 library(carbcontpred)
 ```
 

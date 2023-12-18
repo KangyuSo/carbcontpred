@@ -31,6 +31,7 @@ mappred <- function(predictions_dataframe, reflectance_column, prediction_column
   ROI$B1 <- as.numeric(ROI$B1)
   predicted_carbon <- 3 * as.vector(coefficient) + as.vector(coefficient) * as.numeric(ROI$B1) * -3
   ROI$B1 <- predicted_carbon
-  dir.create(ROI_folder, showWarnings = FALSE)
-  utils::write.csv(ROI, file.path(ROI_folder, paste0(output_dataset, ".csv")), row.names = FALSE)
+  dir.create("inst/ROI_folder", showWarnings = FALSE)
+  output_csv <- paste0(output_dataset, ".csv")
+  utils::write.csv(ROI, file.path(system.file("ROI_folder", package = "carbcontpred"), paste0(output_dataset, ".csv")), row.names = FALSE)
 }
