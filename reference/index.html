@@ -64,7 +64,11 @@
       </tr><tr><td>
           <p><code><a href="mappred.html">mappred()</a></code> </p>
         </td>
-        <td><p>The function first extracts an algebraic equation based on the reflectance and predicted organic carbon content of soil samples. Then the function applies continuum removal over the reflectance values of an Region of Interest (ROI) data table collected from image processing and analysis software ENVI. Then the function applies the extracted algebraic equation on this attribute table to predict organic carbon content of points based on their reflectance values.</p></td>
+        <td><p>The function first extracts an algebraic equation based on the reflectance and predicted organic carbon content of soil samples. Then the function applies min-max normalization over the reflectance values of an Region of Interest (ROI) data table collected from image processing and analysis software ENVI. Then the function applies the extracted algebraic equation on the reflectance values of points in the ROI data file to predict organic carbon content. Then the function updates the ROI data file with the predictions and outputs it as a new csv file.</p></td>
+      </tr><tr><td>
+          <p><code><a href="pred_C.html">pred_c</a></code> </p>
+        </td>
+        <td><p>Reflectance values and organic carbon content for post-dried soil samples.</p></td>
       </tr><tr><td>
           <p><code><a href="ref_dry_avg.html">ref_dry_avg</a></code> </p>
         </td>

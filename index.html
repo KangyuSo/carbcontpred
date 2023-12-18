@@ -85,7 +85,9 @@
 </h2>
 <p>You can install the development version of carbcontpred from <a href="https://github.com/KangyuSo/carbcontpred" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'carbcontpred'</span>, repos <span class="op">=</span> <span class="st">"https://github.com/KangyuSo/carbcontpred"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"KangyuSo/carbcontpred"</span>, </span>
+<span>                         build_vignettes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/KangyuSo/carbcontpred" class="external-link">carbcontpred</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
@@ -95,36 +97,36 @@
 <code class="sourceCode R"><span><span class="co">## Install and load the package</span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"KangyuSo/carbcontpred"</span>, </span>
 <span>                         build_vignettes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Downloading GitHub repo KangyuSo/carbcontpred@HEAD</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; ── R CMD build ─────────────────────────────────────────────────────────────────</span></span>
-<span><span class="co">#&gt;      checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/Rtmpt4lVJX/remotesac83e424f5/KangyuSo-carbcontpred-e29a5ce/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/Rtmpt4lVJX/remotesac83e424f5/KangyuSo-carbcontpred-e29a5ce/DESCRIPTION’</span></span>
-<span><span class="co">#&gt;   ─  preparing ‘carbcontpred’:</span></span>
-<span><span class="co">#&gt;    checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information</span></span>
-<span><span class="co">#&gt;   ─  installing the package to build vignettes</span></span>
-<span><span class="co">#&gt;      creating vignettes ...  ✔  creating vignettes (8.4s)</span></span>
-<span><span class="co">#&gt;   ─  checking for LF line-endings in source and make files and shell scripts</span></span>
-<span><span class="co">#&gt;   ─  checking for empty or unneeded directories</span></span>
-<span><span class="co">#&gt;        NB: this package now depends on R (&gt;= 3.5.0)</span></span>
-<span><span class="co">#&gt;        WARNING: Added dependency on R &gt;= 3.5.0 because serialized objects in</span></span>
-<span><span class="co">#&gt;      serialize/load version 3 cannot be read in older versions of R.</span></span>
-<span><span class="co">#&gt;      File(s) containing such objects:</span></span>
-<span><span class="co">#&gt;        ‘carbcontpred/vignettes/ref_dry_avg.rda’</span></span>
-<span><span class="co">#&gt;   ─  building ‘carbcontpred_0.0.0.9000.tar.gz’</span></span>
-<span><span class="co">#&gt;      </span></span>
-<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Skipping install of 'carbcontpred' from a github remote, the SHA1 (66dfba84) has not changed since last install.</span></span>
+<span><span class="co">#&gt;   Use `force = TRUE` to force installation</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/KangyuSo/carbcontpred" class="external-link">carbcontpred</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">## Load the dataset </span></span>
 <span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">ref_dry_avg</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co">## Create a linear regression model with "Reflectance" as the response variable, "Organic_Carbon" as the predictor variable, test size of 70%, 10 folds for the cross-validation, and "Predicted_Organic_Carbon" as the output column</span></span>
+<span><span class="co">## Create a linear regression model with "Reflectance" as the predictor variable, "Organic_Carbon" as the response variable, test size of 70%, 10 folds for the cross-validation, and "Predicted_Organic_Carbon" as the output column</span></span>
 <span><span class="va">pred_c</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/cpred.html">cpred</a></span><span class="op">(</span><span class="va">data</span>, <span class="st">"Reflectance"</span>, <span class="st">"Organic_Carbon"</span>, <span class="fl">0.7</span>, <span class="fl">10</span>, <span class="st">"Predicted_Organic_Carbon"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Loading required package: ggplot2</span></span>
 <span><span class="co">#&gt; Loading required package: lattice</span></span>
+<span> </span>
+<span><span class="co">## View the results</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">pred_c</span><span class="op">)</span></span>
+<span>   </span>
+<span><span class="co">## Load the ROI data file "ROI_Predicted_Carbon.csv" and apply min-max normalization on the spectral reflectance values </span></span>
+<span><span class="co">## Extract an equation for predicting organic carbon content using reflectance based on the results of the "cpred" function and use it to predicted the organic carbon content of the "ROI_Predicted_Carbon.csv" file using its reflectance values</span></span>
+<span><span class="co">## Update the ROI data file with the predictions and save it as a csv file output titled "ROI_Predicted_Carbon"</span></span>
+<span><span class="va">mappred_c</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/mappred.html">mappred</a></span><span class="op">(</span><span class="va">pred_c</span>, <span class="st">"Reflectance"</span>, <span class="st">"Predicted_Organic_Carbon"</span>, <span class="st">"~/carbcontpred/ROI_Data/Reflectance_ROI.csv"</span>, <span class="st">"ROI_Predicted_Carbon"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Rows: 12209 Columns: 7</span></span>
+<span><span class="co">#&gt; ── Column specification ────────────────────────────────────────────────────────</span></span>
+<span><span class="co">#&gt; Delimiter: ","</span></span>
+<span><span class="co">#&gt; chr (1): ; File X</span></span>
+<span><span class="co">#&gt; dbl (6): File Y, Map X, Map Y, Lat, Lon, B1</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.</span></span>
+<span><span class="co">#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</span></span>
 <span></span>
 <span><span class="co">## View the results</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">pred_c</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">mappred_c</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
   </div>
