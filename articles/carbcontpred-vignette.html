@@ -86,9 +86,9 @@
     
     
 <div class="section level2">
-<h2 id="carbcontpred-predicting-organic-carbon-content-soil-samples-based-on-their-spectral-reflectance-in-hudson-bay-lowlands-ontario-canada">carbcontpred: Predicting Organic Carbon Content Soil Samples Based
-on Their Spectral Reflectance in Hudson Bay Lowlands, Ontario,
-Canada<a class="anchor" aria-label="anchor" href="#carbcontpred-predicting-organic-carbon-content-soil-samples-based-on-their-spectral-reflectance-in-hudson-bay-lowlands-ontario-canada"></a>
+<h2 id="carbcontpred-predicting-and-mapping-soil-organic-carbon-content-based-on-the-spectral-reflectance-of-soil-samples-in-hudson-bay-lowlands-ontario-canada">carbcontpred: Predicting and Mapping Soil Organic Carbon Content
+Based on The Spectral Reflectance of Soil Samples in Hudson Bay
+Lowlands, Ontario, Canada<a class="anchor" aria-label="anchor" href="#carbcontpred-predicting-and-mapping-soil-organic-carbon-content-based-on-the-spectral-reflectance-of-soil-samples-in-hudson-bay-lowlands-ontario-canada"></a>
 </h2>
 <p>This package contains objects that are sourced from a 2022 McMaster
 Remote Sensing Laboratory research project and objects created to
@@ -142,7 +142,8 @@ open-source community.</p>
 </h3>
 <p>This is how you install the package if you have not done so yet:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'carbcontpred'</span>, repos <span class="op">=</span> <span class="st">"https://github.com/KangyuSo/carbcontpred"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"KangyuSo/carbcontpred"</span>, </span>
+<span>                         build_vignettes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p>Begin by loading the package:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/KangyuSo/carbcontpred" class="external-link">carbcontpred</a></span><span class="op">)</span></span></code></pre></div>
@@ -237,10 +238,9 @@ look at the first 6 rows of the data:</p>
 how the raw data was processed for use in the <code>carbcontpred</code>
 package.</p>
 </div>
-</div>
-<div class="section level2">
-<h2 id="cpred-function-overview">cpred Function Overview:<a class="anchor" aria-label="anchor" href="#cpred-function-overview"></a>
-</h2>
+<div class="section level3">
+<h3 id="cpred-function-overview">cpred Function Overview:<a class="anchor" aria-label="anchor" href="#cpred-function-overview"></a>
+</h3>
 <p>The <code>cpred</code> function builds a linear regression model
 using spectral reflectance as the independent variable and organic
 carbon content as the dependent variable and uses it to predict the
@@ -249,22 +249,81 @@ function will utilize a dataset containing the spectral reflectance and
 organic carbon content of soil samples. In this package, that dataset
 will be <code>ref_dry_avg.rda</code>.</p>
 <p>The cpred function can be applied using the following chunk:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(ref_dry_avg)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>cpred <span class="ot">&lt;-</span> <span class="cf">function</span>(data, reflectance, carbon, test_size, folds, prediction)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">ref_dry_avg</span><span class="op">)</span></span>
+<span><span class="va">pred_c</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/cpred.html">cpred</a></span><span class="op">(</span><span class="va">data</span>, <span class="st">"Reflectance"</span>, <span class="st">"Organic_Carbon"</span>, <span class="fl">0.7</span>, <span class="fl">10</span>, <span class="st">"Predicted_Organic_Carbon"</span><span class="op">)</span></span></code></pre></div>
 <p>For the chunk above, the parameter <code>data</code> represents the
-<code>ref_dry_avg</code> dataset. The parameter <code>reflectance</code>
-represents the average at a given wavelength range. The parameter
-<code>carbon</code> represents organic carbon content by percent dry
-weight. The parameters <code>test_size</code> and <code>folds</code>
-represent the test size for the model and the number of folds for the
-cross-validation respectively. The parameter <code>prediction</code>
-represents the name for the predicted organic carbon content output.</p>
+<code>ref_dry_avg</code> dataset. The parameter
+<code>"Reflectance"</code> represents the <code>"Reflectance"</code>
+column of the <code>ref_dry_avg</code> dataset which is the average
+reflectance between 300 nm and 2500 nm of the post-dried soil samples.
+The parameter <code>"Organic_Carbon"</code> represents the
+<code>"Organic_Carbon"</code> column of the <code>ref_dry_avg</code>
+dataset which is the measured organic carbon content by percent dry
+weight of the post-dried soil samples. The parameters <code>0.7</code>
+and <code>10</code> represent the test size for the model and the number
+of folds for the cross-validation respectively. The parameter
+<code>"Predicted_Organic_Carbon"</code> represents the name for the
+predicted organic carbon content output.</p>
 <p>The return of the function is a new column added to the previous
 dataset which contains the predicted organic carbon content values using
 a cross-validated linear regression model.</p>
-<p>Let’s take a look at the first 8 rows of this newly updated dataset
-with the predicted organic carbon content values:</p>
-<p><img src="pred_c.png" style="width:75.0%"></p>
+<p>Let’s take a look at the 6 rows of this newly updated dataset
+<code>pred_c</code> with the predicted organic carbon content
+values:</p>
+<table class="table">
+<thead><tr class="header">
+<th align="left"></th>
+<th align="left">Sample_ID</th>
+<th align="right">Reflectance</th>
+<th align="right">Organic_Carbon</th>
+<th align="right">Predicted_Organic_Carbon</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">A1AD.001</td>
+<td align="right">0.8868612</td>
+<td align="right">45.400</td>
+<td align="right">44.248066</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">A1AD.002</td>
+<td align="right">0.8635153</td>
+<td align="right">45.700</td>
+<td align="right">53.439298</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">A1AD.003</td>
+<td align="right">0.8830594</td>
+<td align="right">38.500</td>
+<td align="right">45.744814</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">A1AD.006</td>
+<td align="right">0.9565598</td>
+<td align="right">9.620</td>
+<td align="right">16.807794</td>
+</tr>
+<tr class="odd">
+<td align="left">8</td>
+<td align="left">A1AD.008</td>
+<td align="right">0.9895953</td>
+<td align="right">0.440</td>
+<td align="right">3.801782</td>
+</tr>
+<tr class="even">
+<td align="left">9</td>
+<td align="left">A1AD.009</td>
+<td align="right">0.9891859</td>
+<td align="right">0.465</td>
+<td align="right">3.962973</td>
+</tr>
+</tbody>
+</table>
 <p>Let’s visualize this data as a scatter plot where the original and
 predicted organic carbon content values will be our X and Y axis
 respectively:</p>
@@ -295,17 +354,177 @@ Mendes et al., 2022).</p>
 to utilize <code>cpred</code>. See the <code>cpred.R</code> file for
 additional information about the function.</p>
 </div>
+<div class="section level3">
+<h3 id="pre-processing-data-for-mappred">Pre-Processing Data for mappred<a class="anchor" aria-label="anchor" href="#pre-processing-data-for-mappred"></a>
+</h3>
+<p>The <code>mappred</code> function uses two data sets. The first data
+set is a file containing spatial information and spectral reflectance
+values of an ROI. The example file used in the vignette is
+<code>Reflectance_ROI.csv</code> in the
+<code>\inst\extdata folder</code>. For more information on how to
+extract an ROI data file, see (INSERT WEBSITE LINK). The second data set
+consists of the sample ID, average reflectance, and measured and
+predicted organic carbon content of post-dried soil samples. This is
+normally the output from the <code>cpred</code> function as shown in the
+previous section. The example file used in the vignette is
+<code>pred_c.rda</code> in the <code>\data folder</code>.</p>
+</div>
+<div class="section level3">
+<h3 id="mappred-function-overview">mappred Function Overview:<a class="anchor" aria-label="anchor" href="#mappred-function-overview"></a>
+</h3>
+<p>The <code>mappred</code> function extracts an algebraic equation
+based on the reflectance and predicted organic carbon content of soil
+samples in a data set. The function then applies min-max normalization
+over the reflectance values of an ROI data set. Finally, the
+<code>mappred</code> function uses the algebraic equation to predict the
+organic carbon content of spatial points in the ROI data set based on
+their reflectance, and then outputs the updated data set as a new csv
+file. The function will utilize two data sets, one containing the
+spatial information and spectral reflectance values of an ROI and one
+containing the reflectance and predicted organic carbon content of soil
+samples. In this package, the ROI data set will be
+<code>Reflectance_ROI.csv</code> and the predicted organic carbon
+content dataset will be <code>pred_c.rda</code>.</p>
+<p>The mappred function can be applied using the following chunk:</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mappred_c</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/mappred.html">mappred</a></span><span class="op">(</span><span class="va">pred_c</span>, <span class="st">"Reflectance"</span>, <span class="st">"Predicted_Organic_Carbon"</span>, <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"Reflectance_ROI.csv"</span>, package <span class="op">=</span> <span class="st">"carbcontpred"</span><span class="op">)</span>, <span class="st">"ROI_Predicted_Carbon"</span><span class="op">)</span></span></code></pre></div>
+<p>For the chunk above, the parameter <code>pred_c</code> represents the
+<code>pred_c</code> dataset. The parameter <code>"Reflectance"</code>
+represents the <code>"Reflectance"</code> column of the
+<code>pred_c</code> dataset which is the average reflectance between 300
+nm and 2500 nm of the post-dried soil samples. The parameter
+<code>"Predicted_Organic_Carbon"</code> represents the
+<code>"Predicted_Organic_Carbon"</code> column of the
+<code>pred_c</code> dataset which is the predicted organic carbon
+content by percent dry weight of the post-dried soil samples. The
+parameter
+<code>system.file("extdata", "Reflectance_ROI.csv", package = "carbcontpred")</code>
+represents the path to the <code>Reflectance_ROI.csv</code> file. The
+parameter <code>"ROI_Predicted_Carbon"</code> represents the name for
+output of the updated data set which will contain the predicted organic
+carbon content of spatial points in the <code>Reflectance_ROI.csv</code>
+file.</p>
+<p>The return of the function is a csv file which contains the spatial
+information of the ROI data set but replaces the reflectance values for
+the points with the predicted organic carbon content. The original
+reflectance values and the replacement predicted organic carbon content
+are typically in the <code>B1</code> of the ROI data set. It is not
+recommended to run the <code>mappred</code> function again using this
+new ROI data set in place of the original ROI data set containing the
+reflectance values.</p>
+<p>Let’s take a look at 6 rows of this newly created data file
+<code>ROI_Predicted_Carbon.csv</code> with the predicted organic carbon
+content values:</p>
+<table class="table">
+<thead><tr class="header">
+<th align="right">X..File.X</th>
+<th align="right">File.Y</th>
+<th align="right">Map.X</th>
+<th align="right">Map.Y</th>
+<th align="right">Lat</th>
+<th align="right">Lon</th>
+<th align="right">B1</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">91</td>
+<td align="right">1677</td>
+<td align="right">-5517591</td>
+<td align="right">5894728</td>
+<td align="right">53.01250</td>
+<td align="right">-82.47585</td>
+<td align="right">68.85428</td>
+</tr>
+<tr class="even">
+<td align="right">92</td>
+<td align="right">1677</td>
+<td align="right">-5517128</td>
+<td align="right">5894728</td>
+<td align="right">53.01250</td>
+<td align="right">-82.46892</td>
+<td align="right">72.12532</td>
+</tr>
+<tr class="odd">
+<td align="right">90</td>
+<td align="right">1677</td>
+<td align="right">-5518054</td>
+<td align="right">5894728</td>
+<td align="right">53.01250</td>
+<td align="right">-82.48277</td>
+<td align="right">68.85428</td>
+</tr>
+<tr class="even">
+<td align="right">89</td>
+<td align="right">1678</td>
+<td align="right">-5518518</td>
+<td align="right">5894264</td>
+<td align="right">53.00833</td>
+<td align="right">-82.48174</td>
+<td align="right">72.87362</td>
+</tr>
+<tr class="odd">
+<td align="right">90</td>
+<td align="right">1678</td>
+<td align="right">-5518054</td>
+<td align="right">5894264</td>
+<td align="right">53.00833</td>
+<td align="right">-82.47481</td>
+<td align="right">72.87362</td>
+</tr>
+<tr class="even">
+<td align="right">91</td>
+<td align="right">1678</td>
+<td align="right">-5517591</td>
+<td align="right">5894264</td>
+<td align="right">53.00833</td>
+<td align="right">-82.46789</td>
+<td align="right">72.12532</td>
+</tr>
+</tbody>
+</table>
+<p>Let’s visualize this data as a histogram where the value and count of
+the <code>B1</code> column in the <code>ROI_Predicted_Carbon.csv</code>
+data set will be our X and Y axis respectively:</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"ggplot2"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">ROI_Predicted_Carbon</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">B1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Value of B1"</span>, y <span class="op">=</span> <span class="st">"Count of B1"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html" class="external-link">geom_histogram</a></span><span class="op">(</span>binwidth<span class="op">=</span> <span class="fl">.5</span>, colour<span class="op">=</span> <span class="st">"black"</span>, fill<span class="op">=</span> <span class="st">"white"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="count_histogram_ROI_Predicted_Carbon.png" style="width:75.0%"></p>
+<p>We can also visualize the <code>ROI_Predicted_Carbon.csv</code> data
+set as a histogram with a kernel density curve where the value and
+density of the <code>B1</code> column in the
+<code>ROI_Predicted_Carbon.csv</code> data set will be our X and Y axis
+respectively:</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">ROI_Predicted_Carbon</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">B1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html" class="external-link">geom_histogram</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">..density..</span><span class="op">)</span>,</span>
+<span>                   binwidth <span class="op">=</span> <span class="fl">.5</span>,</span>
+<span>                   colour <span class="op">=</span> <span class="st">"black"</span>, fill <span class="op">=</span> <span class="st">"white"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Value of B1"</span>, y <span class="op">=</span> <span class="st">"Density of B1"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html" class="external-link">geom_density</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">.2</span>, fill <span class="op">=</span> <span class="st">"#FF6666"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="density_histogram_ROI_Predicted_Carbon.png" style="width:75.0%"></p>
+<p>To see how to use <code>ROI_Predicted_Carbon.csv</code> or another
+output from <code>mappred</code> to visualize the predicted organic
+carbon content of the ROI over a map, see (INSERT WEBSITE LINK).</p>
+<p>See the <code>README.Rmd</code> files for additional details on how
+to utilize <code>mappred</code>. See the <code>mappred.R</code> file for
+additional information about the function.</p>
+</div>
+</div>
 <div class="section level2">
 <h2 id="contributing-to-the-carbcontpred-package">Contributing to the carbcontpred Package<a class="anchor" aria-label="anchor" href="#contributing-to-the-carbcontpred-package"></a>
 </h2>
 <p>The purpose of this <code>R</code> package is to make the soil
 spectral reflectance and organic carbon content data from a 2022
 McMaster University Remote Sensing Laboratory project easily available
-for predictive modeling in an <code>R</code> environment. Currently, the
-package only uses the reflectance and organic carbon content data of the
-post-dried soil samples, but we invite others from the community to
-request additional metrics from the original project dataset, report
-issues such as spelling errors, and contribute to the
+for predictive modeling and mapping in an <code>R</code> environment.
+Currently, the package only uses the reflectance and organic carbon
+content data of the post-dried soil samples, but we invite others from
+the community to request additional metrics from the original project
+dataset, report issues such as spelling errors, and contribute to the
 <code>carbcontpred</code> package. To contribute to the package, create
 a branch in the repository and submit a pull request for your
 contribution. Contributions will be reviewed before approval and full
