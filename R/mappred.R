@@ -31,13 +31,11 @@ mappred <- function(predictions_dataframe, reflectance_column, prediction_column
   ROI$B1 <- as.numeric(ROI$B1)
   predicted_carbon <- 3 * as.vector(coefficient) + as.vector(coefficient) * as.numeric(ROI$B1) * -3
   ROI$B1 <- predicted_carbon
-  inst_folder <- system.file("inst", package = "carbcontpred")
-  ROI_Data <- file.path(inst_folder, "ROI_Data")
-  if (!dir.exists(ROI_Data)) {
-    dir.create(ROI_Data, recursive = TRUE)
-    cat("Folder 'ROI_Data' created within the 'inst' folder.\n")
+  if (!file.exists(file.path(system.file("ROI_folder", package = "carbcontpred")))) {
+    dir.create(file.path(system.file("ROI_folder", package = "carbcontpred")), recursive = TRUE)
+    cat("Folder 'ROI_folder' created within the 'inst' folder.\n")
   } else {
-    cat("Folder 'ROI_Data' already exists within the 'inst' folder.\n")
+    cat("Folder 'ROI_folder' already exists within the 'inst' folder.\n")
   }
   utils::write.csv(ROI, file.path(system.file("ROI_folder", package = "carbcontpred"), paste0(output_dataset, ".csv")), row.names = FALSE)
 }
