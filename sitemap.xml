@@ -1,39 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://carbcontpred.r-lib.org/404.html</loc>
   </url>
   <url>
-    <loc>/LICENSE.html</loc>
+    <loc>https://carbcontpred.r-lib.org/LICENSE.html</loc>
   </url>
   <url>
-    <loc>/articles/carbcontpred-vignette.html</loc>
+    <loc>https://carbcontpred.r-lib.org/articles/carbcontpred-vignette.html</loc>
   </url>
   <url>
-    <loc>/articles/index.html</loc>
+    <loc>https://carbcontpred.r-lib.org/articles/index.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://carbcontpred.r-lib.org/articles/web_only/Background_Information.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://carbcontpred.r-lib.org/authors.html</loc>
   </url>
   <url>
-    <loc>/reference/carbcontpred-package.html</loc>
+    <loc>https://carbcontpred.r-lib.org/index.html</loc>
   </url>
   <url>
-    <loc>/reference/cpred.html</loc>
+    <loc>https://carbcontpred.r-lib.org/reference/carbcontpred-package.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://carbcontpred.r-lib.org/reference/cpred.html</loc>
   </url>
   <url>
-    <loc>/reference/mappred.html</loc>
+    <loc>https://carbcontpred.r-lib.org/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/pred_C.html</loc>
+    <loc>https://carbcontpred.r-lib.org/reference/mappred.html</loc>
   </url>
   <url>
-    <loc>/reference/ref_dry_avg.html</loc>
+    <loc>https://carbcontpred.r-lib.org/reference/pred_C.html</loc>
+  </url>
+  <url>
+    <loc>https://carbcontpred.r-lib.org/reference/ref_dry_avg.html</loc>
   </url>
 </urlset>
