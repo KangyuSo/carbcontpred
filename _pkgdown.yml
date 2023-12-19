@@ -1,0 +1,5 @@
+url: https://carbcontpred.r-lib.org
+template:
+  bootstrap: 5
+  bootswatch: cerulean
+

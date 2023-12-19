@@ -6,3 +6,6 @@
 ^car\.Rproj$
 ^carbcontpred$
 ^\.github$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

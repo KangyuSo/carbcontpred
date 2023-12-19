@@ -25,6 +25,9 @@ The first goal of carbcontpred is to build and cross-validate a linear regressio
 You can install the development version of carbcontpred from [GitHub](https://github.com/KangyuSo/carbcontpred) with:
 
 ``` r
+install.packages("remotes", repos = "http://cran.us.r-project.org")
+library(remotes)
+
 remotes::install_github("KangyuSo/carbcontpred", 
                          build_vignettes = TRUE)
 library(carbcontpred)
@@ -35,7 +38,11 @@ library(carbcontpred)
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-## Install and load the package
+## Install and load the "remotes" package
+install.packages("remotes", repos = "http://cran.us.r-project.org")
+library(remotes)
+
+## Install and load the "carbcontpred" package
 remotes::install_github("KangyuSo/carbcontpred", 
                          build_vignettes = TRUE)
 library(carbcontpred)

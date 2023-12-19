@@ -12,6 +12,7 @@
 /Users/kangyuso/carbcontpred/README.md="F788ED2B"
 /Users/kangyuso/carbcontpred/carbcontpred/.Rbuildignore="FD27D50C"
 /Users/kangyuso/carbcontpred/carbcontpred/.Rhistory="886341F8"
+/Users/kangyuso/carbcontpred/data-raw/SoilMetrics_v01.csv="51F1F4A8"
 /Users/kangyuso/carbcontpred/data-raw/process-pred_c.Rmd="BA1953EA"
 /Users/kangyuso/carbcontpred/data-raw/process-ref_dry_avg.Rmd="5F973380"
 /Users/kangyuso/carbcontpred/data-raw/ref_dry_avg.R="AFF0982B"
@@ -28,4 +29,5 @@
 /Users/kangyuso/carbcontpred/tests/testthat.R="3D479A83"
 /Users/kangyuso/carbcontpred/tests/testthat/test-cpred.R="DA430E6D"
 /Users/kangyuso/carbcontpred/tests/testthat/test-mappred.R="D0F2DA4D"
+/Users/kangyuso/carbcontpred/vignettes/Intro.Rmd="56CE7EB5"
 /Users/kangyuso/carbcontpred/vignettes/carbcontpred-vignette.Rmd="2BD27C2D"

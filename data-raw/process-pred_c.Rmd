@@ -9,8 +9,11 @@ I have an `.RData` file titled `red_dry_avg` which was the output of `ref_dry_av
 
 To increase the shareability of the data I will first read the data set, then convert it to an `.RData` file, and then document it. This will enable the data set to be bundled with package `carbcontpred`.
 
-Install and load the package needed to preprocess the data:
+Install and load the packages needed to preprocess the data:
 ```{r}
+install.packages("remotes", repos = "http://cran.us.r-project.org")
+library(remotes)
+
 remotes::install_github("KangyuSo/carbcontpred", 
                          build_vignettes = TRUE)
 library(carbcontpred)
