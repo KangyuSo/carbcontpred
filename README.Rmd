@@ -54,6 +54,6 @@ View(pred_c)
 ## Update the ROI data file with the predictions and save it as a csv file output titled "ROI_Predicted_Carbon"
 mappred_c <- mappred(pred_c, "Reflectance", "Predicted_Organic_Carbon", system.file("extdata", "Reflectance_ROI.csv", package = "carbcontpred"), "ROI_Predicted_Carbon")
 
-## View the resulting csv file
-read.csv(system.file("ROI_folder", "ROI_Predicted_Carbon.csv", package = "carbcontpred"))
+## View the first 10 rows of the resulting csv file
+head(read.csv(system.file("ROI_folder", "ROI_Predicted_Carbon.csv", package = "carbcontpred")), 10)
 ```

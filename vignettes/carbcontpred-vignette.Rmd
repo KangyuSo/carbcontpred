@@ -7,7 +7,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-# carbcontpred: Predicting Organic Carbon Content Soil Samples Based on Their Spectral Reflectance in Hudson Bay Lowlands, Ontario, Canada
+# carbcontpred: Predicting and Mapping Soil Organic Carbon Content Based on The Spectral Reflectance of Soil Samples in Hudson Bay Lowlands, Ontario, Canada
 
 This package contains objects that are sourced from a 2022 McMaster Remote Sensing Laboratory research project and objects created to facilitate the use and analysis of the fieldwork data. The project recorded a wide range of biochemical, biophysical, and spectral metrics of 432 soil samples that were collected from the Hudson Bay Lowlands (N 51.220318, W 80.556189) and measured and analyzed at McMaster University and the University of Guelph. A portion of the project’s data has been cleaned and packaged for easy use in an ````R```` environment.
 
@@ -30,7 +30,8 @@ The raw data from the research project will eventually be freely available to th
 This is how you install the package if you have not done so yet:
 
 ```{r eval = FALSE} 
-install.packages('carbcontpred', repos = "https://github.com/KangyuSo/carbcontpred")
+remotes::install_github("KangyuSo/carbcontpred", 
+                         build_vignettes = TRUE)
 ```
 
 Begin by loading the package:
@@ -89,7 +90,7 @@ knitr::kable(head(ref_dry_avg))
 
 See the ````process-ref_dry.Rmd```` file for complete details on how the raw data was processed for use in the ````carbcontpred```` package.
 
-# cpred Function Overview:
+## cpred Function Overview:
 
 The ````cpred```` function builds a linear regression model using spectral reflectance as the independent variable and organic carbon content as the dependent variable and uses it to predict the organic carbon content of soil samples based on their reflectance. The function will utilize a dataset containing the spectral reflectance and organic carbon content of soil samples. In this package, that dataset will be ````ref_dry_avg.rda````.
 
@@ -97,16 +98,19 @@ The cpred function can be applied using the following chunk:
 
 ```{r eval = FALSE} 
 data <- data.frame(ref_dry_avg)
-cpred <- function(data, reflectance, carbon, test_size, folds, prediction)
+pred_c <- cpred(data, "Reflectance", "Organic_Carbon", 0.7, 10, "Predicted_Organic_Carbon")
 ```
 
-For the chunk above, the parameter ````data```` represents the ````ref_dry_avg```` dataset. The parameter ````reflectance```` represents the average at a given wavelength range. The parameter ````carbon```` represents organic carbon content by percent dry weight. The parameters ````test_size```` and ````folds```` represent the test size for the model and the number of folds for the cross-validation respectively. The parameter ````prediction```` represents the name for the predicted organic carbon content output.
+For the chunk above, the parameter ````data```` represents the ````ref_dry_avg```` dataset. The parameter ````"Reflectance"```` represents the ````"Reflectance"```` column of the ````ref_dry_avg```` dataset which is the average reflectance between 300 nm and 2500 nm of the post-dried soil samples. The parameter ````"Organic_Carbon"```` represents the ````"Organic_Carbon"```` column of the ````ref_dry_avg```` dataset which is the measured organic carbon content by percent dry weight of the post-dried soil samples. The parameters ````0.7```` and ````10```` represent the test size for the model and the number of folds for the cross-validation respectively. The parameter ````"Predicted_Organic_Carbon"```` represents the name for the predicted organic carbon content output.
 
 The return of the function is a new column added to the previous dataset which contains the predicted organic carbon content values using a cross-validated linear regression model.
 
-Let’s take a look at the first 8 rows of this newly updated dataset with the predicted organic carbon content values:
+Let’s take a look at the 6 rows of this newly updated dataset ````pred_c```` with the predicted organic carbon content values:
 
-![](pred_c.png){width="75%"}
+```{r echo = FALSE} 
+data(pred_c)
+knitr::kable(head(pred_c))
+```
 
 Let's visualize this data as a scatter plot where the original and predicted organic carbon content values will be our X and Y axis respectively:
 
@@ -137,9 +141,64 @@ The R^2^ value for this example is ~0.61, which is in line with the R^2^ values 
 
 See the ````README.Rmd```` files for additional details on how to utilize ````cpred````. See the ````cpred.R```` file for additional information about the function.
 
+## Pre-Processing Data for mappred
+
+The ````mappred```` function uses two data sets. The first data set is a file containing spatial information and spectral reflectance values of an ROI. The example file used in the vignette is ````Reflectance_ROI.csv```` in the ````\inst\extdata folder````. For more information on how to extract an ROI data file, see (INSERT WEBSITE LINK). The second data set consists of the sample ID, average reflectance, and measured and predicted organic carbon content of post-dried soil samples. This is normally the output from the ````cpred```` function as shown in the previous section. The example file used in the vignette is ````pred_c.rda```` in the ````\data folder````.
+
+## mappred Function Overview:
+
+The ````mappred```` function extracts an algebraic equation based on the reflectance and predicted organic carbon content of soil samples in a data set. The function then applies min-max normalization over the reflectance values of an ROI data set. Finally, the ````mappred```` function uses the algebraic equation to predict the organic carbon content of spatial points in the ROI data set based on their reflectance, and then outputs the updated data set as a new csv file. The function will utilize two data sets, one containing the spatial information and spectral reflectance values of an ROI and one containing the reflectance and predicted organic carbon content of soil samples. In this package, the ROI data set will be ````Reflectance_ROI.csv```` and the predicted organic carbon content dataset will be ````pred_c.rda````.
+
+The mappred function can be applied using the following chunk:
+
+```{r eval = FALSE} 
+mappred_c <- mappred(pred_c, "Reflectance", "Predicted_Organic_Carbon", system.file("extdata", "Reflectance_ROI.csv", package = "carbcontpred"), "ROI_Predicted_Carbon")
+```
+
+For the chunk above, the parameter ````pred_c```` represents the ````pred_c```` dataset. The parameter ````"Reflectance"```` represents the ````"Reflectance"```` column of the ````pred_c```` dataset which is the average reflectance between 300 nm and 2500 nm of the post-dried soil samples. The parameter ````"Predicted_Organic_Carbon"```` represents the ````"Predicted_Organic_Carbon"```` column of the ````pred_c```` dataset which is the predicted organic carbon content by percent dry weight of the post-dried soil samples. The parameter ````system.file("extdata", "Reflectance_ROI.csv", package = "carbcontpred")```` represents the path to the ````Reflectance_ROI.csv```` file. The parameter ````"ROI_Predicted_Carbon"```` represents the name for output of the updated data set which will contain the predicted organic carbon content of spatial points in the ````Reflectance_ROI.csv```` file.
+
+The return of the function is a csv file which contains the spatial information of the ROI data set but replaces the reflectance values for the points with the predicted organic carbon content. The original reflectance values and the replacement predicted organic carbon content are typically in the ````B1```` of the ROI data set. It is not recommended to run the ````mappred```` function again using this new ROI data set in place of the original ROI data set containing the reflectance values.
+
+Let’s take a look at 6 rows of this newly created data file ````ROI_Predicted_Carbon.csv```` with the predicted organic carbon content values:
+
+```{r echo = FALSE} 
+ROI_Predicted_Carbon <- as.data.frame(read.csv(system.file("ROI_folder", "ROI_Predicted_Carbon.csv", package = "carbcontpred")))
+knitr::kable(head(ROI_Predicted_Carbon))
+```
+
+Let's visualize this data as a histogram where the value and count of the ````B1```` column in the ````ROI_Predicted_Carbon.csv```` data set will be our X and Y axis respectively:
+
+```{r eval = FALSE}
+install.packages("ggplot2")
+library(ggplot2)
+
+ggplot(ROI_Predicted_Carbon, aes(x = B1)) +
+    labs(x = "Value of B1", y = "Count of B1") + 
+    geom_histogram(binwidth= .5, colour= "black", fill= "white")
+```
+
+![](count_histogram_ROI_Predicted_Carbon.png){width="75%"}
+
+We can also visualize the ````ROI_Predicted_Carbon.csv```` data set as a histogram with a kernel density curve where the value and density of the ````B1```` column in the ````ROI_Predicted_Carbon.csv```` data set will be our X and Y axis respectively:
+
+```{r eval = FALSE}
+ggplot(ROI_Predicted_Carbon, aes(x = B1)) + 
+    geom_histogram(aes(y = ..density..),
+                   binwidth = .5,
+                   colour = "black", fill = "white") +
+    labs(x = "Value of B1", y = "Density of B1") + 
+    geom_density(alpha = .2, fill = "#FF6666")
+```
+
+![](density_histogram_ROI_Predicted_Carbon.png){width="75%"}
+
+To see how to use ````ROI_Predicted_Carbon.csv```` or another output from ````mappred```` to visualize the predicted organic carbon content of the ROI over a map, see (INSERT WEBSITE LINK).
+
+See the ````README.Rmd```` files for additional details on how to utilize ````mappred````. See the ````mappred.R```` file for additional information about the function.
+
 # Contributing to the carbcontpred Package
 
-The purpose of this ````R```` package is to make the soil spectral reflectance and organic carbon content data from a 2022 McMaster University Remote Sensing Laboratory project easily available for predictive modeling in an ````R```` environment. Currently, the package only uses the reflectance and organic carbon content data of the post-dried soil samples, but we invite others from the community to request additional metrics from the original project dataset, report issues such as spelling errors, and contribute to the ````carbcontpred```` package. To contribute to the package, create a branch in the repository and submit a pull request for your contribution. Contributions will be reviewed before approval and full credit will be given.
+The purpose of this ````R```` package is to make the soil spectral reflectance and organic carbon content data from a 2022 McMaster University Remote Sensing Laboratory project easily available for predictive modeling and mapping in an ````R```` environment. Currently, the package only uses the reflectance and organic carbon content data of the post-dried soil samples, but we invite others from the community to request additional metrics from the original project dataset, report issues such as spelling errors, and contribute to the ````carbcontpred```` package. To contribute to the package, create a branch in the repository and submit a pull request for your contribution. Contributions will be reviewed before approval and full credit will be given.
 
 # References
 

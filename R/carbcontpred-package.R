@@ -52,11 +52,11 @@ NULL
 #'  Reflectance <- ref_dry_avg$Reflectance
 "ref_dry_avg"
 
-#' Reflectance values and organic carbon content for post-dried soil samples.
+#' Reflectance values and measured and predicted organic carbon content for post-dried soil samples.
 #'
-#' A dataset containing information about the spectral reflectance and organic 
-#' carbon content of 432 post-dried soil samples collected from the Hudson Bay 
-#' Lowlands.
+#' A dataset containing information about the spectral reflectance, measured 
+#' organic carbon content, and predicted organic carbon content of 303 
+#' post-dried soil samples collected from the Hudson Bay Lowlands.
 
 #' @format A data frame with 303 observations and 4 variables:
 #' \describe{
@@ -70,7 +70,7 @@ NULL
 #' @keywords datasets
 #' @keywords Terrestrial spatial modeling
 #' @keywords Soil carbon content estimation
-#' @name pred_C
+#' @name pred_c
 #' @usage data(pred_c)
 #' @import readr
 #' @import stats
