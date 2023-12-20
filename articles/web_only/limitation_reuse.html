@@ -105,14 +105,13 @@ water content within drier samples may be low enough that it would only
 have a small effect on the prediction accuracy <span class="citation">(Ji, Viscarra Rossel, and Shi 2015)</span>. The drying
 process may lead to the loss of some carbon content within samples, and
 so dried soil samples that already had little water content beforehand
-may actually have a worse prediction accuracy than when they were wet.
-Thus, in some cases, using the wet soil samples for the
-<code>carbcontpred</code> package may lead to better prediction
-performance than if you were to use the dried soil samples. In the case
-of the example data sets, the soil samples were collected from peatlands
-which have a very high water content so the dried soil samples yielded
-better prediction accuracy <span class="citation">(Price and
-Schlotzhauer 1999)</span>.</p>
+may have a worse prediction accuracy than when they were wet. Thus, in
+some cases, using the wet soil samples for the <code>carbcontpred</code>
+package may lead to better prediction performance than if you were to
+use the dried soil samples. In the case of the example data sets, the
+soil samples were collected from peatlands which have a very high water
+content so the dried soil samples yielded better prediction accuracy
+<span class="citation">(Price and Schlotzhauer 1999)</span>.</p>
 </div>
 <div class="section level2">
 <h2 id="continuity-between-cpred-and-mappred-inputs-and-outputs">Continuity between cpred and mappred inputs and outputs<a class="anchor" aria-label="anchor" href="#continuity-between-cpred-and-mappred-inputs-and-outputs"></a>
@@ -120,20 +119,20 @@ Schlotzhauer 1999)</span>.</p>
 <p>We recommend that you keep the location of the soil samples for
 <code>cpred</code> and the ROI for <code>mappred</code> within the same
 area or nearby. Although models such as the linear regression model
-built in <code>cpred</code> can used either local or global data sets,
+built in <code>cpred</code> can use either local or global data sets,
 the prediction performance using global data is worse than the
 performance for the local data. Additionally, the predictions from the
-linear regression model will likely not be helpful for predicting the
-organic carbon content of ROIs in different areas. The soil in a
-different area may contain minerals or other properties that affect the
-reflectance spectra, thus making predictions from one area to another
-very susceptible to covariables <span class="citation">(Sousa Mendes et
-al. 2022)</span>. We recommend at least keeping the type of soil or
-ground consistent between the soil samples for <code>cpred</code> and
-the ROI for <code>mappred</code>. The example in the
-<code>carbcontpred</code> package uses an ROI that remains within ~200
-km<sup>2</sup> of the soil sample sites and covers mostly peatland, the
-same type of area as where the soil samples were collected from.</p>
+linear regression model may not be helpful for predicting the organic
+carbon content of ROIs in different areas. The soil in a different area
+may contain minerals or other properties that affect the reflectance
+spectra, thus making predictions from one area to another very
+susceptible to covariables <span class="citation">(Sousa Mendes et al.
+2022)</span>. We recommend at least keeping the type of soil or ground
+consistent between the soil samples for <code>cpred</code> and the ROI
+for <code>mappred</code>. The example in the <code>carbcontpred</code>
+package uses an ROI that remains within ~200 km<sup>2</sup> of the soil
+sample sites and covers mostly peatland, the same type of area as where
+the soil samples were collected from.</p>
 </div>
 <div class="section level2">
 <h2 id="mappred-linear-equation">mappred linear equation<a class="anchor" aria-label="anchor" href="#mappred-linear-equation"></a>
@@ -174,10 +173,11 @@ is represented through <code>3</code>, x is represented through
 <p>It should be noted that using the two softwares ENVI and ArcGIS Pro
 for extraction and visualization of an ROI data file respectively as
 shown in this <a href="https://kangyuso.github.io/carbcontpred/articles/web_only/ROI_Files.html">article</a>
-can lead to some loss of data. For example, visualizing the
-<code>ROI_Predicted_Carbon.csv</code> data file on ArcGIS Pro leads to
-some of the data missing in the raster:</p>
-<p><img src="arcgis_raster_carbon.png" style="width:75.0%"></p>
+can lead to some loss of data if the Cellsize is too small in the Point
+to Raster tool of ArcGIS Pro. For example, visualizing the
+<code>ROI_Predicted_Carbon.csv</code> data file on ArcGIS Pro using a
+Cellsize of 0.056 leads to some of the data missing in the raster:</p>
+<p><img src="arcgis_raster_0.056.png" style="width:75.0%"></p>
 <p><strong>Figure 1.</strong> <em>A raster of the Hudson Bay Lowlands
 showing the predicted organic carbon content in percent dry mass of the
 Region of Interest (ROI). The image is generated using the data file
@@ -195,8 +195,12 @@ gravimetric water content, and bulk density. The response in
 <code>cpred</code> can be other different soil chemical properties such
 as nitrogen or inorganic carbon content. Additionally,
 <code>carbcontpred</code> can be customized to predict soil properties
-not only for other peatland regions in the world, but also other
-ecosystems and biomes. bui # References {#references .unnumbered}</p>
+not only for other peatland regions in the world but also for other
+ecosystems and biomes.</p>
+</div>
+<div class="section level2">
+<h2 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+</h2>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-ji2015accounting" class="csl-entry">
 Ji, W, RA Viscarra Rossel, and Z Shi. 2015. <span>“Accounting for the

@@ -93,9 +93,8 @@ has been used to detect soil organic matter. The NIR region consists of
 wavelengths between 780 and 2500 nm and has been used to detect H[2]O
 and CO[2]. The visible region and the near infrared (NIR) region can be
 combined to form the visible-near infrared (vis-NIR) region. This region
-has been used to predict a number of different soil properties, but
-organic carbon is among the most successful for accurate predictions
-<span class="citation">(Stenberg et al. 2010)</span>.</p>
+has been used to predict several different soil properties, but organic
+carbon is among the most successful for accurate predictions <span class="citation">(Stenberg et al. 2010)</span>.</p>
 </div>
 <div class="section level2">
 <h2 id="effect-of-water-on-soil-vis-nir-spectra">Effect of water on soil vis-NIR spectra<a class="anchor" aria-label="anchor" href="#effect-of-water-on-soil-vis-nir-spectra"></a>
@@ -112,7 +111,7 @@ Rossel, and Shi 2015)</span>.</p>
 <p><img src="Absorbance_Water.png" style="width:75.0%"></p>
 <p><strong>Figure 1.</strong> <em>The absorbance spectra (Log 1/R) of 34
 soil samples that were measured in the field (grey), in the lab (black),
-and after direct standardization (red) was used to remove environmental
+and after direct standardization (red) were used to remove environmental
 factors like water from the field spectra <span class="citation">(Ji,
 Viscarra Rossel, and Shi 2015)</span>.</em></p>
 <p>The <code>carbcontpred</code> package uses dried soil samples for the
@@ -224,20 +223,20 @@ samples used for the <code>SoilMetrics_v01.csv</code> data set and
 collection in the Hudson Bay Lowlands.</p>
 <p><img src="peat_corer.png" style="width:75.0%"></p>
 <p><strong>Figure 2.</strong> <em>The stainless steel peat corer used to
-collect soil core samples. It has length of ~80 cm and a width of ~10 cm
-wide. </em></p>
+collect soil core samples. It has a length of ~80 cm and a width of ~10
+cm wide. </em></p>
 <p><img src="sample_collection.png" style="width:75.0%"></p>
 <p><strong>Figure 3.</strong> <em>The stainless steel peat corer being
 used to collect soil core samples near the Attawapiskat First Nation
-community in northern Ontario, Canada . </em></p>
+community in northern Ontario, Canada. </em></p>
 <p>The samples were divided into 11.56 cm<sup>3</sup> segments and
 weighed using a Mettler Toledo Standard ME-T Precision Balance. The
 reflectance of the samples was measured using an ASD FieldSpec 4 Hi-Res
-NG spectrometer. The soil samples were then places in individual
+NG spectrometer. The soil samples were then placed in individual
 aluminum trays and air-dried in a Lab-Line Model 3511 L-C Oven as shown
 in <strong>Figure 4</strong>. The soil samples were then manually
-grounded using a hammer and then the mass and reflectance was measured
-again. Finally the soil samples were sent to the University of Guelph’s
+grounded using a hammer and then the mass and reflectance were measured
+again. Finally, the soil samples were sent to the University of Guelph’s
 Agriculture and Food Laboratory for carbon analysis.</p>
 <p><img src="oven_dry.jpg" style="width:75.0%"></p>
 <p><strong>Figure 4.</strong> <em>The soil samples being air-dried in a
@@ -246,7 +245,7 @@ Lab-Line Model 3511 L-C Oven.</em></p>
 <div class="section level2">
 <h2 id="linear-regression-modeling-in-cpred">Linear regression modeling in cpred<a class="anchor" aria-label="anchor" href="#linear-regression-modeling-in-cpred"></a>
 </h2>
-<p>There are a number of different approaches that regression models can
+<p>There are several different approaches that regression models can
 take to predict soil properties using reflectance. One such example is
 by using the “deviation of arch” (DOA) parameter of the spectra which is
 effective for estimating soil organic matter such as organic carbon.
@@ -275,8 +274,7 @@ due to its strong performance in <strong>Table 2</strong>.</p>
 <p>Min-max normalization is a technique where the data values in a data
 set are subtracted by the minimum value and then divided by the range
 which is the difference between the maximum and minimum values <span class="citation">(Sinsomboonthong et al. 2022)</span>. Min-max
-normalization can be demonstrated through the following equation
-where:</p>
+normalization can be demonstrated through the following equation:</p>
 <p><span class="math display">\[\begin{equation}
 \label{eq:1}X'=\frac{X - min(X)}{max(X) -
 min(X)}\end{equation}\]</span></p>
