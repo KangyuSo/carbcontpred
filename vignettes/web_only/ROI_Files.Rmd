@@ -17,7 +17,7 @@ To extract an ROI data file for ````mappred```` you will first download a data s
 
 You will then generate a raster of spectral reflectance from this data file using the Band Math tool in ENVI which can be found in the Band Algera folder in the Toolbox. Band Math will ask for an equation prompt which you will create using the spectral bands you chose to use. In band math, the equation will be written as the following:
 
-\begin{equation} \label{eq:1}=((B[a] + B[b] + … B[z])/n)\end{equation}
+[1]\begin{equation} \label{eq:1}((B[a] + B[b] + … B[z])/n)\end{equation}
 
 *where B[a, b, … z] are the bands you chose to use and n is the total number of chosen bands.*
 
@@ -25,7 +25,7 @@ Applying this equation in Band Math will generate a raster showing the average r
 
 ## Example of Application
 
-To extract ````Reflectance_ROI.csv```` which is the example ROI data file in the ````carbcontpred```` package we downloaded a dataset from the Moderate Resolution Imaging Spectroradiometer (MODIS) satellite operated by the National Aeronautics and Space Administration (NASA). Specifically we used MODIS/Terra Surface Reflectance Daily L2G Global 1km and 500m SIN Grid data set. This data set provides an estimate of surface spectral reflectance at the ground level. More information about this data set can be found [here](https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/MOD09GA). For this example, we used the data captured on October 3 of 2022. We downloaded this data from the NASA Earthdata Search [website](https://search.earthdata.nasa.gov/search) under the ID MOD09GA.A2022276.h13v03.061.2022278035218. We chose this date because it is within the same year that the soil samples were collected. Although the soil samples were collected in July, we chose October because it is before snowfall and after the growing season in northern Ontario, which means that spectral reflectance of the soil is less obstructed by snow or vegetation (Earthdata, 2022). We opened downloaded file on ENVI and used Data Manager at the top ribbon to load a true colour composite of the file. Using the data set [website](https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/MOD09GA) for reference, we generated a true colour composite by putting Band 1 in the red channel, Band 4 in the green channel, and Band 3 in the blue channel (United States Geological Survey, n.d.).
+To extract ````Reflectance_ROI.csv```` which is the example ROI data file in the ````carbcontpred```` package we downloaded a dataset from the Moderate Resolution Imaging Spectroradiometer (MODIS) satellite operated by the National Aeronautics and Space Administration (NASA). Specifically we used MODIS/Terra Surface Reflectance Daily L2G Global 1km and 500m SIN Grid data set. This data set provides an estimate of surface spectral reflectance at the ground level. More information about this data set can be found [here](https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/MOD09GA). For this example, we used the data captured on October 3 of 2022. We downloaded this data from the NASA Earthdata Search [website](https://search.earthdata.nasa.gov/search) under the ID MOD09GA.A2022276.h13v03.061.2022278035218. We chose this date because it is within the same year that the soil samples were collected. Although the soil samples were collected in July, we chose October because it is before snowfall and after the growing season in northern Ontario, which means that spectral reflectance of the soil is less obstructed by snow or vegetation (Earthdata, 2022). We opened the downloaded file on ENVI and used Data Manager at the top ribbon to load a true colour composite of the file. Using the data set [website](https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/MOD09GA) for reference, we generated a true colour composite by putting Band 1 in the red channel, Band 4 in the green channel, and Band 3 in the blue channel (United States Geological Survey, n.d.).
 
 ![](envi_true_colour.png){width="75%"}
 
@@ -33,7 +33,7 @@ To extract ````Reflectance_ROI.csv```` which is the example ROI data file in the
 
 We generated a raster of spectral reflectance from this data file using Band Math and all 7 of the spectral bands in the file. This is because the 7 bands together cover a wavelength range from 620 nm to 2155 nm, which is a majority of the visible-near infrared (vis-NIR) region as shown on this [website](https://lpdaac.usgs.gov/products/mod09gav006/) (United States Geological Survey, n.d.). Thus, our equation for Band Math is constructed as follows:
 
-\begin{equation} \label{eq:1}=((B1 + B2 + B3 + B4 + B5 + B6 + B7)/7)\end{equation}
+[2]\begin{equation} \label{eq:2}((B1 + B2 + B3 + B4 + B5 + B6 + B7)/7)\end{equation}
 
 *where B1 to B7 are Bands 1 to 7 from the MOD09GA.A2022276.h13v03.061.2022278035218 data file.*
 
