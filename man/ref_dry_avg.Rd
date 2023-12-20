@@ -16,7 +16,7 @@ A data frame with 432 observations and 3 variables:
 data(ref_dry_avg)
 }
 \description{
-A dataset containing information about the spectral reflectance and organic
+A data set containing information about the spectral reflectance and organic
 carbon content of 432 post-dried soil samples collected from the Hudson Bay
 Lowlands.
 }
@@ -26,6 +26,7 @@ Lowlands.
 }
 \keyword{Soil}
 \keyword{carbon}
-\keyword{datasets}
+\keyword{data}
+\keyword{sets}
 \keyword{spectroscopy}
 \keyword{stock}

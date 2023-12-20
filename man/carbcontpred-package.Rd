@@ -4,19 +4,19 @@
 \name{carbcontpred-package}
 \alias{carbcontpred}
 \alias{carbcontpred-package}
-\title{carbcontpred: Linear Regression of Soil Spectral Reflectance and Organic Carbcon Content Data to Help Predict Organic Carbon in Regions of Interest for Mapping Purposes}
+\title{carbcontpred: Linear Regression of Soil Spectral Reflectance and Organic Carbon Content Data to Help Predict Organic Carbon in Regions of Interest for Mapping Purposes}
 \description{
-The package first builds and cross-validates a linear regression model for a dataset containing the spectral reflectance and organic carbon content of soil samples. The linear regression model uses the reflectance to predict the organic carbon content. The package then uses the predictions from the linear regression model to predict the organic carbon content of a Region of Interest (ROI) data table using its spectral reflectance values.
+The package first builds and cross-validates a linear regression model for a data set containing the spectral reflectance and organic carbon content of soil samples. The linear regression model uses the reflectance to predict the organic carbon content. The package then uses the predictions from the linear regression model to predict the organic carbon content of a Region of Interest (ROI) data table using its spectral reflectance values.
 
 This package is an exercise in package creation using R studio. The package
 includes a function that builds and implements a linear regression model and
-a sample dataset containing the reflectance and organic carbon data of soil
+a sample data set containing the reflectance and organic carbon data of soil
 samples. The package includes another function that extracts an algebraic
 equation based on the predictions from the linear regression model and uses
 it to predict the organic carbon content of a sample ROI data file  using its
-spectral reflectance data. The package contains a sample dataset of
+spectral reflectance data. The package contains a sample data set of
 predictions from the linear regression model. The package also includes the
-documentation for the functions and datasets.
+documentation for the functions and data sets.
 }
 \references{
 \url{https://github.com/KangyuSo/carbcontpred}
@@ -25,7 +25,6 @@ documentation for the functions and datasets.
 Useful links:
 \itemize{
   \item \url{https://github.com/KangyuSo/carbcontpred}
-  \item \url{http://carbcontpred.r-lib.org/}
   \item \url{https://kangyuso.github.io/carbcontpred/}
   \item Report bugs at \url{https://github.com/KangyuSo/carbcontpred/issues}
 }

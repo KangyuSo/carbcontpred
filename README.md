@@ -7,13 +7,12 @@
 <!-- badges: end -->
 
 The first goal of carbcontpred is to build and cross-validate a linear
-regression model for a dataset containing the spectral reflectance and
+regression model for a data set containing the spectral reflectance and
 organic carbon content of soil samples, and then use it to predict the
 organic carbon content based on reflectance. The second goal of
 carbcontpred is to use the predictions from the linear regression model
-to predict the organic carbon content of an Region of Interest (ROI)
-data table containing the spectral reflectance of spatial points on a
-map.
+to predict the organic carbon content of a Region of Interest (ROI) data
+table containing the spectral reflectance of spatial points on a map.
 
 ## Installation
 
@@ -38,7 +37,7 @@ This is a basic example which shows you how to solve a common problem:
 install.packages("remotes", repos = "http://cran.us.r-project.org")
 #> 
 #> The downloaded binary packages are in
-#>  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpxjfZ4w/downloaded_packages
+#>  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpggZJDT/downloaded_packages
 library(remotes)
 
 ## Install and load the "carbcontpred" package
@@ -47,11 +46,11 @@ remotes::install_github("KangyuSo/carbcontpred",
 #> Downloading GitHub repo KangyuSo/carbcontpred@HEAD
 #> 
 #> ── R CMD build ─────────────────────────────────────────────────────────────────
-#>      checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/RtmpxjfZ4w/remotese44c98d1661/KangyuSo-carbcontpred-8a8e4ac/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/RtmpxjfZ4w/remotese44c98d1661/KangyuSo-carbcontpred-8a8e4ac/DESCRIPTION’
+#>      checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/RtmpggZJDT/remotesb58565a7e221/KangyuSo-carbcontpred-d4daad3/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/RtmpggZJDT/remotesb58565a7e221/KangyuSo-carbcontpred-d4daad3/DESCRIPTION’
 #>   ─  preparing ‘carbcontpred’:
-#>      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
+#>    checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
 #>   ─  installing the package to build vignettes
-#>      creating vignettes ...  ✔  creating vignettes (6s)
+#>      creating vignettes ...  ✔  creating vignettes (7s)
 #>   ─  checking for LF line-endings in source and make files and shell scripts
 #>   ─  checking for empty or unneeded directories
 #>        NB: this package now depends on R (>= 3.5.0)
@@ -59,15 +58,15 @@ remotes::install_github("KangyuSo/carbcontpred",
 #>      serialize/load version 3 cannot be read in older versions of R.
 #>      File(s) containing such objects:
 #>        ‘carbcontpred/vignettes/ref_dry_avg.rda’
-#>   ─  building ‘carbcontpred_0.0.0.9000.tar.gz’
+#> ─  building ‘carbcontpred_0.0.0.9000.tar.gz’
 #>      
 #> 
 library(carbcontpred)
 
-## Load the dataset 
+## Load the data set 
 data <- data.frame(ref_dry_avg)
 
-## Create a linear regression model with "Reflectance" as the predictor variable, "Organic_Carbon" as the response variable, test size of 70%, 10 folds for the cross-validation, and "Predicted_Organic_Carbon" as the output column
+## Create a linear regression model with "Reflectance" as the predictor variable, "Organic_Carbon" as the response variable, a test size of 70%, 10 folds for the cross-validation, and "Predicted_Organic_Carbon" as the output column
 pred_c <- cpred(data, "Reflectance", "Organic_Carbon", 0.7, 10, "Predicted_Organic_Carbon")
 #> Loading required package: ggplot2
 #> Loading required package: lattice
@@ -76,8 +75,8 @@ pred_c <- cpred(data, "Reflectance", "Organic_Carbon", 0.7, 10, "Predicted_Organ
 View(pred_c)
    
 ## Load the ROI data file "ROI_Predicted_Carbon.csv" and apply min-max normalization on the spectral reflectance values 
-## Extract an equation for predicting organic carbon content using reflectance based on the results of the "cpred" function and use it to predicted the organic carbon content of the "ROI_Predicted_Carbon.csv" file using its reflectance values
-## Update the ROI data file with the predictions and save it as a csv file output titled "ROI_Predicted_Carbon"
+## Extract an equation for predicting organic carbon content using reflectance based on the results of the "cpred" function and use it to predict the organic carbon content of the "ROI_Predicted_Carbon.csv" file using its reflectance values
+## Update the ROI data file with the predictions and save it as a CSV file output titled "ROI_Predicted_Carbon"
 mappred_c <- mappred(pred_c, "Reflectance", "Predicted_Organic_Carbon", system.file("extdata", "Reflectance_ROI.csv", package = "carbcontpred"), "ROI_Predicted_Carbon")
 #> Rows: 12209 Columns: 7
 #> ── Column specification ────────────────────────────────────────────────────────
@@ -88,7 +87,7 @@ mappred_c <- mappred(pred_c, "Reflectance", "Predicted_Organic_Carbon", system.f
 #> ℹ Use `spec()` to retrieve the full column specification for this data.
 #> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 
-## View the first 10 rows of the resulting csv file
+## View the first 10 rows of the resulting CSV file
 head(read.csv(system.file("ROI_folder", "ROI_Predicted_Carbon.csv", package = "carbcontpred")), 10)
 #>    X..File.X File.Y    Map.X   Map.Y      Lat       Lon       B1
 #> 1         91   1677 -5517591 5894728 53.01250 -82.47585 68.85428

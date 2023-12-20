@@ -2,9 +2,9 @@
 % Please edit documentation in R/mappred.R
 \name{mappred}
 \alias{mappred}
-\title{The function first extracts an algebraic equation based on the reflectance and predicted organic carbon content of soil samples. Then the function applies min-max normalization over the reflectance values of an Region of Interest (ROI) data table collected from image processing and analysis software ENVI. Then the function applies the extracted algebraic equation on the reflectance values of points in the ROI data file to predict organic carbon content. Then the function updates the ROI data file with the predictions and outputs it as a new csv file.}
+\title{The function first extracts an algebraic equation based on the reflectance and predicted organic carbon content of soil samples. Then the function applies min-max normalization over the reflectance values of a Region of Interest (ROI) data table collected from image processing and analysis software ENVI. Then the function applies the extracted algebraic equation on the reflectance values of points in the ROI data file to predict organic carbon content. Then the function updates the ROI data file with the predictions and outputs it as a new CSV file.}
 \source{
-The data used for the predictions was collected by Kangyu So, Dr. Alemu Gonsamo, and Dr. Cheryl A. Rogers (All affiliated with McMaster University) from the Hudson Bay Lowlands region on July 2022. The ROI dataset was collected from images collected by the Moderate Resolution Imaging Spectroradiometer (MODIS) satellite operated by the National Aeronautics and Space Administration (NASA).
+The data used for the predictions was collected by Kangyu So, Dr. Alemu Gonsamo, and Dr. Cheryl A. Rogers (All affiliated with McMaster University) from the Hudson Bay Lowlands region on July 2022. The ROI data set was collected from images collected by the Moderate Resolution Imaging Spectroradiometer (MODIS) satellite operated by the National Aeronautics and Space Administration (NASA).
 }
 \usage{
 mappred(
@@ -13,7 +13,7 @@ ROI_dataset_path, output_dataset
 )
 }
 \arguments{
-\item{predictions_dataframe}{The dataset resulting from the output of the cpred function, contains the average reflectance and measured and predicted organic carbon content of some soil samples}
+\item{predictions_dataframe}{The data set resulting from the output of the cpred function, contains the average reflectance and measured and predicted organic carbon content of some soil samples}
 
 \item{reflectance_column}{The average reflectance at a given wavelength range in the predictions_dataframe}
 
@@ -27,7 +27,7 @@ ROI_dataset_path, output_dataset
 A CSV file containing the ROI data table as well as the predicted organic carbon content of the points using an algebraic equation extracted from the predictions of a cross-validated linear regression model
 }
 \description{
-The function first extracts an algebraic equation based on the reflectance and predicted organic carbon content of soil samples. Then the function applies min-max normalization over the reflectance values of an Region of Interest (ROI) data table collected from image processing and analysis software ENVI. Then the function applies the extracted algebraic equation on the reflectance values of points in the ROI data file to predict organic carbon content. Then the function updates the ROI data file with the predictions and outputs it as a new csv file.
+The function first extracts an algebraic equation based on the reflectance and predicted organic carbon content of soil samples. Then the function applies min-max normalization over the reflectance values of a Region of Interest (ROI) data table collected from image processing and analysis software ENVI. Then the function applies the extracted algebraic equation on the reflectance values of points in the ROI data file to predict organic carbon content. Then the function updates the ROI data file with the predictions and outputs it as a new CSV file.
 }
 \examples{
 mappred_c <- mappred(

@@ -10,7 +10,7 @@ vignette: >
 
 # Vis-NIR spectroscopy for predicting soil organic carbon content
 
-Over the past couple of decades, the application of visible and near infrared (NIR) regions for soil science has been researched intensively. The visible region consists of wavelengths between 400 and 780 nm and has been used to detect soil organic matter. The NIR region consists of wavelengths between 780 and 2500 nm and has been used to detect H[2]O and CO[2]. The visible region and the near infrared (NIR) region can be combined to form the visible-near infrared (vis-NIR) region. This region has been used to predict a number of different soil properties, but organic carbon is among the most successful for accurate predictions [@stenberg2010visible].
+Over the past couple of decades, the application of visible and near infrared (NIR) regions for soil science has been researched intensively. The visible region consists of wavelengths between 400 and 780 nm and has been used to detect soil organic matter. The NIR region consists of wavelengths between 780 and 2500 nm and has been used to detect H[2]O and CO[2]. The visible region and the near infrared (NIR) region can be combined to form the visible-near infrared (vis-NIR) region. This region has been used to predict several different soil properties, but organic carbon is among the most successful for accurate predictions [@stenberg2010visible].
 
 # Effect of water on soil vis-NIR spectra
 
@@ -18,7 +18,7 @@ Water has a strong effect on the reflectance of soil in the vis-NIR region, espe
 
 ![](Absorbance_Water.png){width="75%"}
 
-**Figure 1.** *The absorbance spectra (Log 1/R) of 34 soil samples that were measured in the field (grey), in the lab (black), and after direct standardization (red) was used to remove environmental factors like water from the field spectra [@ji2015accounting].*
+**Figure 1.** *The absorbance spectra (Log 1/R) of 34 soil samples that were measured in the field (grey), in the lab (black), and after direct standardization (red) were used to remove environmental factors like water from the field spectra [@ji2015accounting].*
 
 The ````carbcontpred```` package uses dried soil samples for the example data sets to illustrate the capability of using spectra reflectance for predicting soil organic carbon content. Dried soil samples were chosen because the output from ````cpred```` yielded a higher R^2^ value (~0.61) than the wet soil samples (~0.52).
 
@@ -41,13 +41,13 @@ We collected soil core samples using a stainless steel peat corer. **Figure 2** 
 
 ![](peat_corer.png){width="75%"}
 
-**Figure 2.** *The stainless steel peat corer used to collect soil core samples. It has length of ~80 cm and a width of ~10 cm wide. *
+**Figure 2.** *The stainless steel peat corer used to collect soil core samples. It has a length of ~80 cm and a width of ~10 cm wide. *
 
 ![](sample_collection.png){width="75%"}
 
-**Figure 3.** *The stainless steel peat corer being used to collect soil core samples near the Attawapiskat First Nation community in northern Ontario, Canada . *
+**Figure 3.** *The stainless steel peat corer being used to collect soil core samples near the Attawapiskat First Nation community in northern Ontario, Canada. *
 
-The samples were divided into 11.56 cm^3^ segments and weighed using a Mettler Toledo Standard ME-T Precision Balance. The reflectance of the samples was measured using an ASD FieldSpec 4 Hi-Res NG spectrometer. The soil samples were then places in individual aluminum trays and air-dried in a Lab-Line Model 3511 L-C Oven as shown in **Figure 4**. The soil samples were then manually grounded using a hammer and then the mass and reflectance was measured again. Finally the soil samples were sent to the University of Guelph’s Agriculture and Food Laboratory for carbon analysis. 
+The samples were divided into 11.56 cm^3^ segments and weighed using a Mettler Toledo Standard ME-T Precision Balance. The reflectance of the samples was measured using an ASD FieldSpec 4 Hi-Res NG spectrometer. The soil samples were then placed in individual aluminum trays and air-dried in a Lab-Line Model 3511 L-C Oven as shown in **Figure 4**. The soil samples were then manually grounded using a hammer and then the mass and reflectance were measured again. Finally, the soil samples were sent to the University of Guelph’s Agriculture and Food Laboratory for carbon analysis. 
 
 ![](oven_dry.jpg){width="75%"}
 
@@ -55,7 +55,7 @@ The samples were divided into 11.56 cm^3^ segments and weighed using a Mettler T
 
 # Linear regression modeling in cpred
 
-There are a number of different approaches that regression models can take to predict soil properties using reflectance. One such example is by using the “deviation of arch” (DOA) parameter of the spectra which is effective for estimating soil organic matter such as organic carbon. This parameter covers the reflectance wavelength range in the range between 550 nm and 650 nm. A DOA-based regression model can come in 4 different types: linear, quadratic, power, and exponential. The best estimation of soil organic matter amongst these 4 types is linear, yielding the highest R^2^ value for the validation results at 0.51 ± 0.06 for the validation results as shown in  **Table 2**. This type of DOA-based regression model employs a linear regression model [@zheng2016estimation].
+There are several different approaches that regression models can take to predict soil properties using reflectance. One such example is by using the “deviation of arch” (DOA) parameter of the spectra which is effective for estimating soil organic matter such as organic carbon. This parameter covers the reflectance wavelength range in the range between 550 nm and 650 nm. A DOA-based regression model can come in 4 different types: linear, quadratic, power, and exponential. The best estimation of soil organic matter amongst these 4 types is linear, yielding the highest R^2^ value for the validation results at 0.51 ± 0.06 for the validation results as shown in  **Table 2**. This type of DOA-based regression model employs a linear regression model [@zheng2016estimation].
 
 **Table 2.** *The calibration and validation performance for different types of deviation of arch (DOA)-based regression models [@zheng2016estimation].*
 
@@ -65,7 +65,7 @@ Although the wavelength range of the DOA parameter falls within the vis-NIR regi
 
 # Min-max normalization in mappred
 
-Min-max normalization is a technique where the data values in a data set are subtracted by the minimum value and then divided by the range which is the difference between the maximum and minimum values [@sinsomboonthong2022performance]. Min-max normalization can be demonstrated through the following equation where:
+Min-max normalization is a technique where the data values in a data set are subtracted by the minimum value and then divided by the range which is the difference between the maximum and minimum values [@sinsomboonthong2022performance]. Min-max normalization can be demonstrated through the following equation:
 
 \begin{equation} \label{eq:1}X'=\frac{X - min(X)}{max(X) - min(X)}\end{equation}
 

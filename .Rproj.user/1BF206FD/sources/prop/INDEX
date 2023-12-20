@@ -42,6 +42,7 @@
 ~%2Fcarbcontpred%2Fdata-raw%2Fprocess-ref_dry_avg.Rmd="EFD3A0D0"
 ~%2Fcarbcontpred%2Fdata-raw%2Fref_dry_avg.R="904A9092"
 ~%2Fcarbcontpred%2Fdata-raw%2Fref_dry_avg.Rmd="A3D0B478"
+~%2Fcarbcontpred%2Fdocs%2Fpkgdown.yml="8EAE1C3B"
 ~%2Fcarbcontpred%2Finst%2Fextdata%2FReflectance_ROI.csv="D7938413"
 ~%2Fcarbcontpred%2Finst%2Ftestdata%2Fmappred_c_actual.csv="171B2A1E"
 ~%2Fcarbcontpred%2Finst%2Ftestdata%2Fpred_c_actual.csv="72AD0801"
@@ -75,3 +76,4 @@
 ~%2Fcarbcontpred%2Fvignettes%2Fweb_only%2FREFERENCES.bib="E49C744F"
 ~%2Fcarbcontpred%2Fvignettes%2Fweb_only%2FROI_Files.Rmd="3B0B5869"
 ~%2Fcarbcontpred%2Fvignettes%2Fweb_only%2Flimitation_reuse.Rmd="C6729BDF"
+~%2Fcarbcontpred%2Fvignettes%2Fweb_only%2Fpackages.bib="FDF2DC13"

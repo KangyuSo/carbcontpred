@@ -10,7 +10,7 @@ The data was collected by Kangyu So, Dr. Alemu Gonsamo, and Dr. Cheryl A. Rogers
 cpred(data, reflectance, carbon, test_size, folds, prediction)
 }
 \arguments{
-\item{data}{The dataset containing the average reflectance and organic carbon content of soil samples}
+\item{data}{The data set containing the average reflectance and organic carbon content of soil samples}
 
 \item{reflectance}{The average reflectance at a given wavelength range}
 

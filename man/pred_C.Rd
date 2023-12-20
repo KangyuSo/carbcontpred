@@ -17,7 +17,7 @@ A data frame with 303 observations and 4 variables:
 data(pred_c)
 }
 \description{
-A dataset containing information about the spectral reflectance, measured
+A data set containing information about the spectral reflectance, measured
 organic carbon content, and predicted organic carbon content of 303
 post-dried soil samples collected from the Hudson Bay Lowlands.
 }
@@ -29,7 +29,8 @@ post-dried soil samples collected from the Hudson Bay Lowlands.
 \keyword{Terrestrial}
 \keyword{carbon}
 \keyword{content}
-\keyword{datasets}
+\keyword{data}
 \keyword{estimation}
 \keyword{modeling}
+\keyword{sets}
 \keyword{spatial}

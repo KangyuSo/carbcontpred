@@ -11,13 +11,13 @@ NULL
 #'
 #' This package is an exercise in package creation using R studio. The package 
 #' includes a function that builds and implements a linear regression model and 
-#' a sample dataset containing the reflectance and organic carbon data of soil 
+#' a sample data set containing the reflectance and organic carbon data of soil 
 #' samples. The package includes another function that extracts an algebraic 
 #' equation based on the predictions from the linear regression model and uses 
 #' it to predict the organic carbon content of a sample ROI data file  using its
-#' spectral reflectance data. The package contains a sample dataset of 
+#' spectral reflectance data. The package contains a sample data set of 
 #' predictions from the linear regression model. The package also includes the 
-#' documentation for the functions and datasets.
+#' documentation for the functions and data sets.
 #'
 #' @docType package
 #' @name carbcontpred-package
@@ -27,7 +27,7 @@ NULL
 
 #' Reflectance values and organic carbon content for post-dried soil samples.
 #'
-#' A dataset containing information about the spectral reflectance and organic 
+#' A data set containing information about the spectral reflectance and organic 
 #' carbon content of 432 post-dried soil samples collected from the Hudson Bay 
 #' Lowlands.
 #'
@@ -39,7 +39,7 @@ NULL
 #' }
 #'
 #' @docType data
-#' @keywords datasets
+#' @keywords data sets
 #' @keywords Soil carbon stock
 #' @keywords Soil spectroscopy
 #' @name ref_dry_avg
@@ -54,7 +54,7 @@ NULL
 
 #' Reflectance values and measured and predicted organic carbon content for post-dried soil samples.
 #'
-#' A dataset containing information about the spectral reflectance, measured 
+#' A data set containing information about the spectral reflectance, measured 
 #' organic carbon content, and predicted organic carbon content of 303 
 #' post-dried soil samples collected from the Hudson Bay Lowlands.
 
@@ -67,7 +67,7 @@ NULL
 #' }
 #' 
 #' @docType data
-#' @keywords datasets
+#' @keywords data sets
 #' @keywords Terrestrial spatial modeling
 #' @keywords Soil carbon content estimation
 #' @name pred_c

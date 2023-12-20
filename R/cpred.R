@@ -1,6 +1,6 @@
 #' Create a linear regression model, cross-validate it, and use it to predict the organic carbon content of soil samples based on their reflectance
 #'
-#' @param data The dataset containing the average reflectance and organic carbon content of soil samples
+#' @param data The data set containing the average reflectance and organic carbon content of soil samples
 #' @param reflectance The average reflectance at a given wavelength range
 #' @param carbon The organic carbon content by percent dry weight
 #' @param test_size The test size for the model

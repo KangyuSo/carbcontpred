@@ -7,7 +7,7 @@ output: html_document
 
 I have two files titled `SoilReflectanceDry_v01.csv` and `SoilMetrics_v01.csv`. The `SoilReflectanceDry_v01.csv` file contains data on the spectral reflectance of post-dried soil samples between the wavelengths 350 nm and 2500 nm in increments of 1 nm. The soil samples were collected from the Hudson Bay Lowlands. The `SoilMetrics_v01.csv` file contains biophysical and biochemical metrics of the soil samples. This includes the organic carbon content of the soil samples by percent dry weight.
 
-To increase the shareability of the data I will first read the two data sets into one. I will then convert the data set to an `.RData` file and then document it. This will enable the data set to be bundled with package `carbcontpred`.
+To increase the shareability of the data I will first read the two data sets into one. I will then convert the data set to an `.RData` file and then document it. This will enable the data set to be bundled with the package `carbcontpred`.
 
 Install and load the package needed to preprocess the data:
 ```{r}
@@ -25,9 +25,9 @@ The data frame consists of 2151 observations of 433 variables. Get a summary of 
 summary(data_ref)
 ```
 
-The data was collected by Kangyu So, Dr. Alemu Gonsamo, and Dr. Cheryl A. Rogers from McMaster University. The data was collected from 18 sites near the Cree First Nations communities in the Hudson Bay Lowlands region of northern Ontario, Canada. The data was collected during the month of July 2023 and spectral measurements were collected during the month of August 2023. 
+The data was collected by Kangyu So, Dr. Alemu Gonsamo, and Dr. Cheryl A. Rogers from McMaster University. The data was collected from 18 sites near the Cree First Nations communities in the Hudson Bay Lowlands region of northern Ontario, Canada. The data was collected during July 2022 and spectral measurements were collected during August 2022. 
 
-The reflectance spectra is not normalized so I will calculate continuum removal for the data frame:
+The reflectance spectra are not normalized so I will calculate continuum removal for the data frame:
 ```{r}
 ref_dry <- as.data.frame(apply(data_ref[,-1], MARGIN=2, FUN =continuumRemoval, wav = data_ref$Wavelength))
 ref_dry <- cbind(Wavelength = data_ref$Wavelength, ref_dry)
@@ -70,7 +70,7 @@ The data frame consists of 432 observations of 13 variables. Get a summary of th
 summary(data_met)
 ```
 
-The data was collected by Kangyu So, Dr. Alemu Gonsamo, and Dr. Cheryl A. Rogers from McMaster University. The data was collected from 18 sites near the Cree First Nations communities in the Hudson Bay Lowlands region of northern Ontario, Canada. The data was collected during the month of July 2023 and biophysical measurements were collected during the month of August 2023. Biochemical measurements were done by the University of Guelph's Agriculture and Food Laboratory.
+The data was collected by Kangyu So, Dr. Alemu Gonsamo, and Dr. Cheryl A. Rogers from McMaster University. The data was collected from 18 sites near the Cree First Nations communities in the Hudson Bay Lowlands region of northern Ontario, Canada. The data was collected during July 2022 and biophysical measurements were collected during August 2022. Biochemical measurements were done by the University of Guelph's Agriculture and Food Laboratory.
 
 Install and load the package needed to preprocess the data:
 ```{r}
@@ -78,7 +78,7 @@ install.packages("dplyr")
 library(dplyr)
 ```
 
-Merge the organic carbon data from the `data_met` dataset to the `ref_dry_avg` dataset based on the ID of the soil samples
+Merge the organic carbon data from the `data_met` data set to the `ref_dry_avg` data set based on the ID of the soil samples
 ```{r}
 ref_dry_avg <- ref_dry_avg %>%
   left_join(data_met %>% select(Sample_ID, OC), by = "Sample_ID") %>%
