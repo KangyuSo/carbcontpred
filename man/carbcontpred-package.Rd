@@ -26,6 +26,7 @@ Useful links:
 \itemize{
   \item \url{https://github.com/KangyuSo/carbcontpred}
   \item \url{http://carbcontpred.r-lib.org/}
+  \item \url{https://kangyuso.github.io/carbcontpred/}
   \item Report bugs at \url{https://github.com/KangyuSo/carbcontpred/issues}
 }
 

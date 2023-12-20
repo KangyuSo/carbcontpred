@@ -52,5 +52,5 @@ It should be noted that using the two softwares ENVI and ArcGIS Pro for extracti
 # Reuse for different soil properties and areas
 
 While  ````carbcontpred```` creates a predictive model and map for carbon stock through spectral reflectance, the package can be adapted for a variety of other uses. Different soil properties can be used as the predictor in ````cpred```` such as peat content, gravimetric water content, and bulk density. The response in ````cpred```` can be other different soil chemical properties such as nitrogen or inorganic carbon content. Additionally, ````carbcontpred```` can be customized to predict soil properties not only for other peatland regions in the world, but also other ecosystems and biomes. 
-
+bui
 # References {#references .unnumbered}
