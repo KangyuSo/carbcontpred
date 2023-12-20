@@ -1,5 +1,6 @@
 ---
 title: "carbcontpred-vignette"
+bibliography: INTRO_REFERENCES.bib
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{carbcontpred-vignette}
@@ -148,13 +149,13 @@ r_squared <- cor(pred_c$Organic_Carbon, pred_c$Predicted_Organic_Carbon)^2
 cat("R-squared:", r_squared, "\n")
 ```
 
-The R^2^ value for this example is ~0.61, which is in line with the R^2^ values from studies that used standard global soil spectral data from peatlands to predict organic carbon (de Sousa Mendes et al., 2022).
+The R^2^ value for this example is ~0.61, which is in line with the R^2^ values from studies that used standard global soil spectral data from peatlands to predict organic carbon [@de2022peatlands].
 
 See the ````README.Rmd```` files for additional details on how to utilize ````cpred````. See the ````cpred.R```` file for additional information about the function.
 
 ## Pre-Processing Data for mappred
 
-The ````mappred```` function uses two data sets. The first data set is a file containing spatial information and spectral reflectance values of an ROI. The example file used in the vignette is ````Reflectance_ROI.csv```` in the ````\inst\extdata folder````. For more information on how to extract an ROI data file, see (INSERT WEBSITE LINK). The second data set consists of the sample ID, average reflectance, and measured and predicted organic carbon content of post-dried soil samples. This is normally the output from the ````cpred```` function as shown in the previous section. The example file used in the vignette is ````pred_c.rda```` in the ````\data folder````.
+The ````mappred```` function uses two data sets. The first data set is a file containing spatial information and spectral reflectance values of an ROI. The example file used in the vignette is ````Reflectance_ROI.csv```` in the ````\inst\extdata folder````. For more information on how to extract an ROI data file, see this [article](https://kangyuso.github.io/carbcontpred/articles/web_only/ROI_Files.html). The second data set consists of the sample ID, average reflectance, and measured and predicted organic carbon content of post-dried soil samples. This is normally the output from the ````cpred```` function as shown in the previous section. The example file used in the vignette is ````pred_c.rda```` in the ````\data folder````.
 
 ## mappred Function Overview:
 
@@ -217,7 +218,7 @@ ggplot(ROI_Predicted_Carbon, aes(x = B1)) +
 
 **Figure 4.** *A histogram of the* ````ROI_Predicted_Carbon.csv```` *data file where the spectral reflectance value and the density of points with that value are the X and Y axis respectively. A kernel density curve is overlaid on the histogram in red.*
 
-To see how to use ````ROI_Predicted_Carbon.csv```` or another output from ````mappred```` to visualize the predicted organic carbon content of the ROI over a map, see (INSERT WEBSITE LINK).
+To see how to use ````ROI_Predicted_Carbon.csv```` or another output from ````mappred```` to visualize the predicted organic carbon content of the ROI over a map, see this [article](https://kangyuso.github.io/carbcontpred/articles/web_only/ROI_Files.html).
 
 See the ````README.Rmd```` files for additional details on how to utilize ````mappred````. See the ````mappred.R```` file for additional information about the function.
 
@@ -225,8 +226,4 @@ See the ````README.Rmd```` files for additional details on how to utilize ````ma
 
 The purpose of this ````R```` package is to make the soil spectral reflectance and organic carbon content data from a 2022 McMaster University Remote Sensing Laboratory project easily available for predictive modeling and mapping in an ````R```` environment. Currently, the package only uses the reflectance and organic carbon content data of the post-dried soil samples, but we invite others from the community to request additional metrics from the original project dataset, report issues such as spelling errors, and contribute to the ````carbcontpred```` package. To contribute to the package, create a branch in the repository and submit a pull request for your contribution. Contributions will be reviewed before approval and full credit will be given.
 
-# References
-
-| de Sousa Mendes, W., Sommer, M., Koszinski, S., & Wehrhan, M. (2022). Peatlands spectral data influence in 
-| &emsp;&emsp;global spectral modelling of soil organic carbon and total nitrogen using visible-near-infrared spectroscopy. 
-| &emsp;&emsp;*Journal of Environmental Management*, *317*, 115383. https://doi.org/10.1016/j.jenvman.2022.115383
+# References {#references .unnumbered}

@@ -25,6 +25,7 @@ documentation for the functions and datasets.
 Useful links:
 \itemize{
   \item \url{https://github.com/KangyuSo/carbcontpred}
+  \item \url{http://carbcontpred.r-lib.org/}
   \item Report bugs at \url{https://github.com/KangyuSo/carbcontpred/issues}
 }
 

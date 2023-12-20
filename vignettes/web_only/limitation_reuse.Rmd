@@ -1,5 +1,6 @@
 ---
 title: "Limitations and Reuse Potential"
+bibliography: REFERENCES.bib
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{limitation_reuse}
@@ -13,11 +14,11 @@ This article discusses how the ````carbcontpred```` package can be customized to
 
 # Using dry or wet soil samples
 
-The ````carbcontpred```` package uses dried soil samples for the example data sets due to the high water content in the samples affecting the performance of the predictions as mentioned in this [article](file:///Users/kangyuso/carbcontpred/docs/articles/web_only/Background_Information.html). However, soil samples from drier areas than the peatlands in the Hudson Bay Lowlands may benefit from utilizing wet soil samples instead. The water content within drier samples may be low enough that it would only have a small effect on the prediction accuracy (Ji et al., 2015). The drying process may lead to the loss of some carbon content within samples, and so dried soil samples that already had little water content beforehand may actually have a worse prediction accuracy than when they were wet. Thus, in some cases, using the wet soil samples for the ````carbcontpred```` package may lead to better prediction performance than if you were to use the dried soil samples. In the case of the example data sets, the soil samples were collected from peatlands which have a very high water content so the dried soil samples yielded better prediction accuracy (Price & Schlotzhauer, 1999).
+The ````carbcontpred```` package uses dried soil samples for the example data sets due to the high water content in the samples affecting the performance of the predictions as mentioned in this [article](https://kangyuso.github.io/carbcontpred/articles/web_only/Background_Information.html). However, soil samples from drier areas than the peatlands in the Hudson Bay Lowlands may benefit from utilizing wet soil samples instead. The water content within drier samples may be low enough that it would only have a small effect on the prediction accuracy [@ji2015accounting]. The drying process may lead to the loss of some carbon content within samples, and so dried soil samples that already had little water content beforehand may actually have a worse prediction accuracy than when they were wet. Thus, in some cases, using the wet soil samples for the ````carbcontpred```` package may lead to better prediction performance than if you were to use the dried soil samples. In the case of the example data sets, the soil samples were collected from peatlands which have a very high water content so the dried soil samples yielded better prediction accuracy [@price1999importance].
 
 # Continuity between cpred and mappred inputs and outputs
 
-We recommend that you keep the location of the soil samples for ````cpred```` and the ROI for ````mappred```` within the same area or nearby. Although models such as the linear regression model built in ````cpred```` can used either local or global data sets, the prediction performance using global data is worse than the performance for the local data. Additionally, the predictions from the linear regression model will likely not be helpful for predicting the organic carbon content of ROIs in different areas. The soil in a different area may contain minerals or other properties that affect the reflectance spectra, thus making predictions from one area to another very susceptible to covariables (de Sousa Mendes et al., 2022). We recommend at least keeping the type of soil or ground consistent between the soil samples for ````cpred```` and the ROI for ````mappred````. The example in the ````carbcontpred```` package uses an ROI that remains within ~200 km^2^ of the soil sample sites and covers mostly peatland, the same type of area as where the soil samples were collected from. 
+We recommend that you keep the location of the soil samples for ````cpred```` and the ROI for ````mappred```` within the same area or nearby. Although models such as the linear regression model built in ````cpred```` can used either local or global data sets, the prediction performance using global data is worse than the performance for the local data. Additionally, the predictions from the linear regression model will likely not be helpful for predicting the organic carbon content of ROIs in different areas. The soil in a different area may contain minerals or other properties that affect the reflectance spectra, thus making predictions from one area to another very susceptible to covariables [@de2022peatlands]. We recommend at least keeping the type of soil or ground consistent between the soil samples for ````cpred```` and the ROI for ````mappred````. The example in the ````carbcontpred```` package uses an ROI that remains within ~200 km^2^ of the soil sample sites and covers mostly peatland, the same type of area as where the soil samples were collected from. 
 
 # mappred linear equation
 
@@ -42,7 +43,7 @@ Here, α is represented through ````as.vector(coefficient)````, β is represente
 
 # Data loss between ENVI and ArcGIS Pro
 
-It should be noted that using the two softwares ENVI and ArcGIS Pro for extraction and visualization of an ROI data file respectively as shown in this [article](file:///Users/kangyuso/carbcontpred/docs/articles/web_only/ROI_Files.html) can lead to some loss of data. For example, visualizing the ````ROI_Predicted_Carbon.csv```` data file on ArcGIS Pro leads to some of the data missing in the raster:
+It should be noted that using the two softwares ENVI and ArcGIS Pro for extraction and visualization of an ROI data file respectively as shown in this [article](https://kangyuso.github.io/carbcontpred/articles/web_only/ROI_Files.html) can lead to some loss of data. For example, visualizing the ````ROI_Predicted_Carbon.csv```` data file on ArcGIS Pro leads to some of the data missing in the raster:
 
 ![](arcgis_raster_carbon.png){width="75%"}
 
@@ -52,16 +53,4 @@ It should be noted that using the two softwares ENVI and ArcGIS Pro for extracti
 
 While  ````carbcontpred```` creates a predictive model and map for carbon stock through spectral reflectance, the package can be adapted for a variety of other uses. Different soil properties can be used as the predictor in ````cpred```` such as peat content, gravimetric water content, and bulk density. The response in ````cpred```` can be other different soil chemical properties such as nitrogen or inorganic carbon content. Additionally, ````carbcontpred```` can be customized to predict soil properties not only for other peatland regions in the world, but also other ecosystems and biomes. 
 
-# References
-
-| de Sousa Mendes, W., Sommer, M., Koszinski, S., & Wehrhan, M. (2022). Peatlands spectral data influence in 
-| &emsp;&emsp;global spectral modelling of soil organic carbon and total nitrogen using visible-near-infrared spectroscopy. 
-| &emsp;&emsp;*Journal of Environmental Management*, *317*, 115383. https://doi.org/10.1016/j.jenvman.2022.115383
-
-| Price, J. S., & Schlotzhauer, S. M. (1999). Importance of shrinkage and compression in determining water 
-| &emsp;&emsp;storage changes in peat: the case of a mined peatland. *Hydrological Processes*, *13*(16), 2591-2601. 
-| &emsp;&emsp;https://doi.org/10.1002/(SICI)1099-1085(199911)13:16<2591::AID-HYP933>3.0.CO;2-E
-
-| Ji, W., Viscarra Rossel, R. A., & Shi, Z. (2015). Accounting for the effects of water and the environment on 
-| &emsp;&emsp;proximally sensed vis–NIR soil spectra and their calibrations. *European Journal of Soil Science*, *66*(3), 
-| &emsp;&emsp;555-565. https://doi.org/10.1111/ejss.12239
+# References {#references .unnumbered}
