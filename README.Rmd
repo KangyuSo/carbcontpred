@@ -26,7 +26,11 @@ You can install the development version of carbcontpred from [GitHub](https://gi
 
 ``` r
 install.packages("remotes", repos = "http://cran.us.r-project.org")
+install.packages("knitr", repos = "http://cran.us.r-project.org")
+install.packages("rmarkdown", repos = "http://cran.us.r-project.org")
 library(remotes)
+library(knitr)
+library(rmarkdown)
 
 remotes::install_github("KangyuSo/carbcontpred", 
                          build_vignettes = TRUE)
@@ -38,9 +42,13 @@ library(carbcontpred)
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-## Install and load the "remotes" package
+## Install and load the packages required to read the "carbcontpred" package
 install.packages("remotes", repos = "http://cran.us.r-project.org")
+install.packages("knitr", repos = "http://cran.us.r-project.org")
+install.packages("rmarkdown", repos = "http://cran.us.r-project.org")
 library(remotes)
+library(knitr)
+library(rmarkdown)
 
 ## Install and load the "carbcontpred" package
 remotes::install_github("KangyuSo/carbcontpred", 

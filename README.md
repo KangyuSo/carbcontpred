@@ -21,7 +21,11 @@ You can install the development version of carbcontpred from
 
 ``` r
 install.packages("remotes", repos = "http://cran.us.r-project.org")
+install.packages("knitr", repos = "http://cran.us.r-project.org")
+install.packages("rmarkdown", repos = "http://cran.us.r-project.org")
 library(remotes)
+library(knitr)
+library(rmarkdown)
 
 remotes::install_github("KangyuSo/carbcontpred", 
                          build_vignettes = TRUE)
@@ -33,12 +37,22 @@ library(carbcontpred)
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-## Install and load the "remotes" package
+## Install and load the packages required to read the "carbcontpred" package
 install.packages("remotes", repos = "http://cran.us.r-project.org")
 #> 
 #> The downloaded binary packages are in
-#>  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpggZJDT/downloaded_packages
+#>  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//Rtmp5lyZ2P/downloaded_packages
+install.packages("knitr", repos = "http://cran.us.r-project.org")
+#> 
+#> The downloaded binary packages are in
+#>  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//Rtmp5lyZ2P/downloaded_packages
+install.packages("rmarkdown", repos = "http://cran.us.r-project.org")
+#> 
+#> The downloaded binary packages are in
+#>  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//Rtmp5lyZ2P/downloaded_packages
 library(remotes)
+library(knitr)
+library(rmarkdown)
 
 ## Install and load the "carbcontpred" package
 remotes::install_github("KangyuSo/carbcontpred", 
@@ -46,11 +60,11 @@ remotes::install_github("KangyuSo/carbcontpred",
 #> Downloading GitHub repo KangyuSo/carbcontpred@HEAD
 #> 
 #> ── R CMD build ─────────────────────────────────────────────────────────────────
-#>      checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/RtmpggZJDT/remotesb58565a7e221/KangyuSo-carbcontpred-d4daad3/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/RtmpggZJDT/remotesb58565a7e221/KangyuSo-carbcontpred-d4daad3/DESCRIPTION’
+#>      checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/Rtmp5lyZ2P/remotescfb73335aed9/KangyuSo-carbcontpred-64e0338/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/Rtmp5lyZ2P/remotescfb73335aed9/KangyuSo-carbcontpred-64e0338/DESCRIPTION’
 #>   ─  preparing ‘carbcontpred’:
-#>    checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
+#>      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
 #>   ─  installing the package to build vignettes
-#>      creating vignettes ...  ✔  creating vignettes (7s)
+#>      creating vignettes ...  ✔  creating vignettes (6.4s)
 #>   ─  checking for LF line-endings in source and make files and shell scripts
 #>   ─  checking for empty or unneeded directories
 #>        NB: this package now depends on R (>= 3.5.0)
@@ -58,7 +72,7 @@ remotes::install_github("KangyuSo/carbcontpred",
 #>      serialize/load version 3 cannot be read in older versions of R.
 #>      File(s) containing such objects:
 #>        ‘carbcontpred/vignettes/ref_dry_avg.rda’
-#> ─  building ‘carbcontpred_0.0.0.9000.tar.gz’
+#>   ─  building ‘carbcontpred_0.0.0.9000.tar.gz’
 #>      
 #> 
 library(carbcontpred)
