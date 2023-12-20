@@ -218,7 +218,7 @@ collection in the Hudson Bay Lowlands.</p>
 <p><strong>Figure 2.</strong> <em>The stainless steel peat corer used to
 collect soil core samples. It has length of ~80 cm and a width of ~10 cm
 wide. </em></p>
-<p><img src="soil_sample.png" style="width:75.0%"></p>
+<p><img src="sample_collection.png" style="width:75.0%"></p>
 <p><strong>Figure 3.</strong> <em>The stainless steel peat corer being
 used to collect soil core samples near the Attawapiskat First Nation
 community in northern Ontario, Canada . </em></p>
@@ -231,7 +231,7 @@ in <strong>Figure 4</strong>. The soil samples were then manually
 grounded using a hammer and then the mass and reflectance was measured
 again. Finally the soil samples were sent to the University of Guelph’s
 Agriculture and Food Laboratory for carbon analysis.</p>
-<p><img src="oven_dried.png" style="width:75.0%"></p>
+<p><img src="oven_dry.jpg" style="width:75.0%"></p>
 <p><strong>Figure 4.</strong> <em>The soil samples being air-dried in a
 Lab-Line Model 3511 L-C Oven.</em></p>
 </div>
@@ -269,11 +269,12 @@ set are subtracted by the minimum value and then divided by the range
 which is the difference between the maximum and minimum values
 (Sinsomboonthong, 2022). Min-max normalization can be demonstrated
 through the following equation where:</p>
-<p><span class="math display">\[\begin{equation} \label{eq:1}X*=\frac{X
-- min(X)}{max(X) - min(X)}\end{equation}\]</span></p>
-<p><em>where X is a value in the data set, X</em> is a value in the data
-set after min-max normalization, min(X) is the minimum value, and max(X)
-is the maximum value (Sinsomboonthong, 2022).*</p>
+<p><span class="math display">\[\begin{equation}
+\label{eq:1}X'=\frac{X - min(X)}{max(X) -
+min(X)}\end{equation}\]</span></p>
+<p><em>where X is a value in the data set, X’ is a value in the data set
+after min-max normalization, min(X) is the minimum value, and max(X) is
+the maximum value (Sinsomboonthong, 2022).</em></p>
 <p>We built <code>mappred</code> to use min-max normalization on the
 reflectance values from the ROI data because it is one of the common
 methods for spectral preprocessing. Min-max normalization helps
@@ -291,29 +292,44 @@ min-max normalization (Cheng et al., 2023).</em></p>
 <div class="section level2">
 <h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
 </h2>
-<p>Chatterjee, A., Lal, R., Wielopolski, L., Martin, M. Z., &amp;
-Ebinger, M. H. (2009). Evaluation of different soil carbon determination
-methods. <em>Critical Reviews in Plant Science</em>, <em>28</em>(3),
-164-178. <a href="https://doi.org/10.1080/07352680902776556" class="external-link uri">https://doi.org/10.1080/07352680902776556</a></p>
-<p>Cheng, W., Xu, Z., Fan, S., Liu, B., Zhang, P., Xia, J., Li, Z.,
-Wang, Y., Wang, Q., &amp; Wu, Y. (2023). Rapid evaluation method of
-eating quality based on near-infrared spectroscopy for composition and
-physicochemical properties analysis of rice grains. <em>Journal of Food
-Measurement and Characterization</em>, <em>17</em>(2), 1640-1650. <a href="https://doi.org/10.1007/s11694-022-01686-7" class="external-link uri">https://doi.org/10.1007/s11694-022-01686-7</a></p>
-<p>Ji, W., Viscarra Rossel, R. A., &amp; Shi, Z. (2015). Accounting for
-the effects of water and the environment on proximally sensed vis–NIR
-soil spectra and their calibrations. <em>European Journal of Soil
-Science</em>, <em>66</em>(3), 555-565. <a href="https://doi.org/10.1111/ejss.12239" class="external-link uri">https://doi.org/10.1111/ejss.12239</a></p>
-<p>Sinsomboonthong, S. (2022). Performance comparison of new adjusted
-min-max with decimal scaling and statistical column normalization
-methods for artificial neural network classification. <em>International
-Journal of Mathematics and Mathematical Sciences</em>, <em>2022</em>. <a href="https://doi.org/10.1155/2022/3584406" class="external-link uri">https://doi.org/10.1155/2022/3584406</a></p>
-<p>Stenberg, B., Rossel, R. A. V., Mouazen, A. M., &amp; Wetterlind, J.
-(2010). Visible and near infrared spectroscopy in soil science.
-<em>Advances in Agronomy</em>, <em>107</em>, 163-215. <a href="https://doi.org/10.1016/S0065-2113(10)07005-7" class="external-link uri">https://doi.org/10.1016/S0065-2113(10)07005-7</a></p>
-<p>Zheng, G., Ryu, D., Jiao, C., &amp; Hong, C. (2016). Estimation of
-organic matter content in coastal soil using reflectance spectroscopy.
-<em>Pedosphere</em>, <em>26</em>(1), 130-136. <a href="https://doi.org/10.1016/S1002-0160(15)60029-7" class="external-link uri">https://doi.org/10.1016/S1002-0160(15)60029-7</a></p>
+<div class="line-block">Chatterjee, A., Lal, R., Wielopolski, L.,
+Martin, M. Z., &amp; Ebinger, M. H. (2009). Evaluation of different soil
+carbon<br>
+  determination methods. <em>Critical Reviews in Plant Science</em>,
+<em>28</em>(3), 164-178.<br>
+  <a href="https://doi.org/10.1080/07352680902776556" class="external-link uri">https://doi.org/10.1080/07352680902776556</a>
+</div>
+<div class="line-block">Cheng, W., Xu, Z., Fan, S., Liu, B., Zhang, P.,
+Xia, J., Li, Z., Wang, Y., Wang, Q., &amp; Wu, Y. (2023). Rapid<br>
+  evaluation method of eating quality based on near-infrared
+spectroscopy for composition and<br>
+  physicochemical properties analysis of rice grains. <em>Journal of
+Food Measurement and Characterization</em>,<br>
+  <em>17</em>(2), 1640-1650. <a href="https://doi.org/10.1007/s11694-022-01686-7" class="external-link uri">https://doi.org/10.1007/s11694-022-01686-7</a>
+</div>
+<div class="line-block">Ji, W., Viscarra Rossel, R. A., &amp; Shi, Z.
+(2015). Accounting for the effects of water and the environment on<br>
+  proximally sensed vis–NIR soil spectra and their calibrations.
+<em>European Journal of Soil Science</em>, <em>66</em>(3),<br>
+  555-565. <a href="https://doi.org/10.1111/ejss.12239" class="external-link uri">https://doi.org/10.1111/ejss.12239</a>
+</div>
+<div class="line-block">Sinsomboonthong, S. (2022). Performance
+comparison of new adjusted min-max with decimal scaling and<br>
+  statistical column normalization methods for artificial neural network
+classification. <em>International</em><br>
+  <em>Journal of Mathematics and Mathematical Sciences</em>,
+<em>2022</em>. <a href="https://doi.org/10.1155/2022/3584406" class="external-link uri">https://doi.org/10.1155/2022/3584406</a>
+</div>
+<div class="line-block">Stenberg, B., Rossel, R. A. V., Mouazen, A. M.,
+&amp; Wetterlind, J. (2010). Visible and near infrared spectroscopy
+in<br>
+  soil science. <em>Advances in Agronomy</em>, <em>107</em>, 163-215. <a href="https://doi.org/10.1016/S0065-2113(10)07005-7" class="external-link uri">https://doi.org/10.1016/S0065-2113(10)07005-7</a>
+</div>
+<div class="line-block">Zheng, G., Ryu, D., Jiao, C., &amp; Hong, C.
+(2016). Estimation of organic matter content in coastal soil using<br>
+  reflectance spectroscopy. <em>Pedosphere</em>, <em>26</em>(1),
+130-136. <a href="https://doi.org/10.1016/S1002-0160(15)60029-7" class="external-link uri">https://doi.org/10.1016/S1002-0160(15)60029-7</a>
+</div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
