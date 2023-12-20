@@ -15,6 +15,8 @@ The soil samples were collected from near the Kashechewan (N 52.253621, W 81.776
 
 ![](SoilSampleSites.png){width="90%"}
 
+**Figure 1.** *A satellite image map of the portion of the Hudson Bay Lowlands where the soil samples were collected from. The legend displays the locations of the soil sample sites.*
+
 The project was funded by the Natural Sciences and Engineering Research Council of Canada (NSERC) through the Discovery Grants program (RGPIN-2020-05,708). The corresponding author is Kangyu So^[McMaster University, sok11@mcmaster.ca]. The full list of authors can be found here^[Authors: Kangyu So (McMaster University, sok11@mcmaster.ca), Cheryl A. Rogers (McMaster University, rogerc11@mcmaster.ca), Alemu Gonsamo (McMaster University, gonsamoa@mcmaster.ca), Yiyao Li (McMaster University, liy571@mcmaster.ca), James Snider (World Wildlife Fund Canada, jsnider@wwfcanada.org), Clare Wark (World Wildlife Fund Canada, cwark@wwfcanada.org)].
 
 # What Is This Package?
@@ -86,6 +88,8 @@ ref_dry_avg <- ref_dry_avg %>%
 
 Finally, our data is fully processed and ready to build linear regression models using the ````cpred```` function. Let's take a look at the first 6 rows of the data: 
 
+**Table 1.** *The first 6 rows of the* ````ref_dry_avg```` *data set.*
+
 ```{r echo = FALSE} 
 data(ref_dry_avg)
 knitr::kable(head(ref_dry_avg))
@@ -110,6 +114,8 @@ The return of the function is a new column added to the previous dataset which c
 
 Let’s take a look at the 6 rows of this newly updated dataset ````pred_c```` with the predicted organic carbon content values:
 
+**Table 2.** *The first 6 rows of the* ````pred_c```` *data set.*
+
 ```{r echo = FALSE} 
 data(pred_c)
 knitr::kable(head(pred_c))
@@ -132,6 +138,8 @@ ggplot(pred_c, aes(x = Organic_Carbon, y = Predicted_Organic_Carbon)) +
 ```
 
 ![](scatterplot_pred_c.png){width="75%"}
+
+**Figure 2.** *A scatterplot of the* ````pred_c```` *data set where the measured and predicted organic carbon content by percent dry weight of the samples are the X and Y axis respectively.*
 
 Finally let's evaluate our output by calculating the R^2^ value between the the original and predicted organic carbon content values:
 
@@ -164,6 +172,8 @@ The return of the function is a csv file which contains the spatial information 
 
 Let’s take a look at 6 rows of this newly created data file ````ROI_Predicted_Carbon.csv```` with the predicted organic carbon content values:
 
+**Table 3.** *The first 6 rows of the* ````ROI_Predicted_Carbon.csv```` *data file.*
+
 ```{r echo = FALSE} 
 ROI_Predicted_Carbon <- as.data.frame(read.csv(system.file("ROI_folder", "ROI_Predicted_Carbon.csv", package = "carbcontpred")))
 knitr::kable(head(ROI_Predicted_Carbon))
@@ -177,10 +187,16 @@ library(ggplot2)
 
 ggplot(ROI_Predicted_Carbon, aes(x = B1)) +
     labs(x = "Value of B1", y = "Count of B1") + 
-    geom_histogram(binwidth= .5, colour= "black", fill= "white")
+    geom_histogram(binwidth= .5, colour= "black", fill= "white") + 
+    theme_minimal() +
+    theme(panel.grid = element_blank()) +
+    geom_hline(yintercept = 0, linetype = "solid", color = "black") +
+    geom_vline(xintercept = 0, linetype = "solid", color = "black")
 ```
 
 ![](count_histogram_ROI_Predicted_Carbon.png){width="75%"}
+
+**Figure 3.** *A histogram of the* ````ROI_Predicted_Carbon.csv```` *data file where the spectral reflectance value and the count of points with that value are the X and Y axis respectively.*
 
 We can also visualize the ````ROI_Predicted_Carbon.csv```` data set as a histogram with a kernel density curve where the value and density of the ````B1```` column in the ````ROI_Predicted_Carbon.csv```` data set will be our X and Y axis respectively:
 
@@ -190,10 +206,16 @@ ggplot(ROI_Predicted_Carbon, aes(x = B1)) +
                    binwidth = .5,
                    colour = "black", fill = "white") +
     labs(x = "Value of B1", y = "Density of B1") + 
+    theme_minimal() +
+    theme(panel.grid = element_blank()) +
+    geom_hline(yintercept = 0, linetype = "solid", color = "black") +
+    geom_vline(xintercept = 0, linetype = "solid", color = "black") + 
     geom_density(alpha = .2, fill = "#FF6666")
 ```
 
 ![](density_histogram_ROI_Predicted_Carbon.png){width="75%"}
+
+**Figure 4.** *A histogram of the* ````ROI_Predicted_Carbon.csv```` *data file where the spectral reflectance value and the density of points with that value are the X and Y axis respectively. A kernel density curve is overlaid on the histogram in red.*
 
 To see how to use ````ROI_Predicted_Carbon.csv```` or another output from ````mappred```` to visualize the predicted organic carbon content of the ROI over a map, see (INSERT WEBSITE LINK).
 
@@ -207,4 +229,4 @@ The purpose of this ````R```` package is to make the soil spectral reflectance a
 
 de Sousa Mendes, W., Sommer, M., Koszinski, S., & Wehrhan, M. (2022). Peatlands spectral data influence in 
 &emsp;&emsp;global spectral modelling of soil organic carbon and total nitrogen using visible-near-infrared spectroscopy. 
-&emsp;&emsp;*Journal of Environmental Management*, *317*, 115383.
+&emsp;&emsp;*Journal of Environmental Management*, *317*, 115383. https://doi.org/10.1016/j.jenvman.2022.115383
