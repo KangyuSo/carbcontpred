@@ -1,5 +1,4 @@
-url: https://carbcontpred.r-lib.org
+url: http://carbcontpred.r-lib.org/
 template:
   bootstrap: 5
   bootswatch: cerulean
-
