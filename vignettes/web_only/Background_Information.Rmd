@@ -1,5 +1,6 @@
 ---
 title: "Background Information"
+bibliography: REFERENCES.bib
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Intro}
@@ -75,6 +76,12 @@ We built ````mappred```` to use min-max normalization on the reflectance values 
 ![](rice_spectra.png){width="75%"}
 
 **Figure 5.** *The near-infrared (NIR) absorbance spectra of rice grains (A) without min-max normalization and (B) with min-max normalization (Cheng et al., 2023).*
+
+# References
+
+```{r, include=FALSE}
+knitr::write_bib(file = 'REFERENCES.bib')
+```
 
 # References
 
