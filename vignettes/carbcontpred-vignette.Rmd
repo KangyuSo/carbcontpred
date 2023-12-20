@@ -227,6 +227,6 @@ The purpose of this ````R```` package is to make the soil spectral reflectance a
 
 # References
 
-de Sousa Mendes, W., Sommer, M., Koszinski, S., & Wehrhan, M. (2022). Peatlands spectral data influence in 
-&emsp;&emsp;global spectral modelling of soil organic carbon and total nitrogen using visible-near-infrared spectroscopy. 
-&emsp;&emsp;*Journal of Environmental Management*, *317*, 115383. https://doi.org/10.1016/j.jenvman.2022.115383
+| de Sousa Mendes, W., Sommer, M., Koszinski, S., & Wehrhan, M. (2022). Peatlands spectral data influence in 
+| &emsp;&emsp;global spectral modelling of soil organic carbon and total nitrogen using visible-near-infrared spectroscopy. 
+| &emsp;&emsp;*Journal of Environmental Management*, *317*, 115383. https://doi.org/10.1016/j.jenvman.2022.115383

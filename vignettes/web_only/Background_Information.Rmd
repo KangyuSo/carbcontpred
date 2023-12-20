@@ -42,13 +42,13 @@ We collected soil core samples using a stainless steel peat corer. **Figure 2** 
 
 **Figure 2.** *The stainless steel peat corer used to collect soil core samples. It has length of ~80 cm and a width of ~10 cm wide. *
 
-![](soil_sample.png){width="75%"}
+![](sample_collection.png){width="75%"}
 
 **Figure 3.** *The stainless steel peat corer being used to collect soil core samples near the Attawapiskat First Nation community in northern Ontario, Canada . *
 
 The samples were divided into 11.56 cm^3^ segments and weighed using a Mettler Toledo Standard ME-T Precision Balance. The reflectance of the samples was measured using an ASD FieldSpec 4 Hi-Res NG spectrometer. The soil samples were then places in individual aluminum trays and air-dried in a Lab-Line Model 3511 L-C Oven as shown in **Figure 4**. The soil samples were then manually grounded using a hammer and then the mass and reflectance was measured again. Finally the soil samples were sent to the University of Guelph’s Agriculture and Food Laboratory for carbon analysis. 
 
-![](oven_dried.png){width="75%"}
+![](oven_dry.jpg){width="75%"}
 
 **Figure 4.** *The soil samples being air-dried in a Lab-Line Model 3511 L-C Oven.*
 
@@ -66,9 +66,9 @@ Although the wavelength range of the DOA parameter falls within the vis-NIR regi
 
 Min-max normalization is a technique where the data values in a data set are subtracted by the minimum value and then divided by the range which is the difference between the maximum and minimum values (Sinsomboonthong, 2022). Min-max normalization can be demonstrated through the following equation where:
 
-\begin{equation} \label{eq:1}X*=\frac{X - min(X)}{max(X) - min(X)}\end{equation}
+\begin{equation} \label{eq:1}X'=\frac{X - min(X)}{max(X) - min(X)}\end{equation}
 
-*where X is a value in the data set, X* is a value in the data set after min-max normalization, min(X) is the minimum value, and max(X) is the maximum value (Sinsomboonthong, 2022).*
+*where X is a value in the data set, X' is a value in the data set after min-max normalization, min(X) is the minimum value, and max(X) is the maximum value (Sinsomboonthong, 2022).*
 
 We built ````mappred```` to use min-max normalization on the reflectance values from the ROI data because it is one of the common methods for spectral preprocessing. Min-max normalization helps eliminate the effects of solid particle size, surface scattering, and light variation in the NIR region. This is not only limited to soil properties as min-max normalization has been used for the spectral preprocessing of other materials and surfaces. **Figure 5** shows how min-max normalization affects the distribution of the spectra in rice grains (Cheng et al., 2023). 
 
@@ -78,14 +78,25 @@ We built ````mappred```` to use min-max normalization on the reflectance values 
 
 # References
 
-Chatterjee, A., Lal, R., Wielopolski, L., Martin, M. Z., & Ebinger, M. H. (2009). Evaluation of different soil carbon determination methods. *Critical Reviews in Plant Science*, *28*(3), 164-178. https://doi.org/10.1080/07352680902776556
+| Chatterjee, A., Lal, R., Wielopolski, L., Martin, M. Z., & Ebinger, M. H. (2009). Evaluation of different soil carbon 
+| &emsp;&emsp;determination methods. *Critical Reviews in Plant Science*, *28*(3), 164-178. 
+| &emsp;&emsp;https://doi.org/10.1080/07352680902776556
 
-Cheng, W., Xu, Z., Fan, S., Liu, B., Zhang, P., Xia, J., Li, Z., Wang, Y., Wang, Q., & Wu, Y. (2023). Rapid evaluation method of eating quality based on near-infrared spectroscopy for composition and physicochemical properties analysis of rice grains. *Journal of Food Measurement and Characterization*, *17*(2), 1640-1650. https://doi.org/10.1007/s11694-022-01686-7
+| Cheng, W., Xu, Z., Fan, S., Liu, B., Zhang, P., Xia, J., Li, Z., Wang, Y., Wang, Q., & Wu, Y. (2023). Rapid 
+| &emsp;&emsp;evaluation method of eating quality based on near-infrared spectroscopy for composition and 
+| &emsp;&emsp;physicochemical properties analysis of rice grains. *Journal of Food Measurement and Characterization*,
+| &emsp;&emsp;*17*(2), 1640-1650. https://doi.org/10.1007/s11694-022-01686-7
 
-Ji, W., Viscarra Rossel, R. A., & Shi, Z. (2015). Accounting for the effects of water and the environment on proximally sensed vis–NIR soil spectra and their calibrations. *European Journal of Soil Science*, *66*(3), 555-565. https://doi.org/10.1111/ejss.12239
+| Ji, W., Viscarra Rossel, R. A., & Shi, Z. (2015). Accounting for the effects of water and the environment on 
+| &emsp;&emsp;proximally sensed vis–NIR soil spectra and their calibrations. *European Journal of Soil Science*, *66*(3),
+| &emsp;&emsp;555-565. https://doi.org/10.1111/ejss.12239
 
-Sinsomboonthong, S. (2022). Performance comparison of new adjusted min-max with decimal scaling and statistical column normalization methods for artificial neural network classification. *International Journal of Mathematics and Mathematical Sciences*, *2022*. https://doi.org/10.1155/2022/3584406
+| Sinsomboonthong, S. (2022). Performance comparison of new adjusted min-max with decimal scaling and 
+| &emsp;&emsp;statistical column normalization methods for artificial neural network classification. *International* 
+| &emsp;&emsp;*Journal of Mathematics and Mathematical Sciences*, *2022*. https://doi.org/10.1155/2022/3584406
 
-Stenberg, B., Rossel, R. A. V., Mouazen, A. M., & Wetterlind, J. (2010). Visible and near infrared spectroscopy in soil science. *Advances in Agronomy*, *107*, 163-215. https://doi.org/10.1016/S0065-2113(10)07005-7
+| Stenberg, B., Rossel, R. A. V., Mouazen, A. M., & Wetterlind, J. (2010). Visible and near infrared spectroscopy in 
+| &emsp;&emsp;soil science. *Advances in Agronomy*, *107*, 163-215. https://doi.org/10.1016/S0065-2113(10)07005-7
 
-Zheng, G., Ryu, D., Jiao, C., & Hong, C. (2016). Estimation of organic matter content in coastal soil using reflectance spectroscopy. *Pedosphere*, *26*(1), 130-136. https://doi.org/10.1016/S1002-0160(15)60029-7
+| Zheng, G., Ryu, D., Jiao, C., & Hong, C. (2016). Estimation of organic matter content in coastal soil using 
+| &emsp;&emsp;reflectance spectroscopy. *Pedosphere*, *26*(1), 130-136. https://doi.org/10.1016/S1002-0160(15)60029-7
