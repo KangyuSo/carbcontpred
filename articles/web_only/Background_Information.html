@@ -92,7 +92,7 @@ and CO[2]. The visible region and the near infrared (NIR) region can be
 combined to form the visible-near infrared (vis-NIR) region. This region
 has been used to predict a number of different soil properties, but
 organic carbon is among the most successful for accurate predictions
-(Stenberg et al., 2010).</p>
+<span class="citation">(Stenberg et al. 2010)</span>.</p>
 </div>
 <div class="section level2">
 <h2 id="effect-of-water-on-soil-vis-nir-spectra">Effect of water on soil vis-NIR spectra<a class="anchor" aria-label="anchor" href="#effect-of-water-on-soil-vis-nir-spectra"></a>
@@ -104,12 +104,14 @@ thus decreasing reflectance as shown in <strong>Figure 1</strong>. This
 can impact the accuracy of the spectra of soil samples collected from
 fieldwork. Additionally, wet soil samples can have more varied particle
 sizes than dry samples that have been grounded, which can lead to
-inconsistencies in the spectra (Ji et al., 2015).</p>
+inconsistencies in the spectra <span class="citation">(Ji, Viscarra
+Rossel, and Shi 2015)</span>.</p>
 <p><img src="Absorbance_Water.png" style="width:75.0%"></p>
 <p><strong>Figure 1.</strong> <em>The absorbance spectra (Log 1/R) of 34
 soil samples that were measured in the field (grey), in the lab (black),
 and after direct standardization (red) was used to remove environmental
-factors like water from the field spectra (Ji et al., 2015).</em></p>
+factors like water from the field spectra <span class="citation">(Ji,
+Viscarra Rossel, and Shi 2015)</span>.</em></p>
 <p>The <code>carbcontpred</code> package uses dried soil samples for the
 example data sets to illustrate the capability of using spectra
 reflectance for predicting soil organic carbon content. Dried soil
@@ -130,11 +132,11 @@ carbon. This is done by introducing the dried soil samples to a
 high-temperature oxidation zone which converts carbon in the soil into
 CO[2]. The CO[2] gas is then carried by a carrier gas and separated from
 other gases through a gas chromatographic system. Finally, the CO[2] is
-detected using an automated infrared gas analyzer (Chatterjee et al.,
-2009).</p>
+detected using an automated infrared gas analyzer <span class="citation">(Chatterjee et al. 2009)</span>.</p>
 <p><strong>Table 1.</strong> <em>A list of automated analyzers, the
 principles for detection, and manufacturers and their contact
-information (Chatterjee et al., 2009).</em></p>
+information <span class="citation">(Chatterjee et al.
+2009)</span>.</em></p>
 <table class="table">
 <colgroup>
 <col width="10%">
@@ -206,7 +208,8 @@ it is incredibly expensive to use. The cost for the 432 soil samples
 used for the <code>SoilMetrics_v01.csv</code> data set was almost
 $10,000 CAD. Alternative methods for measuring organic carbon content
 include in situ methods, wet combustion, and dry combustion through the
-weight loss of soils through ignition (Chatterjee et al., 2009).</p>
+weight loss of soils through ignition <span class="citation">(Chatterjee
+et al. 2009)</span>.</p>
 </div>
 <div class="section level2">
 <h2 id="collection-and-processing-of-soil-samples">Collection and processing of soil samples<a class="anchor" aria-label="anchor" href="#collection-and-processing-of-soil-samples"></a>
@@ -251,32 +254,33 @@ estimation of soil organic matter amongst these 4 types is linear,
 yielding the highest R<sup>2</sup> value for the validation results at
 0.51 ± 0.06 for the validation results as shown in <strong>Table
 2</strong>. This type of DOA-based regression model employs a linear
-regression model (Zheng et al., 2016).</p>
+regression model <span class="citation">(Zheng et al. 2016)</span>.</p>
 <p><strong>Table 2.</strong> <em>The calibration and validation
 performance for different types of deviation of arch (DOA)-based
-regression models (Zheng et al., 2016).</em></p>
+regression models <span class="citation">(Zheng et al.
+2016)</span>.</em></p>
 <p><img src="regression_model.png" style="width:75.0%"></p>
 <p>Although the wavelength range of the DOA parameter falls within the
-vis-NIR region, it misses a huge portion of the region (Zheng et al.,
-2016). We cannot use DOA for our prediction model in <code>cpred</code>
-because of this limitation. However, we built <code>cpred</code> to
-create a linear regression model due to its strong performance in
-<strong>Table 2</strong>.</p>
+vis-NIR region, it misses a huge portion of the region <span class="citation">(Zheng et al. 2016)</span>. We cannot use DOA for our
+prediction model in <code>cpred</code> because of this limitation.
+However, we built <code>cpred</code> to create a linear regression model
+due to its strong performance in <strong>Table 2</strong>.</p>
 </div>
 <div class="section level2">
 <h2 id="min-max-normalization-in-mappred">Min-max normalization in mappred<a class="anchor" aria-label="anchor" href="#min-max-normalization-in-mappred"></a>
 </h2>
 <p>Min-max normalization is a technique where the data values in a data
 set are subtracted by the minimum value and then divided by the range
-which is the difference between the maximum and minimum values
-(Sinsomboonthong, 2022). Min-max normalization can be demonstrated
-through the following equation where:</p>
+which is the difference between the maximum and minimum values <span class="citation">(Sinsomboonthong et al. 2022)</span>. Min-max
+normalization can be demonstrated through the following equation
+where:</p>
 <p><span class="math display">\[\begin{equation}
 \label{eq:1}X'=\frac{X - min(X)}{max(X) -
 min(X)}\end{equation}\]</span></p>
 <p><em>where X is a value in the data set, X’ is a value in the data set
 after min-max normalization, min(X) is the minimum value, and max(X) is
-the maximum value (Sinsomboonthong, 2022).</em></p>
+the maximum value <span class="citation">(Sinsomboonthong et al.
+2022)</span>.</em></p>
 <p>We built <code>mappred</code> to use min-max normalization on the
 reflectance values from the ROI data because it is one of the common
 methods for spectral preprocessing. Min-max normalization helps
@@ -285,56 +289,54 @@ light variation in the NIR region. This is not only limited to soil
 properties as min-max normalization has been used for the spectral
 preprocessing of other materials and surfaces. <strong>Figure 5</strong>
 shows how min-max normalization affects the distribution of the spectra
-in rice grains (Cheng et al., 2023).</p>
+in rice grains <span class="citation">(Cheng et al. 2023)</span>.</p>
 <p><img src="rice_spectra.png" style="width:75.0%"></p>
 <p><strong>Figure 5.</strong> <em>The near-infrared (NIR) absorbance
 spectra of rice grains (A) without min-max normalization and (B) with
-min-max normalization (Cheng et al., 2023).</em></p>
+min-max normalization <span class="citation">(Cheng et al.
+2023)</span>.</em></p>
 </div>
 <div class="section level2">
-<h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+<h2 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
 </h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-chatterjee2009evaluation" class="csl-entry">
+Chatterjee, Amitava, Rattan Lal, L Wielopolski, Madhavi Z Martin, and MH
+Ebinger. 2009. <span>“Evaluation of Different Soil Carbon Determination
+Methods.”</span> <em>Critical Reviews in Plant Science</em> 28 (3):
+164–78. <a href="https://doi.org/10.1080/07352680902776556" class="external-link">https://doi.org/10.1080/07352680902776556</a>.
 </div>
-<div class="section level2">
-<h2 id="references-1">References<a class="anchor" aria-label="anchor" href="#references-1"></a>
-</h2>
-<div class="line-block">Chatterjee, A., Lal, R., Wielopolski, L.,
-Martin, M. Z., &amp; Ebinger, M. H. (2009). Evaluation of different soil
-carbon<br>
-  determination methods. <em>Critical Reviews in Plant Science</em>,
-<em>28</em>(3), 164-178.<br>
-  <a href="https://doi.org/10.1080/07352680902776556" class="external-link uri">https://doi.org/10.1080/07352680902776556</a>
+<div id="ref-cheng2023rapid" class="csl-entry">
+Cheng, Weimin, Zhuopin Xu, Shuang Fan, Binmei Liu, Pengfei Zhang, Jiafa
+Xia, Zefu Li, Yuanlei Wang, Qi Wang, and Yuejin Wu. 2023. <span>“Rapid
+Evaluation Method of Eating Quality Based on Near-Infrared Spectroscopy
+for Composition and Physicochemical Properties Analysis of Rice
+Grains.”</span> <em>Journal of Food Measurement and
+Characterization</em> 17 (2): 1640–50. <a href="https://doi.org/10.1007/s11694-022-01686-7" class="external-link">https://doi.org/10.1007/s11694-022-01686-7</a>.
 </div>
-<div class="line-block">Cheng, W., Xu, Z., Fan, S., Liu, B., Zhang, P.,
-Xia, J., Li, Z., Wang, Y., Wang, Q., &amp; Wu, Y. (2023). Rapid<br>
-  evaluation method of eating quality based on near-infrared
-spectroscopy for composition and<br>
-  physicochemical properties analysis of rice grains. <em>Journal of
-Food Measurement and Characterization</em>,<br>
-  <em>17</em>(2), 1640-1650. <a href="https://doi.org/10.1007/s11694-022-01686-7" class="external-link uri">https://doi.org/10.1007/s11694-022-01686-7</a>
+<div id="ref-ji2015accounting" class="csl-entry">
+Ji, W, RA Viscarra Rossel, and Z Shi. 2015. <span>“Accounting for the
+Effects of Water and the Environment on Proximally Sensed Vis–NIR Soil
+Spectra and Their Calibrations.”</span> <em>European Journal of Soil
+Science</em> 66 (3): 555–65. <a href="https://doi.org/10.1111/ejss.12239" class="external-link">https://doi.org/10.1111/ejss.12239</a>.
 </div>
-<div class="line-block">Ji, W., Viscarra Rossel, R. A., &amp; Shi, Z.
-(2015). Accounting for the effects of water and the environment on<br>
-  proximally sensed vis–NIR soil spectra and their calibrations.
-<em>European Journal of Soil Science</em>, <em>66</em>(3),<br>
-  555-565. <a href="https://doi.org/10.1111/ejss.12239" class="external-link uri">https://doi.org/10.1111/ejss.12239</a>
+<div id="ref-sinsomboonthong2022performance" class="csl-entry">
+Sinsomboonthong, Saichon et al. 2022. <span>“Performance Comparison of
+New Adjusted Min-Max with Decimal Scaling and Statistical Column
+Normalization Methods for Artificial Neural Network
+Classification.”</span> <em>International Journal of Mathematics and
+Mathematical Sciences</em> 2022. <a href="https://doi.org/10.1155/2022/3584406" class="external-link">https://doi.org/10.1155/2022/3584406</a>.
 </div>
-<div class="line-block">Sinsomboonthong, S. (2022). Performance
-comparison of new adjusted min-max with decimal scaling and<br>
-  statistical column normalization methods for artificial neural network
-classification. <em>International</em><br>
-  <em>Journal of Mathematics and Mathematical Sciences</em>,
-<em>2022</em>. <a href="https://doi.org/10.1155/2022/3584406" class="external-link uri">https://doi.org/10.1155/2022/3584406</a>
+<div id="ref-stenberg2010visible" class="csl-entry">
+Stenberg, Bo, Raphael A Viscarra Rossel, Abdul Mounem Mouazen, and
+Johanna Wetterlind. 2010. <span>“Visible and Near Infrared Spectroscopy
+in Soil Science.”</span> <em>Advances in Agronomy</em> 107: 163–215. <a href="https://doi.org/10.1016/S0065-2113(10)07005-7" class="external-link">https://doi.org/10.1016/S0065-2113(10)07005-7</a>.
 </div>
-<div class="line-block">Stenberg, B., Rossel, R. A. V., Mouazen, A. M.,
-&amp; Wetterlind, J. (2010). Visible and near infrared spectroscopy
-in<br>
-  soil science. <em>Advances in Agronomy</em>, <em>107</em>, 163-215. <a href="https://doi.org/10.1016/S0065-2113(10)07005-7" class="external-link uri">https://doi.org/10.1016/S0065-2113(10)07005-7</a>
+<div id="ref-zheng2016estimation" class="csl-entry">
+Zheng, GuangHui, RYU Dongryeol, JIAO Caixia, and HONG Changqiao. 2016.
+<span>“Estimation of Organic Matter Content in Coastal Soil Using
+Reflectance Spectroscopy.”</span> <em>Pedosphere</em> 26 (1): 130–36. <a href="https://doi.org/10.1016/S1002-0160(15)60029-7" class="external-link">https://doi.org/10.1016/S1002-0160(15)60029-7</a>.
 </div>
-<div class="line-block">Zheng, G., Ryu, D., Jiao, C., &amp; Hong, C.
-(2016). Estimation of organic matter content in coastal soil using<br>
-  reflectance spectroscopy. <em>Pedosphere</em>, <em>26</em>(1),
-130-136. <a href="https://doi.org/10.1016/S1002-0160(15)60029-7" class="external-link uri">https://doi.org/10.1016/S1002-0160(15)60029-7</a>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

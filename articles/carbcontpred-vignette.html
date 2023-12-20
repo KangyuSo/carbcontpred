@@ -362,8 +362,7 @@ values:</p>
 <span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">"R-squared:"</span>, <span class="va">r_squared</span>, <span class="st">"\n"</span><span class="op">)</span></span></code></pre></div>
 <p>The R<sup>2</sup> value for this example is ~0.61, which is in line
 with the R<sup>2</sup> values from studies that used standard global
-soil spectral data from peatlands to predict organic carbon (de Sousa
-Mendes et al., 2022).</p>
+soil spectral data from peatlands to predict organic carbon <span class="citation">(Sousa Mendes et al. 2022)</span>.</p>
 <p>See the <code>README.Rmd</code> files for additional details on how
 to utilize <code>cpred</code>. See the <code>cpred.R</code> file for
 additional information about the function.</p>
@@ -376,12 +375,13 @@ set is a file containing spatial information and spectral reflectance
 values of an ROI. The example file used in the vignette is
 <code>Reflectance_ROI.csv</code> in the
 <code>\inst\extdata folder</code>. For more information on how to
-extract an ROI data file, see (INSERT WEBSITE LINK). The second data set
-consists of the sample ID, average reflectance, and measured and
-predicted organic carbon content of post-dried soil samples. This is
-normally the output from the <code>cpred</code> function as shown in the
-previous section. The example file used in the vignette is
-<code>pred_c.rda</code> in the <code>\data folder</code>.</p>
+extract an ROI data file, see this <a href="https://kangyuso.github.io/carbcontpred/articles/web_only/ROI_Files.html" class="external-link">article</a>.
+The second data set consists of the sample ID, average reflectance, and
+measured and predicted organic carbon content of post-dried soil
+samples. This is normally the output from the <code>cpred</code>
+function as shown in the previous section. The example file used in the
+vignette is <code>pred_c.rda</code> in the
+<code>\data folder</code>.</p>
 </div>
 <div class="section level3">
 <h3 id="mappred-function-overview">mappred Function Overview:<a class="anchor" aria-label="anchor" href="#mappred-function-overview"></a>
@@ -541,7 +541,7 @@ and Y axis respectively. A kernel density curve is overlaid on the
 histogram in red.</em></p>
 <p>To see how to use <code>ROI_Predicted_Carbon.csv</code> or another
 output from <code>mappred</code> to visualize the predicted organic
-carbon content of the ROI over a map, see (INSERT WEBSITE LINK).</p>
+carbon content of the ROI over a map, see this <a href="https://kangyuso.github.io/carbcontpred/articles/web_only/ROI_Files.html" class="external-link">article</a>.</p>
 <p>See the <code>README.Rmd</code> files for additional details on how
 to utilize <code>mappred</code>. See the <code>mappred.R</code> file for
 additional information about the function.</p>
@@ -564,13 +564,16 @@ contribution. Contributions will be reviewed before approval and full
 credit will be given.</p>
 </div>
 <div class="section level2">
-<h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+<h2 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
 </h2>
-<div class="line-block">de Sousa Mendes, W., Sommer, M., Koszinski, S.,
-&amp; Wehrhan, M. (2022). Peatlands spectral data influence in<br>
-  global spectral modelling of soil organic carbon and total nitrogen
-using visible-near-infrared spectroscopy.<br>
-  <em>Journal of Environmental Management</em>, <em>317</em>, 115383. <a href="https://doi.org/10.1016/j.jenvman.2022.115383" class="external-link uri">https://doi.org/10.1016/j.jenvman.2022.115383</a>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-de2022peatlands" class="csl-entry">
+Sousa Mendes, Wanderson de, Michael Sommer, Sylvia Koszinski, and Marc
+Wehrhan. 2022. <span>“Peatlands Spectral Data Influence in Global
+Spectral Modelling of Soil Organic Carbon and Total Nitrogen Using
+Visible-Near-Infrared Spectroscopy.”</span> <em>Journal of Environmental
+Management</em> 317: 115383. <a href="https://doi.org/10.1016/j.jenvman.2022.115383" class="external-link">https://doi.org/10.1016/j.jenvman.2022.115383</a>.
+</div>
 </div>
 </div>
 
