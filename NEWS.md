@@ -1,3 +1,3 @@
-# carbcontpred (development version)
+# carbcontpred 0.0.0.9000
 
-* Initial CRAN submission.
+* This is the first release of carbcontpred.
