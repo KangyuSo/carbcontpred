@@ -19,6 +19,9 @@
     <loc>https://carbcontpred.r-lib.org/articles/web_only/ROI_Files.html</loc>
   </url>
   <url>
+    <loc>https://carbcontpred.r-lib.org/articles/web_only/limitation_reuse.html</loc>
+  </url>
+  <url>
     <loc>https://carbcontpred.r-lib.org/authors.html</loc>
   </url>
   <url>
@@ -37,7 +40,7 @@
     <loc>https://carbcontpred.r-lib.org/reference/mappred.html</loc>
   </url>
   <url>
-    <loc>https://carbcontpred.r-lib.org/reference/pred_C.html</loc>
+    <loc>https://carbcontpred.r-lib.org/reference/pred_c.html</loc>
   </url>
   <url>
     <loc>https://carbcontpred.r-lib.org/reference/ref_dry_avg.html</loc>
