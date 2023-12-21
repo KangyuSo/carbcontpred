@@ -9,7 +9,7 @@ The data used for the predictions was collected by Kangyu So, Dr. Alemu Gonsamo,
 \usage{
 mappred(
 predictions_dataframe, reflectance_column, prediction_column, 
-ROI_dataset_path, output_dataset
+ROI_dataset_path, output_dataset, output_folder, output_package
 )
 }
 \arguments{
@@ -22,6 +22,10 @@ ROI_dataset_path, output_dataset
 \item{ROI_dataset_path}{The path to the ROI data table that was exported from ENVI into a CSV file, contains geoinformation and reflectance values of the ROI divided into individual points}
 
 \item{output_dataset}{The updated ROI data table containing the new predicted organic carbon content of the points}
+
+\item{output_folder}{The folder location for the updated ROI data table}
+
+\item{output_package}{The package location for the updated ROI data table}
 }
 \value{
 A CSV file containing the ROI data table as well as the predicted organic carbon content of the points using an algebraic equation extracted from the predictions of a cross-validated linear regression model
@@ -32,7 +36,8 @@ The function first extracts an algebraic equation based on the reflectance and p
 \examples{
 mappred_c <- mappred(
 pred_c, "Reflectance", "Predicted_Organic_Carbon", 
-system.file("extdata", "Reflectance_ROI.csv", package = "carbcontpred"), "ROI_Predicted_Carbon"
+system.file("extdata", "Reflectance_ROI.csv", package = "carbcontpred"), "ROI_Predicted_Carbon",
+"ROI_folder", "carbcontpred"
 )
 }
 \references{
