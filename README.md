@@ -42,15 +42,15 @@ This is a basic example which shows you how to solve a common problem:
 install.packages("remotes", repos = "http://cran.us.r-project.org")
 #> 
 #> The downloaded binary packages are in
-#>  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpFdWYBy/downloaded_packages
+#>  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpxTi2EY/downloaded_packages
 install.packages("knitr", repos = "http://cran.us.r-project.org")
 #> 
 #> The downloaded binary packages are in
-#>  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpFdWYBy/downloaded_packages
+#>  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpxTi2EY/downloaded_packages
 install.packages("rmarkdown", repos = "http://cran.us.r-project.org")
 #> 
 #> The downloaded binary packages are in
-#>  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpFdWYBy/downloaded_packages
+#>  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpxTi2EY/downloaded_packages
 library(remotes)
 library(knitr)
 library(rmarkdown)
@@ -58,8 +58,24 @@ library(rmarkdown)
 ## Install and load the "carbcontpred" package
 remotes::install_github("KangyuSo/carbcontpred", 
                          build_vignettes = TRUE)
-#> Skipping install of 'carbcontpred' from a github remote, the SHA1 (3db31fdb) has not changed since last install.
-#>   Use `force = TRUE` to force installation
+#> Downloading GitHub repo KangyuSo/carbcontpred@HEAD
+#> 
+#> ── R CMD build ─────────────────────────────────────────────────────────────────
+#>      checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/RtmpxTi2EY/remotes10e0b5d29ada9/KangyuSo-carbcontpred-080639d/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/RtmpxTi2EY/remotes10e0b5d29ada9/KangyuSo-carbcontpred-080639d/DESCRIPTION’
+#>   ─  preparing ‘carbcontpred’:
+#>    checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
+#>   ─  installing the package to build vignettes
+#>      creating vignettes ...  ✔  creating vignettes (6.4s)
+#>   ─  checking for LF line-endings in source and make files and shell scripts
+#>   ─  checking for empty or unneeded directories
+#>        NB: this package now depends on R (>= 3.5.0)
+#>        WARNING: Added dependency on R >= 3.5.0 because serialized objects in
+#>      serialize/load version 3 cannot be read in older versions of R.
+#>      File(s) containing such objects:
+#>        ‘carbcontpred/vignettes/ref_dry_avg.rda’
+#>   ─  building ‘carbcontpred_0.0.0.9000.tar.gz’
+#>      
+#> 
 library(carbcontpred)
 
 ## Load the data set 
@@ -76,7 +92,7 @@ View(pred_c)
 ## Load the ROI data file "ROI_Predicted_Carbon.csv" and apply min-max normalization on the spectral reflectance values 
 ## Extract an equation for predicting organic carbon content using reflectance based on the results of the "cpred" function and use it to predict the organic carbon content of the "ROI_Predicted_Carbon.csv" file using its reflectance values
 ## Update the ROI data file with the predictions and save it as a CSV file output titled "ROI_Predicted_Carbon"
-mappred_c <- mappred(pred_c, "Reflectance", "Predicted_Organic_Carbon", system.file("extdata", "Reflectance_ROI.csv", package = "carbcontpred"), "ROI_Predicted_Carbon")
+mappred_c <- mappred(pred_c, "Reflectance", "Predicted_Organic_Carbon", system.file("extdata", "Reflectance_ROI.csv", package = "carbcontpred"), "ROI_Predicted_Carbon", "ROI_folder", "carbcontpred")
 #> Rows: 12209 Columns: 7
 #> ── Column specification ────────────────────────────────────────────────────────
 #> Delimiter: ","

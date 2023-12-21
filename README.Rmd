@@ -67,7 +67,7 @@ View(pred_c)
 ## Load the ROI data file "ROI_Predicted_Carbon.csv" and apply min-max normalization on the spectral reflectance values 
 ## Extract an equation for predicting organic carbon content using reflectance based on the results of the "cpred" function and use it to predict the organic carbon content of the "ROI_Predicted_Carbon.csv" file using its reflectance values
 ## Update the ROI data file with the predictions and save it as a CSV file output titled "ROI_Predicted_Carbon"
-mappred_c <- mappred(pred_c, "Reflectance", "Predicted_Organic_Carbon", system.file("extdata", "Reflectance_ROI.csv", package = "carbcontpred"), "ROI_Predicted_Carbon")
+mappred_c <- mappred(pred_c, "Reflectance", "Predicted_Organic_Carbon", system.file("extdata", "Reflectance_ROI.csv", package = "carbcontpred"), "ROI_Predicted_Carbon", "ROI_folder", "carbcontpred")
 
 ## View the first 10 rows of the resulting CSV file
 head(read.csv(system.file("ROI_folder", "ROI_Predicted_Carbon.csv", package = "carbcontpred")), 10)
