@@ -74,11 +74,11 @@
 </h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>The first goal of carbcontpred is to build and cross-validate a linear regression model for a data set containing the spectral reflectance and organic carbon content of soil samples, and then use it to predict the organic carbon content based on reflectance. The second goal of carbcontpred is to use the predictions from the linear regression model to predict the organic carbon content of a Region of Interest (ROI) data table containing the spectral reflectance of spatial points on a map.</p>
+<p>The first goal of <code>carbcontpred</code> is to build and cross-validate a linear regression model for a data set containing the spectral reflectance and organic carbon content of soil samples, and then use it to predict the organic carbon content based on reflectance. The second goal of <code>carbcontpred</code> is to use the predictions from the linear regression model to predict the organic carbon content of a Region of Interest (ROI) data table containing the spectral reflectance of spatial points on a map.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of carbcontpred from <a href="https://github.com/KangyuSo/carbcontpred" class="external-link">GitHub</a> with:</p>
+<p>You can install the development version of <code>carbcontpred</code> from <a href="https://github.com/KangyuSo/carbcontpred" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span>, repos <span class="op">=</span> <span class="st">"http://cran.us.r-project.org"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"knitr"</span>, repos <span class="op">=</span> <span class="st">"http://cran.us.r-project.org"</span><span class="op">)</span></span>
@@ -100,15 +100,15 @@
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span>, repos <span class="op">=</span> <span class="st">"http://cran.us.r-project.org"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; The downloaded binary packages are in</span></span>
-<span><span class="co">#&gt;  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//Rtmp5lyZ2P/downloaded_packages</span></span>
+<span><span class="co">#&gt;  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpFdWYBy/downloaded_packages</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"knitr"</span>, repos <span class="op">=</span> <span class="st">"http://cran.us.r-project.org"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; The downloaded binary packages are in</span></span>
-<span><span class="co">#&gt;  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//Rtmp5lyZ2P/downloaded_packages</span></span>
+<span><span class="co">#&gt;  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpFdWYBy/downloaded_packages</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"rmarkdown"</span>, repos <span class="op">=</span> <span class="st">"http://cran.us.r-project.org"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; The downloaded binary packages are in</span></span>
-<span><span class="co">#&gt;  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//Rtmp5lyZ2P/downloaded_packages</span></span>
+<span><span class="co">#&gt;  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpFdWYBy/downloaded_packages</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://remotes.r-lib.org" class="external-link">remotes</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/" class="external-link">knitr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/rmarkdown" class="external-link">rmarkdown</a></span><span class="op">)</span></span>
@@ -116,24 +116,8 @@
 <span><span class="co">## Install and load the "carbcontpred" package</span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"KangyuSo/carbcontpred"</span>, </span>
 <span>                         build_vignettes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Downloading GitHub repo KangyuSo/carbcontpred@HEAD</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; ── R CMD build ─────────────────────────────────────────────────────────────────</span></span>
-<span><span class="co">#&gt;      checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/Rtmp5lyZ2P/remotescfb73335aed9/KangyuSo-carbcontpred-64e0338/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/Rtmp5lyZ2P/remotescfb73335aed9/KangyuSo-carbcontpred-64e0338/DESCRIPTION’</span></span>
-<span><span class="co">#&gt;   ─  preparing ‘carbcontpred’:</span></span>
-<span><span class="co">#&gt;      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information</span></span>
-<span><span class="co">#&gt;   ─  installing the package to build vignettes</span></span>
-<span><span class="co">#&gt;      creating vignettes ...  ✔  creating vignettes (6.4s)</span></span>
-<span><span class="co">#&gt;   ─  checking for LF line-endings in source and make files and shell scripts</span></span>
-<span><span class="co">#&gt;   ─  checking for empty or unneeded directories</span></span>
-<span><span class="co">#&gt;        NB: this package now depends on R (&gt;= 3.5.0)</span></span>
-<span><span class="co">#&gt;        WARNING: Added dependency on R &gt;= 3.5.0 because serialized objects in</span></span>
-<span><span class="co">#&gt;      serialize/load version 3 cannot be read in older versions of R.</span></span>
-<span><span class="co">#&gt;      File(s) containing such objects:</span></span>
-<span><span class="co">#&gt;        ‘carbcontpred/vignettes/ref_dry_avg.rda’</span></span>
-<span><span class="co">#&gt;   ─  building ‘carbcontpred_0.0.0.9000.tar.gz’</span></span>
-<span><span class="co">#&gt;      </span></span>
-<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Skipping install of 'carbcontpred' from a github remote, the SHA1 (3db31fdb) has not changed since last install.</span></span>
+<span><span class="co">#&gt;   Use `force = TRUE` to force installation</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/KangyuSo/carbcontpred" class="external-link">carbcontpred</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">## Load the data set </span></span>

@@ -149,7 +149,11 @@ open-source community.</p>
 <p>This is how you install the package if you have not done so yet:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span>, repos <span class="op">=</span> <span class="st">"http://cran.us.r-project.org"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"knitr"</span>, repos <span class="op">=</span> <span class="st">"http://cran.us.r-project.org"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"rmarkdown"</span>, repos <span class="op">=</span> <span class="st">"http://cran.us.r-project.org"</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://remotes.r-lib.org" class="external-link">remotes</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/" class="external-link">knitr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/rmarkdown" class="external-link">rmarkdown</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"KangyuSo/carbcontpred"</span>, </span>
 <span>                         build_vignettes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
@@ -192,8 +196,8 @@ average reflectance in a more acceptable format:</p>
 the latter of which will be the independent variable for the linear
 regression model. We need to add our dependent variable to this data
 set, which would be the organic carbon content. This data is stored in
-<code>SoilMetrics_v01.csv</code> in the
-<code>\data-raw folder</code>.</p>
+<code>SoilMetrics_v01.csv</code> in the <code>\data-raw</code>
+folder.</p>
 <p>We will merge the organic carbon content data from this data set to
 the data set containing the sample ID and average reflectance using the
 following chunk:</p>
@@ -377,15 +381,15 @@ additional information about the function.</p>
 <p>The <code>mappred</code> function uses two data sets. The first data
 set is a file containing spatial information and spectral reflectance
 values of an ROI. The example file used in the vignette is
-<code>Reflectance_ROI.csv</code> in the
-<code>\inst\extdata folder</code>. For more information on how to
-extract an ROI data file, see this <a href="https://kangyuso.github.io/carbcontpred/articles/web_only/ROI_Files.html">article</a>.
+<code>Reflectance_ROI.csv</code> in the <code>\inst\extdata</code>
+folder. For more information on how to extract an ROI data file, see
+this <a href="https://kangyuso.github.io/carbcontpred/articles/web_only/ROI_Files.html">article</a>.
 The second data set consists of the sample ID, average reflectance, and
 measured and predicted organic carbon content of post-dried soil
 samples. This is normally the output from the <code>cpred</code>
 function as shown in the previous section. The example file used in the
-vignette is <code>pred_c.rda</code> in the
-<code>\data folder</code>.</p>
+vignette is <code>pred_c.rda</code> in the <code>\data</code>
+folder.</p>
 </div>
 <div class="section level3">
 <h3 id="mappred-function-overview">mappred Function Overview:<a class="anchor" aria-label="anchor" href="#mappred-function-overview"></a>
