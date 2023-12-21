@@ -62,7 +62,7 @@
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">mappred</span><span class="op">(</span></span>
 <span><span class="va">predictions_dataframe</span>, <span class="va">reflectance_column</span>, <span class="va">prediction_column</span>, </span>
-<span><span class="va">ROI_dataset_path</span>, <span class="va">output_dataset</span></span>
+<span><span class="va">ROI_dataset_path</span>, <span class="va">output_dataset</span>, <span class="va">output_folder</span>, <span class="va">output_package</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -89,7 +89,15 @@
 
 
 <dt>output_dataset</dt>
-<dd><p>The updated ROI data table containing the new predicted organic carbon content of the points</p></dd>
+<dd><p>The file path for the updated ROI data table containing the new predicted organic carbon content of the points</p></dd>
+
+
+<dt>output_folder</dt>
+<dd><p>The folder location for the updated ROI data table</p></dd>
+
+
+<dt>output_package</dt>
+<dd><p>The package location for the updated ROI data table</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -107,7 +115,8 @@
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">mappred_c</span> <span class="op">&lt;-</span> <span class="fu">mappred</span><span class="op">(</span></span></span>
 <span class="r-in"><span><span class="va">pred_c</span>, <span class="st">"Reflectance"</span>, <span class="st">"Predicted_Organic_Carbon"</span>, </span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"Reflectance_ROI.csv"</span>, package <span class="op">=</span> <span class="st">"carbcontpred"</span><span class="op">)</span>, <span class="st">"ROI_Predicted_Carbon"</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"Reflectance_ROI.csv"</span>, package <span class="op">=</span> <span class="st">"carbcontpred"</span><span class="op">)</span>, </span></span>
+<span class="r-in"><span><span class="st">"ROI_Predicted_Carbon"</span>, <span class="st">"ROI_folder"</span>, <span class="st">"carbcontpred"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Rows: </span><span style="color: #0000BB;">12209</span> <span style="font-weight: bold;">Columns: </span><span style="color: #0000BB;">7</span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">──</span> <span style="font-weight: bold;">Column specification</span> <span style="color: #00BBBB;">────────────────────────────────────────────────────────</span></span>
