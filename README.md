@@ -6,17 +6,18 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The first goal of carbcontpred is to build and cross-validate a linear
+The first goal of `carbcontpred` is to build and cross-validate a linear
 regression model for a data set containing the spectral reflectance and
 organic carbon content of soil samples, and then use it to predict the
 organic carbon content based on reflectance. The second goal of
-carbcontpred is to use the predictions from the linear regression model
-to predict the organic carbon content of a Region of Interest (ROI) data
-table containing the spectral reflectance of spatial points on a map.
+`carbcontpred` is to use the predictions from the linear regression
+model to predict the organic carbon content of a Region of Interest
+(ROI) data table containing the spectral reflectance of spatial points
+on a map.
 
 ## Installation
 
-You can install the development version of carbcontpred from
+You can install the development version of `carbcontpred` from
 [GitHub](https://github.com/KangyuSo/carbcontpred) with:
 
 ``` r
@@ -41,15 +42,15 @@ This is a basic example which shows you how to solve a common problem:
 install.packages("remotes", repos = "http://cran.us.r-project.org")
 #> 
 #> The downloaded binary packages are in
-#>  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//Rtmp5lyZ2P/downloaded_packages
+#>  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpFdWYBy/downloaded_packages
 install.packages("knitr", repos = "http://cran.us.r-project.org")
 #> 
 #> The downloaded binary packages are in
-#>  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//Rtmp5lyZ2P/downloaded_packages
+#>  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpFdWYBy/downloaded_packages
 install.packages("rmarkdown", repos = "http://cran.us.r-project.org")
 #> 
 #> The downloaded binary packages are in
-#>  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//Rtmp5lyZ2P/downloaded_packages
+#>  /var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T//RtmpFdWYBy/downloaded_packages
 library(remotes)
 library(knitr)
 library(rmarkdown)
@@ -57,24 +58,8 @@ library(rmarkdown)
 ## Install and load the "carbcontpred" package
 remotes::install_github("KangyuSo/carbcontpred", 
                          build_vignettes = TRUE)
-#> Downloading GitHub repo KangyuSo/carbcontpred@HEAD
-#> 
-#> ── R CMD build ─────────────────────────────────────────────────────────────────
-#>      checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/Rtmp5lyZ2P/remotescfb73335aed9/KangyuSo-carbcontpred-64e0338/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/j9/6__ydzcn15q_pgcfcdxhbrvc0000gn/T/Rtmp5lyZ2P/remotescfb73335aed9/KangyuSo-carbcontpred-64e0338/DESCRIPTION’
-#>   ─  preparing ‘carbcontpred’:
-#>      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
-#>   ─  installing the package to build vignettes
-#>      creating vignettes ...  ✔  creating vignettes (6.4s)
-#>   ─  checking for LF line-endings in source and make files and shell scripts
-#>   ─  checking for empty or unneeded directories
-#>        NB: this package now depends on R (>= 3.5.0)
-#>        WARNING: Added dependency on R >= 3.5.0 because serialized objects in
-#>      serialize/load version 3 cannot be read in older versions of R.
-#>      File(s) containing such objects:
-#>        ‘carbcontpred/vignettes/ref_dry_avg.rda’
-#>   ─  building ‘carbcontpred_0.0.0.9000.tar.gz’
-#>      
-#> 
+#> Skipping install of 'carbcontpred' from a github remote, the SHA1 (3db31fdb) has not changed since last install.
+#>   Use `force = TRUE` to force installation
 library(carbcontpred)
 
 ## Load the data set 

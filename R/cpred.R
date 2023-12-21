@@ -9,6 +9,7 @@
 #' @return A column containing the predicted organic carbon content using a cross-validated linear regression model
 #' @usage cpred(data, reflectance, carbon, test_size, folds, prediction)
 #' @import caret
+#' @import stats
 #' @export
 #' @references https://github.com/KangyuSo/carbcontpred
 #' @source The data was collected by Kangyu So, Dr. Alemu Gonsamo, and Dr. Cheryl A. Rogers (All affiliated with McMaster University) from the Hudson Bay Lowlands region on July 2022

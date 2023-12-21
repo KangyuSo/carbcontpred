@@ -14,7 +14,7 @@ NULL
 #' a sample data set containing the reflectance and organic carbon data of soil 
 #' samples. The package includes another function that extracts an algebraic 
 #' equation based on the predictions from the linear regression model and uses 
-#' it to predict the organic carbon content of a sample ROI data file  using its
+#' it to predict the organic carbon content of a sample ROI data file using its
 #' spectral reflectance data. The package contains a sample data set of 
 #' predictions from the linear regression model. The package also includes the 
 #' documentation for the functions and data sets.

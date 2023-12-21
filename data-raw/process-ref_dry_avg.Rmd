@@ -11,13 +11,21 @@ To increase the shareability of the data I will first read the two data sets int
 
 Install and load the package needed to preprocess the data:
 ```{r}
-install.packages("prospectr")
+install.packages("prospectr", repos = "http://cran.us.r-project.org")
+install.packages("remotes", repos = "http://cran.us.r-project.org")
+install.packages("utils", repos = "http://cran.us.r-project.org")
 library(prospectr)
+library(remotes)
+library(utils)
+
+remotes::install_github("KangyuSo/carbcontpred", 
+                         build_vignettes = TRUE)
+library(carbcontpred)
 ```
 
 Read the `SoilReflectanceDry_v01.csv` file as a data frame:
 ```{r}
-data_ref <- read.csv("data-raw/SoilReflectanceDry_v01.csv")
+data_ref <- read.csv("SoilReflectanceDry_v01.csv")
 ```
 
 The data frame consists of 2151 observations of 433 variables. Get a summary of the data frame:
@@ -60,9 +68,8 @@ ref_dry_avg <- data.frame(
 ```
 
 Read the `SoilMetrics_v01.csv` file as a data frame:
-
 ```{r}
-data_met <- read.csv("data-raw/SoilMetrics_v01.csv")
+data_met <- read.csv("SoilMetrics_v01.csv")
 ```
 
 The data frame consists of 432 observations of 13 variables. Get a summary of the data frame:
@@ -74,7 +81,7 @@ The data was collected by Kangyu So, Dr. Alemu Gonsamo, and Dr. Cheryl A. Rogers
 
 Install and load the package needed to preprocess the data:
 ```{r}
-install.packages("dplyr")
+install.packages("dplyr", repos = "http://cran.us.r-project.org")
 library(dplyr)
 ```
 

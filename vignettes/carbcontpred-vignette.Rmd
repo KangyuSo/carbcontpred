@@ -34,7 +34,11 @@ This is how you install the package if you have not done so yet:
 
 ```{r eval = FALSE} 
 install.packages("remotes", repos = "http://cran.us.r-project.org")
+install.packages("knitr", repos = "http://cran.us.r-project.org")
+install.packages("rmarkdown", repos = "http://cran.us.r-project.org")
 library(remotes)
+library(knitr)
+library(rmarkdown)
 
 remotes::install_github("KangyuSo/carbcontpred", 
                          build_vignettes = TRUE)
@@ -77,7 +81,7 @@ ref_dry_avg <- data.frame(
 )
 ```
 
-Now, we have a data set with our sample ID and average reflectance, the latter of which will be the independent variable for the linear regression model. We need to add our dependent variable to this data set, which would be the organic carbon content. This data is stored in ````SoilMetrics_v01.csv```` in the ````\data-raw folder````.
+Now, we have a data set with our sample ID and average reflectance, the latter of which will be the independent variable for the linear regression model. We need to add our dependent variable to this data set, which would be the organic carbon content. This data is stored in ````SoilMetrics_v01.csv```` in the ````\data-raw```` folder.
 
 We will merge the organic carbon content data from this data set to the data set containing the sample ID and average reflectance using the following chunk:
 
@@ -155,7 +159,7 @@ See the ````README.Rmd```` files for additional details on how to utilize ````cp
 
 ## Pre-Processing Data for mappred
 
-The ````mappred```` function uses two data sets. The first data set is a file containing spatial information and spectral reflectance values of an ROI. The example file used in the vignette is ````Reflectance_ROI.csv```` in the ````\inst\extdata folder````. For more information on how to extract an ROI data file, see this [article](https://kangyuso.github.io/carbcontpred/articles/web_only/ROI_Files.html). The second data set consists of the sample ID, average reflectance, and measured and predicted organic carbon content of post-dried soil samples. This is normally the output from the ````cpred```` function as shown in the previous section. The example file used in the vignette is ````pred_c.rda```` in the ````\data folder````.
+The ````mappred```` function uses two data sets. The first data set is a file containing spatial information and spectral reflectance values of an ROI. The example file used in the vignette is ````Reflectance_ROI.csv```` in the ````\inst\extdata```` folder. For more information on how to extract an ROI data file, see this [article](https://kangyuso.github.io/carbcontpred/articles/web_only/ROI_Files.html). The second data set consists of the sample ID, average reflectance, and measured and predicted organic carbon content of post-dried soil samples. This is normally the output from the ````cpred```` function as shown in the previous section. The example file used in the vignette is ````pred_c.rda```` in the ````\data```` folder.
 
 ## mappred Function Overview:
 

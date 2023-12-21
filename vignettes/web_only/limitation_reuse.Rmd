@@ -47,7 +47,7 @@ It should be noted that using the two softwares ENVI and ArcGIS Pro for extracti
 
 ![](arcgis_raster_0.056.png){width="75%"}
 
-**Figure 1.** *A raster of the Hudson Bay Lowlands showing the predicted organic carbon content in percent dry mass of the Region of Interest (ROI). The image is generated using the data file MOD09GA.A2022276.h13v03.061.2022278035218 from NASA and the ````carbcontpred```` package.*
+**Figure 1.** *A raster of the Hudson Bay Lowlands showing the predicted organic carbon content in percent dry mass of the Region of Interest (ROI). The image is generated using the data file MOD09GA.A2022276.h13v03.061.2022278035218 from NASA and the ````carbcontpred```` package. The Cellsize is 0.056.*
 
 # Reuse for different soil properties and areas
 

@@ -10,7 +10,6 @@
 #' predictions_dataframe, reflectance_column, prediction_column, 
 #' ROI_dataset_path, output_dataset
 #' )
-#' @import prospectr
 #' @import readr
 #' @import stats
 #' @export

@@ -1,6 +1,14 @@
 # Install and load the package needed to preprocess the data:
-install.packages("prospectr")
+install.packages("prospectr", repos = "http://cran.us.r-project.org")
+install.packages("remotes", repos = "http://cran.us.r-project.org")
+install.packages("utils", repos = "http://cran.us.r-project.org")
 library(prospectr)
+library(remotes)
+library(utils)
+
+remotes::install_github("KangyuSo/carbcontpred", 
+                        build_vignettes = TRUE)
+library(carbcontpred)
 
 # Read the "SoilReflectanceDry_v01" file as a data frame
 data_ref <- read.csv("data-raw/SoilReflectanceDry_v01.csv")
@@ -35,7 +43,7 @@ data_met <- read.csv("data-raw/SoilMetrics_v01.csv")
 summary(data_met)
 
 # Install and load the package needed to preprocess the data
-install.packages("dplyr")
+install.packages("dplyr", repos = "http://cran.us.r-project.org")
 library(dplyr)
 
 # Merge the organic carbon data from the "data_met" dataset to the "ref_dry_avg" dataset based on the ID of the soil samples
