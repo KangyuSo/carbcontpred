@@ -4,7 +4,7 @@
 #' @param reflectance_column The average reflectance at a given wavelength range in the predictions_dataframe
 #' @param prediction_column The predicted organic carbon content in the predictions_dataframe
 #' @param ROI_dataset_path The path to the ROI data table that was exported from ENVI into a CSV file, contains geoinformation and reflectance values of the ROI divided into individual points
-#' @param output_dataset The updated ROI data table containing the new predicted organic carbon content of the points
+#' @param output_dataset The file path for the updated ROI data table containing the new predicted organic carbon content of the points
 #' @param output_folder The folder location for the updated ROI data table
 #' @param output_package The package location for the updated ROI data table
 #' @return A CSV file containing the ROI data table as well as the predicted organic carbon content of the points using an algebraic equation extracted from the predictions of a cross-validated linear regression model
@@ -20,8 +20,8 @@
 #' @examples
 #' mappred_c <- mappred(
 #' pred_c, "Reflectance", "Predicted_Organic_Carbon", 
-#' system.file("extdata", "Reflectance_ROI.csv", package = "carbcontpred"), "ROI_Predicted_Carbon",
-#' "ROI_folder", "carbcontpred"
+#' system.file("extdata", "Reflectance_ROI.csv", package = "carbcontpred"), 
+#' "ROI_Predicted_Carbon", "ROI_folder", "carbcontpred"
 #' )
 mappred <- function(predictions_dataframe, reflectance_column, prediction_column, ROI_dataset_path, output_dataset, output_folder, output_package) {
   independent_variable <- as.numeric(unlist(predictions_dataframe[reflectance_column]))
